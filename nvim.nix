@@ -22,7 +22,7 @@
   config = neovimUtils.makeNeovimConfig {
     plugins = builtins.attrValues {
       inherit (self'.legacyPackages.vimPlugins) nobbz;
-      inherit (vimPlugins) null-ls-nvim nvim-lspconfig cmp-nvim-lsp nvim-cmp;
+      inherit (vimPlugins) null-ls-nvim nvim-lspconfig cmp-nvim-lsp nvim-cmp which-key-nvim;
       inherit nvim-treesitter;
     };
   };
