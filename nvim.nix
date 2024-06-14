@@ -24,7 +24,7 @@
     plugins = builtins.attrValues {
       inherit (self'.legacyPackages.vimPlugins) nobbz;
       inherit (vimPlugins) null-ls-nvim nvim-lspconfig cmp-nvim-lsp nvim-cmp which-key-nvim luasnip;
-      inherit (vimPlugins) lspkind-nvim;
+      inherit (vimPlugins) lspkind-nvim indent-blankline-nvim;
       inherit nvim-treesitter;
     };
   };
