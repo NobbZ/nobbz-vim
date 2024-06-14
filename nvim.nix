@@ -7,6 +7,7 @@
   self',
   lib,
   lua-language-server,
+  stylua,
 }: let
   nvim-treesitter = vimPlugins.nvim-treesitter.withAllGrammars;
 
@@ -22,7 +23,8 @@
   config = neovimUtils.makeNeovimConfig {
     plugins = builtins.attrValues {
       inherit (self'.legacyPackages.vimPlugins) nobbz;
-      inherit (vimPlugins) null-ls-nvim nvim-lspconfig cmp-nvim-lsp nvim-cmp which-key-nvim;
+      inherit (vimPlugins) null-ls-nvim nvim-lspconfig cmp-nvim-lsp nvim-cmp which-key-nvim luasnip;
+      inherit (vimPlugins) lspkind-nvim;
       inherit nvim-treesitter;
     };
   };
@@ -40,7 +42,7 @@ in
             #
             # Runtime dependencies
             #
-            inherit lua-language-server;
+            inherit lua-language-server stylua;
           }
         ))
       ];

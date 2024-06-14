@@ -17,6 +17,7 @@
 
         formatter = pkgs.writeShellScriptBin "formatter" ''
           ${pkgs.lib.getExe pkgs.alejandra} .
+          ${pkgs.lib.getExe pkgs.stylua} --indent-type Spaces --indent-width 2 .
         '';
 
         packages.neovim = pkgs.callPackage ./nvim.nix {inherit npins self';};
@@ -26,7 +27,7 @@
 
         devShells.default = pkgs.mkShell {
           packages = builtins.attrValues {
-            inherit (pkgs) nil;
+            inherit (pkgs) nil stylua;
           };
         };
       };
