@@ -12,7 +12,7 @@
 
   neovim-nightly = neovim-unwrapped.overrideAttrs {
     src = npins.neovim;
-    version = __trace (__attrNames npins.neovim) npins.neovim.revision;
+    version = npins.neovim.revision;
     patches = [];
     preConfigure = ''
       sed -i cmake.config/versiondef.h.in -e "s/@NVIM_VERSION_PRERELEASE@/-dev-$version/"
