@@ -4,6 +4,9 @@
   neovimUtils,
   npins,
   vimPlugins,
+  self',
+  lib,
+  lua-language-server,
 }: let
   nvim-treesitter = vimPlugins.nvim-treesitter.withAllGrammars;
 
@@ -17,9 +20,28 @@
   };
 
   config = neovimUtils.makeNeovimConfig {
-    plugins = [
-      nvim-treesitter
-    ];
+    plugins = builtins.attrValues {
+      inherit (self'.legacyPackages.vimPlugins) nobbz;
+      inherit (vimPlugins) null-ls-nvim nvim-lspconfig cmp-nvim-lsp nvim-cmp;
+      inherit nvim-treesitter;
+    };
   };
 in
-  wrapNeovimUnstable neovim-nightly config
+  (wrapNeovimUnstable neovim-nightly config).overrideAttrs (old: {
+    generatedWrapperArgs =
+      old.generatedWrapperArgs
+      or []
+      ++ [
+        "--prefix"
+        "PATH"
+        ":"
+        (lib.makeBinPath (
+          builtins.attrValues {
+            #
+            # Runtime dependencies
+            #
+            inherit lua-language-server;
+          }
+        ))
+      ];
+  })

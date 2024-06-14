@@ -19,8 +19,10 @@
           ${pkgs.lib.getExe pkgs.alejandra} .
         '';
 
-        packages.neovim = pkgs.callPackage ./nvim.nix {inherit npins;};
+        packages.neovim = pkgs.callPackage ./nvim.nix {inherit npins self';};
         packages.default = self'.packages.neovim;
+
+        legacyPackages.vimPlugins.nobbz = pkgs.callPackage ./plugins/nobbz {inherit self;};
       };
     };
 
