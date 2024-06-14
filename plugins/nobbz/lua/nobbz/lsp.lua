@@ -6,8 +6,8 @@ local ls_sources = {
   formatting.stylua,
   formatting.rustfmt,
   --formatting.alejandra,
-  code_actions.statix,
-  diagnostics.deadnix,
+  --code_actions.statix,
+  --diagnostics.deadnix,
 }
 
 -- Enable null-ls
@@ -26,3 +26,4 @@ capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Load individual languages configuration
 require("nobbz.lsp.lua")
+require("nobbz.lsp.nil")

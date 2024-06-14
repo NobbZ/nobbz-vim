@@ -23,6 +23,12 @@
         packages.default = self'.packages.neovim;
 
         legacyPackages.vimPlugins.nobbz = pkgs.callPackage ./plugins/nobbz {inherit self;};
+
+        devShells.default = pkgs.mkShell {
+          packages = builtins.attrValues {
+            inherit (pkgs) nil;
+          };
+        };
       };
     };
 
