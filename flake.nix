@@ -16,8 +16,9 @@
         _module.args.npins = import ./npins;
 
         formatter = pkgs.writeShellScriptBin "formatter" ''
-          ${pkgs.lib.getExe pkgs.alejandra} .
-          ${pkgs.lib.getExe pkgs.stylua} --indent-type Spaces --indent-width 2 .
+          export PATH=${pkgs.lib.makeBinPath [pkgs.alejandra pkgs.stylua]}:$PATH
+          alejandra .
+          stylua --indent-type Spaces --indent-width 2 .
         '';
 
         packages.neovim = pkgs.callPackage ./nvim.nix {inherit npins self';};
