@@ -6,6 +6,8 @@ vim.o.expandtab = true
 vim.o.ai = true
 vim.o.colorcolumn = "80,100,120"
 
+vim.g.mapleader = " "
+
 -- Set up indent markers
 require("ibl").setup({
   indent = { char = "┊" },
