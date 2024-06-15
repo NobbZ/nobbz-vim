@@ -1,6 +1,7 @@
 require("nobbz.cmp")
-require("nobbz.lualine")
+require("nobbz.git")
 require("nobbz.lsp")
+require("nobbz.lualine")
 require("nobbz.markdown")
 require("nobbz.misc")
 require("nobbz.theme")
