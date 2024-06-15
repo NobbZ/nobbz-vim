@@ -1,5 +1,6 @@
-require("nobbz.misc")
 require("nobbz.cmp")
 require("nobbz.lsp")
+require("nobbz.markdown")
+require("nobbz.misc")
 require("nobbz.treesitter")
 require("nobbz.whichkey")
