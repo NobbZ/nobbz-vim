@@ -7,6 +7,8 @@ vim.o.ai = true
 vim.o.colorcolumn = "80,100,120"
 vim.o.signcolumn = "yes"
 vim.o.number = true
+vim.o.cursorline = true
+vim.o.cursorcolumn = true
 
 vim.g.mapleader = " "
 
