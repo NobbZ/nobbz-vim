@@ -25,6 +25,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Load individual languages configuration
+require("nobbz.lsp.astro")
 require("nobbz.lsp.elixir")
 require("nobbz.lsp.lua")
 require("nobbz.lsp.nil")
