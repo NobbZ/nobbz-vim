@@ -26,6 +26,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Load individual languages configuration
 require("nobbz.lsp.astro")
+require("nobbz.lsp.digestif")
 require("nobbz.lsp.elixir")
 require("nobbz.lsp.lua")
 require("nobbz.lsp.mdx")
