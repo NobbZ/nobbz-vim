@@ -5,7 +5,7 @@ local code_actions = null_ls.builtins.code_actions
 local ls_sources = {
   formatting.stylua,
   formatting.rustfmt,
-  --formatting.alejandra,
+  formatting.alejandra,
   --code_actions.statix,
   --diagnostics.deadnix,
 }
