@@ -28,7 +28,7 @@
 
         devShells.default = pkgs.mkShell {
           packages = builtins.attrValues {
-            inherit (pkgs) nil stylua;
+            inherit (pkgs) nil stylua npins;
             inherit (self'.packages) neovim;
           };
         };
