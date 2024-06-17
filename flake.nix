@@ -36,7 +36,7 @@
     };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?reg=nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
 
     parts.url = "github:hercules-ci/flake-parts";
   };
