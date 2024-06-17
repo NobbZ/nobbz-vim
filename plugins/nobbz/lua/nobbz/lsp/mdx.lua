@@ -7,5 +7,6 @@ vim.filetype.add({
 })
 
 require("lspconfig").mdx_analyzer.setup({
+  on_attach = require("nobbz.lsp.keymap"),
   capabilities = capabilities,
 })
