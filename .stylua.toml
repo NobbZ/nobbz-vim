@@ -1,0 +1,14 @@
+# This config file repeats *all* options, despite being set to the default (as 
+# of writing this) to avoid that future changes of the default will lead to
+# drastic reformats
+
+column_width = 120
+line_endings = "Unix"
+indent_type = "Spaces"
+indent_width = 2
+quote_style = "AutoPreferDouble"
+call_parentheses = "Always"
+collapse_simple_statement = "Always"
+
+[sort_requires]
+enabled = true

@@ -1,7 +1,5 @@
 local function is_always_hidden(name)
-  if name == ".git" then
-    return true
-  end
+  if name == ".git" then return true end
 
   return false
 end

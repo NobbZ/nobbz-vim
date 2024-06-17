@@ -1,9 +1,7 @@
 local cmp = require("cmp")
 
 local snippet = {
-  expand = function(args)
-    require("luasnip").lsp_expand(args.body)
-  end,
+  expand = function(args) require("luasnip").lsp_expand(args.body) end,
 }
 local formatting = { format = require("lspkind").cmp_format() }
 
