@@ -16,7 +16,7 @@ require("lspconfig").nil_ls.setup({
         },
       },
       formatting = {
-        command = { "nix", "fmt" },
+        command = { "alejandra", "--" },
       },
     },
   },
