@@ -5,7 +5,7 @@ local code_actions = null_ls.builtins.code_actions
 local ls_sources = {
   formatting.stylua,
   formatting.rustfmt,
-  --formatting.alejandra,
+  formatting.alejandra,
   --code_actions.statix,
   --diagnostics.deadnix,
 }
@@ -26,6 +26,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Load individual languages configuration
 require("nobbz.lsp.astro")
+require("nobbz.lsp.digestif")
 require("nobbz.lsp.elixir")
 require("nobbz.lsp.lua")
 require("nobbz.lsp.mdx")
