@@ -15,6 +15,18 @@
       "url": "https://api.github.com/repos/neovim/neovim/tarball/v0.10.0",
       "hash": "0p366agcv4lz1qs453i44f9h37r09r58qj8g2wpbj0g4f6js48ql"
     },
+    "nvim-lspconfig": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "neovim",
+        "repo": "nvim-lspconfig"
+      },
+      "branch": "master",
+      "revision": "5c33bf1f708ac8cb839469e1a03d45987fec305c",
+      "url": "https://github.com/neovim/nvim-lspconfig/archive/5c33bf1f708ac8cb839469e1a03d45987fec305c.tar.gz",
+      "hash": "1mdqckjmk1hdxgipa2qwncwmbv6ad8mi5cqisinkz7610k55sxpm"
+    },
     "nvim-telescope": {
       "type": "Git",
       "repository": {

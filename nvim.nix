@@ -22,8 +22,8 @@
 
   config = neovimUtils.makeNeovimConfig {
     plugins = builtins.attrValues {
-      inherit (self'.legacyPackages.vimPlugins) nobbz telescope;
-      inherit (vimPlugins) null-ls-nvim nvim-lspconfig cmp-nvim-lsp nvim-cmp which-key-nvim luasnip;
+      inherit (self'.legacyPackages.vimPlugins) nobbz telescope lspconfig;
+      inherit (vimPlugins) null-ls-nvim cmp-nvim-lsp nvim-cmp which-key-nvim luasnip;
       inherit (vimPlugins) lspkind-nvim indent-blankline-nvim markdown-nvim onedark-nvim lualine-nvim;
       inherit (vimPlugins) lualine-lsp-progress neogit oil-nvim nvim-web-devicons;
       inherit nvim-treesitter;
