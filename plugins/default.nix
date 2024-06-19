@@ -21,6 +21,7 @@
     legacyPackages.vimPlugins =
       {
         nobbz = pkgs.callPackage ./nobbz {inherit self;};
+nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
       }
       // plugins;
   };
