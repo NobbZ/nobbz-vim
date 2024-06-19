@@ -6,22 +6,22 @@
     lib,
     ...
   }: let
-    pluginPins = lib.filterAttrs (name: _: lib.hasPrefix "nvim-" name) npins;
-    plugins = lib.traceVal (
-      lib.mapAttrs' (name: pin: {
-        name = lib.removePrefix "nvim-" name;
-        value = pkgs.vimUtils.buildVimPlugin {
-          pname = name;
-          version = pin.version or pin.revision;
-          src = pin;
-        };
-      })
-      pluginPins);
+    makePluginFromPin = name: pin:
+      pkgs.vimUtils.buildVimPlugin {
+        pname = name;
+        version = pin.version or pin.revision;
+        src = pin;
+      };
+    plugins = lib.pipe npins [
+      (lib.filterAttrs (name: _: lib.hasPrefix "nvim-" name))
+      (lib.mapAttrs' (name: pin: lib.nameValuePair (lib.removePrefix "nvim-" name) pin))
+      (lib.mapAttrs makePluginFromPin)
+    ];
   in {
     legacyPackages.vimPlugins =
       {
         nobbz = pkgs.callPackage ./nobbz {inherit self;};
-nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+        nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
       }
       // plugins;
   };
