@@ -7,6 +7,8 @@
     parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
 
+      imports = [./plugins];
+
       perSystem = {
         self',
         pkgs,
@@ -23,8 +25,6 @@
 
         packages.neovim = pkgs.callPackage ./nvim.nix {inherit npins self';};
         packages.default = self'.packages.neovim;
-
-        legacyPackages.vimPlugins.nobbz = pkgs.callPackage ./plugins/nobbz {inherit self;};
 
         devShells.default = pkgs.mkShell {
           packages = builtins.attrValues {
