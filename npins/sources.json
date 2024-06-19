@@ -1,16 +1,16 @@
 {
   "pins": {
-    "nvim-luasnip": {
+    "nvim-lspkind": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "L3MON4D3",
-        "repo": "LuaSnip"
+        "owner": "onsails",
+        "repo": "lspkind.nvim"
       },
       "branch": "master",
-      "revision": "50fcf17db7c75af80e6b6109acfbfb4504768780",
-      "url": "https://github.com/L3MON4D3/LuaSnip/archive/50fcf17db7c75af80e6b6109acfbfb4504768780.tar.gz",
-      "hash": "1bwx37sqnbb1nypr5mmc6xdcnzlmzhii9kayarmyclqaissby0j2"
+      "revision": "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf",
+      "url": "https://github.com/onsails/lspkind.nvim/archive/1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf.tar.gz",
+      "hash": "0sjd244122q7hs3xaxzxhfcfpnzjz082rbnishq6khnr9w2xs0px"
     },
     "neovim": {
       "type": "GitRelease",
@@ -62,6 +62,18 @@
       "revision": "5c33bf1f708ac8cb839469e1a03d45987fec305c",
       "url": "https://github.com/neovim/nvim-lspconfig/archive/5c33bf1f708ac8cb839469e1a03d45987fec305c.tar.gz",
       "hash": "1mdqckjmk1hdxgipa2qwncwmbv6ad8mi5cqisinkz7610k55sxpm"
+    },
+    "nvim-luasnip": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip"
+      },
+      "branch": "master",
+      "revision": "50fcf17db7c75af80e6b6109acfbfb4504768780",
+      "url": "https://github.com/L3MON4D3/LuaSnip/archive/50fcf17db7c75af80e6b6109acfbfb4504768780.tar.gz",
+      "hash": "1bwx37sqnbb1nypr5mmc6xdcnzlmzhii9kayarmyclqaissby0j2"
     },
     "nvim-telescope": {
       "type": "Git",
