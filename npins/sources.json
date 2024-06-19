@@ -1,5 +1,17 @@
 {
   "pins": {
+    "nvim-luasnip": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip"
+      },
+      "branch": "master",
+      "revision": "50fcf17db7c75af80e6b6109acfbfb4504768780",
+      "url": "https://github.com/L3MON4D3/LuaSnip/archive/50fcf17db7c75af80e6b6109acfbfb4504768780.tar.gz",
+      "hash": "1bwx37sqnbb1nypr5mmc6xdcnzlmzhii9kayarmyclqaissby0j2"
+    },
     "neovim": {
       "type": "GitRelease",
       "repository": {
