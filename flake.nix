@@ -39,5 +39,6 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
 
     parts.url = "github:hercules-ci/flake-parts";
+    parts.inputs.nixpkgs-lib.follows = "nixpkgs";
   };
 }
