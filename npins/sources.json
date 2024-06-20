@@ -111,6 +111,18 @@
       "url": "https://github.com/tadmccorkle/markdown.nvim/archive/d6dd17dd36fd8d83f5bf2fef6a9acc24ffa6ff9c.tar.gz",
       "hash": "1i6ays4c4azx7fvfy4hm69psmafyvqf7q33a8692cj6q8zl5fvxd"
     },
+    "nvim-oxide": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Feel-ix-343",
+        "repo": "markdown-oxide"
+      },
+      "branch": "main",
+      "revision": "bd44db39f55b26a93aa56eb18eb105488a6a972d",
+      "url": "https://github.com/Feel-ix-343/markdown-oxide/archive/bd44db39f55b26a93aa56eb18eb105488a6a972d.tar.gz",
+      "hash": "06h6s83g1rfvdxzgndi6krs787mvdal7am4pp1y07wz316bz7sdr"
+    },
     "nvim-telescope": {
       "type": "Git",
       "repository": {
