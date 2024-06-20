@@ -5,6 +5,15 @@ local snippet = {
 }
 local formatting = { format = require("lspkind").cmp_format() }
 
+local nvim_lsp = {
+  name = "nvim_lsp",
+  option = {
+    markdown_oxide = {
+      keyword_pattern = [[\(\k\| \|\/\|#\)\+]];
+    },
+  },
+}
+
 cmp.setup({
   snippet = snippet,
   formatting = formatting,
@@ -16,7 +25,7 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },
+    nvim_lsp,
     { name = "hledger" },
   }),
 })
