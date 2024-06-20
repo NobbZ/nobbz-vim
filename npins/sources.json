@@ -99,6 +99,18 @@
       "url": "https://github.com/L3MON4D3/LuaSnip/archive/50fcf17db7c75af80e6b6109acfbfb4504768780.tar.gz",
       "hash": "1bwx37sqnbb1nypr5mmc6xdcnzlmzhii9kayarmyclqaissby0j2"
     },
+    "nvim-markdown": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "tadmccorkle",
+        "repo": "markdown.nvim"
+      },
+      "branch": "master",
+      "revision": "d6dd17dd36fd8d83f5bf2fef6a9acc24ffa6ff9c",
+      "url": "https://github.com/tadmccorkle/markdown.nvim/archive/d6dd17dd36fd8d83f5bf2fef6a9acc24ffa6ff9c.tar.gz",
+      "hash": "1i6ays4c4azx7fvfy4hm69psmafyvqf7q33a8692cj6q8zl5fvxd"
+    },
     "nvim-telescope": {
       "type": "Git",
       "repository": {
