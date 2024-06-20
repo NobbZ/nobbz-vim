@@ -1,4 +1,5 @@
 local neogit = require("neogit")
+local gitsigns = require("gitsigns")
 
 neogit.setup({})
 
@@ -6,3 +7,5 @@ neogit.setup({})
 require("which-key").register({
   g = { "<cmd>:Neogit<CR>", "neogit status" },
 }, { prefix = "<leader>" })
+
+gitsigns.setup()
