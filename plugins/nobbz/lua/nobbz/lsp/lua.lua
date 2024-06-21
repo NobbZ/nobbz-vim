@@ -9,8 +9,9 @@ require("lspconfig").lua_ls.setup({
     local path = client.workspace_folders[1].name
 
     -- Search in project for a `.luarc.json` or `.luarc.jsonc`, do nothing if found.
-    -- if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then return end
-    if vim.fn.findfile(".luarc.json", path) or vim.fn.findfile(".luarc.jsonc", path) then return end
+    local luarc_json_exists = vim.fn.glob(path .. "/.luarc.json") ~= ""
+    local luarc_jsonc_exists = vim.fn.glob(path .. "/.luarc.jsonc") ~= ""
+    if luarc_json_exists or luarc_jsonc_exists then return end
 
     -- Assume we are in a nvim config and configure appropriately to not warn on nvim globals
     client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
