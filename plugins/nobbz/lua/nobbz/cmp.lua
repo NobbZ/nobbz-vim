@@ -31,4 +31,7 @@ cmp.setup({
     { name = "luasnip", max_item_count = 3 }, -- snippets
     { name = "hledger" },
   }),
+  experimental = {
+    ghost_text = true,
+  },
 })
