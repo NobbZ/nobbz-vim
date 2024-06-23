@@ -21,7 +21,6 @@
 
   config = neovimUtils.makeNeovimConfig {
     plugins = builtins.attrValues ({
-        inherit (vimPlugins) null-ls-nvim;
         inherit (vimPlugins) onedark-nvim lualine-nvim;
         inherit (vimPlugins) lualine-lsp-progress neogit oil-nvim nvim-web-devicons;
       }
