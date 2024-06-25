@@ -135,6 +135,21 @@
       "url": "https://github.com/tadmccorkle/markdown.nvim/archive/d6dd17dd36fd8d83f5bf2fef6a9acc24ffa6ff9c.tar.gz",
       "hash": "1i6ays4c4azx7fvfy4hm69psmafyvqf7q33a8692cj6q8zl5fvxd"
     },
+    "nvim-noice": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "noice.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v4.3.0",
+      "revision": "d580646db85f49b8226d52b143a458161f41954a",
+      "url": "https://api.github.com/repos/folke/noice.nvim/tarball/v4.3.0",
+      "hash": "15lyjf0dixcabf7mssrhilis56ryn9xmw45mrgw0sbx99zzc44cd"
+    },
     "nvim-none-ls": {
       "type": "Git",
       "repository": {
@@ -146,6 +161,21 @@
       "revision": "f1b438ab1709cf9d8875843559d20265013ac755",
       "url": "https://github.com/nvimtools/none-ls.nvim/archive/f1b438ab1709cf9d8875843559d20265013ac755.tar.gz",
       "hash": "17ln5mqzrcp0fm80pf4n21kqv52fschxx36mckra9cr5lfn6yiyj"
+    },
+    "nvim-nui": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "0.3.0",
+      "revision": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733",
+      "url": "https://api.github.com/repos/MunifTanjim/nui.nvim/tarball/0.3.0",
+      "hash": "0fjrnhfhq7sn3am7283adar0jlf6gcyq303kxkwqvxzvvdg9nirg"
     },
     "nvim-telescope": {
       "type": "Git",

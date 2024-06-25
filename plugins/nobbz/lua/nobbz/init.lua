@@ -4,6 +4,7 @@ require("nobbz.lsp") -- LSP and related setup
 require("nobbz.lualine") -- Set up the status bar at the bottom
 require("nobbz.markdown") -- Set up markdown editing
 require("nobbz.misc") -- miscelanous editor settings
+require("nobbz.noice") -- setup noice for nicer notifications and messages
 require("nobbz.oil") -- manage files as if it was a text buffer
 require("nobbz.telescope") -- some fuzzy finders
 require("nobbz.theme") -- how shall everything look like
