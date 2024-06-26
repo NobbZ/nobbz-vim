@@ -14,4 +14,12 @@ require("noice").setup({
     inc_rename = false,
     lsp_doc_border = true,
   },
+  views = {
+    cmdline_popup = {
+      position = {
+        col = "50%",
+        row = "85%",
+      },
+    },
+  },
 })
