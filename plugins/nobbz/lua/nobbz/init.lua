@@ -2,6 +2,7 @@ require("nobbz.cmp") -- foundations for completions
 require("nobbz.git") -- set up neogit (kind of magit)
 require("nobbz.lsp") -- LSP and related setup
 require("nobbz.lualine") -- Set up the status bar at the bottom
+require("nobbz.luasnip") -- Snippet tool
 require("nobbz.markdown") -- Set up markdown editing
 require("nobbz.misc") -- miscelanous editor settings
 require("nobbz.noice") -- setup noice for nicer notifications and messages
