@@ -9,6 +9,7 @@
   lua-language-server,
   stylua,
   markdown-oxide,
+  xclip,
 }: let
   neovim-nightly = neovim-unwrapped.overrideAttrs {
     src = npins.neovim;
@@ -40,7 +41,7 @@ in
             #
             # Runtime dependencies
             #
-            inherit lua-language-server stylua markdown-oxide;
+            inherit lua-language-server stylua markdown-oxide xclip;
           }
         ))
       ];
