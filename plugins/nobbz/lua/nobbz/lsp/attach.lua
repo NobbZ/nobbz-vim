@@ -7,4 +7,8 @@ return function(client, buffer)
   })
 
   vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
+
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
+  end
 end
