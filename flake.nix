@@ -33,6 +33,7 @@
           packages = builtins.attrValues {
             inherit (pkgs) nil stylua npins alejandra;
             inherit (self'.packages) neovim;
+            inherit (inputs'.nixpkgs-emmy.legacyPackages) emmy-lua-code-style;
           };
 
           shellHook = let
@@ -53,6 +54,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
+
+    nixpkgs-emmy.url = "github:NixOS/nixpkgs?ref=pull/323401/head";
 
     parts.url = "github:hercules-ci/flake-parts";
     parts.inputs.nixpkgs-lib.follows = "nixpkgs";

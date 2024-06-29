@@ -39,6 +39,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-emmy": {
+      "locked": {
+        "lastModified": 1719675406,
+        "narHash": "sha256-bZgaUZikDI7ZS1EY0jjZnbcO4vNeSRhIekb17FyUMf0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2feb215c297f2c9ae272336f55d54a962d71a9ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "pull/323401/head",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -63,6 +79,7 @@
       "inputs": {
         "gen-luarc": "gen-luarc",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-emmy": "nixpkgs-emmy",
         "parts": "parts"
       }
     }
