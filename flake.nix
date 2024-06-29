@@ -20,9 +20,9 @@
         _module.args.pkgs = inputs'.nixpkgs.legacyPackages.extend inputs.gen-luarc.overlays.default;
 
         formatter = pkgs.writeShellScriptBin "formatter" ''
-          export PATH=${pkgs.lib.makeBinPath [pkgs.alejandra pkgs.stylua]}:$PATH
+          export PATH=${pkgs.lib.makeBinPath [pkgs.alejandra inputs'.nixpkgs-emmy.legacyPackages.emmy-lua-code-style]}:$PATH
           alejandra .
-          stylua .
+          CodeFormat format -w . -ig .direnv
         '';
 
         packages.md-oxide = pkgs.callPackage ./pkgs/oxide.nix {inherit npins;};
