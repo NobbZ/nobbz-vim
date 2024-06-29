@@ -13,9 +13,11 @@
         self',
         pkgs,
         npins,
+        inputs',
         ...
       }: {
         _module.args.npins = import ./npins;
+        _module.args.pkgs = inputs'.nixpkgs.legacyPackages.extend inputs.gen-luarc.overlays.default;
 
         formatter = pkgs.writeShellScriptBin "formatter" ''
           export PATH=${pkgs.lib.makeBinPath [pkgs.alejandra pkgs.stylua]}:$PATH
@@ -32,6 +34,19 @@
             inherit (pkgs) nil stylua npins alejandra;
             inherit (self'.packages) neovim;
           };
+
+          shellHook = let
+            luarc = pkgs.mk-luarc-json {
+              nvim = self'.packages.neovim.unwrapped;
+              plugins = self'.packages.neovim.packpathDirs.myNeovimPackages.start;
+            };
+          in
+            /*
+            bash
+            */
+            ''
+              ln -fs ${luarc} .luarc.json
+            '';
         };
       };
     };
@@ -41,5 +56,9 @@
 
     parts.url = "github:hercules-ci/flake-parts";
     parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+
+    gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
+    gen-luarc.inputs.nixpkgs.follows = "nixpkgs";
+    gen-luarc.inputs.flake-parts.follows = "parts";
   };
 }
