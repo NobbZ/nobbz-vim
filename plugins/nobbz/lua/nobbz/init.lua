@@ -11,3 +11,7 @@ require("nobbz.telescope") -- some fuzzy finders
 require("nobbz.theme") -- how shall everything look like
 require("nobbz.treesitter") -- set up treesitter
 require("nobbz.whichkey") -- set up whichkey, which provides help as you type
+
+require("lz.n").load({
+    { "startuptime", command = "StartUptime" },
+})

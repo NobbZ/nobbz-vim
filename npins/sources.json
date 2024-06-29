@@ -123,6 +123,18 @@
       "url": "https://github.com/L3MON4D3/LuaSnip/archive/50fcf17db7c75af80e6b6109acfbfb4504768780.tar.gz",
       "hash": "1bwx37sqnbb1nypr5mmc6xdcnzlmzhii9kayarmyclqaissby0j2"
     },
+    "nvim-lz-n": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neorocks",
+        "repo": "lz.n"
+      },
+      "branch": "master",
+      "revision": "2b9b3ee2a4d94d04454efe6e692d878a79f8433c",
+      "url": "https://github.com/nvim-neorocks/lz.n/archive/2b9b3ee2a4d94d04454efe6e692d878a79f8433c.tar.gz",
+      "hash": "1bh2z1wmir721hygd1ylms7w94zd6is02s2dcg5y2p1sz10mny4k"
+    },
     "nvim-markdown": {
       "type": "Git",
       "repository": {
@@ -176,6 +188,18 @@
       "revision": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733",
       "url": "https://api.github.com/repos/MunifTanjim/nui.nvim/tarball/0.3.0",
       "hash": "0fjrnhfhq7sn3am7283adar0jlf6gcyq303kxkwqvxzvvdg9nirg"
+    },
+    "nvim-startuptime": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "dstein64",
+        "repo": "vim-startuptime"
+      },
+      "branch": "master",
+      "revision": "ac2cccb5be617672add1f4f3c0a55ce99ba34e01",
+      "url": "https://github.com/dstein64/vim-startuptime/archive/ac2cccb5be617672add1f4f3c0a55ce99ba34e01.tar.gz",
+      "hash": "0gblxnqdifln3sswg96dp18h4367hpqb0z72ydrvlz186471zgps"
     },
     "nvim-telescope": {
       "type": "Git",
