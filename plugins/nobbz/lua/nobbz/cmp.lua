@@ -9,11 +9,12 @@ local nvim_lsp = {
   name = "nvim_lsp",
   option = {
     markdown_oxide = {
-      keyword_pattern = [[\(\k\| \|\/\|#\)\+]];
+      keyword_pattern = [[\(\k\| \|\/\|#\)\+]],
     },
   },
 }
 
+---@diagnostic disable-next-line:redundant-parameter
 cmp.setup({
   snippet = snippet,
   formatting = formatting,

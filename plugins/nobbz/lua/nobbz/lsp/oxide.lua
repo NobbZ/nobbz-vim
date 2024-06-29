@@ -10,4 +10,3 @@ require("lspconfig").markdown_oxide.setup({
   on_attach = require("nobbz.lsp.attach"),
   capabilities = capabilities,
 })
-

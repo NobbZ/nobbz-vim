@@ -4,9 +4,7 @@
 ---@return function
 local function refresh_codelens(client)
   return function(args)
-    if client.supports_method('textDocument/codelens') then
-      vim.lsp.codelens.refresh(args)
-    end
+    if client.supports_method("textDocument/codelens") then vim.lsp.codelens.refresh(args) end
   end
 end
 
@@ -22,9 +20,7 @@ local function on_attach(client, buffer)
 
   vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
 
-  if client.server_capabilities.inlayHintProvider then
-    vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
-  end
+  if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true, { bufnr = buffer }) end
 end
 
 return on_attach

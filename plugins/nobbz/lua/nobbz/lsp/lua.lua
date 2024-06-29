@@ -15,9 +15,7 @@ require("lspconfig").lua_ls.setup({
 
     -- if there is a luarc.lua in the workspace root, import and merge.
     local plugin_paths = vim.print(vim.split(vim.fn.glob(path .. "/plugins/*/lua"), "\n"), { trimempty = true })
-    vim.iter(plugin_paths):map(function(plugin_path)
-      return vim.print(string.sub(plugin_path, -1, -4))
-    end)
+    vim.iter(plugin_paths):map(function(plugin_path) return vim.print(string.sub(plugin_path, -1, -4)) end)
     table.insert(plugin_paths, vim.env.VIMRUNTIME)
 
     -- Assume we are in a nvim config and configure appropriately to not warn on nvim globals
@@ -32,8 +30,8 @@ require("lspconfig").lua_ls.setup({
   end,
   settings = {
     Lua = {
-      hint = { enable = true, },
-    }
+      hint = { enable = true },
+    },
   },
   capabilities = capabilities,
 })

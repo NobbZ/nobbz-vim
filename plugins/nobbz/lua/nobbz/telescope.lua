@@ -1,6 +1,6 @@
-local telescope = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
+local telescope = require("telescope")
 
 local mappings = {
   ["<C-2>"] = actions.select_horizontal,

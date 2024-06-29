@@ -3,9 +3,7 @@ local wk = require("which-key")
 
 local function choice(step)
   return function()
-    if luasnip.choice_active() then
-      luasnip.change_choice(step)
-    end
+    if luasnip.choice_active() then luasnip.change_choice(step) end
   end
 end
 

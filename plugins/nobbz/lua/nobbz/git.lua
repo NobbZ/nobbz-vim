@@ -1,5 +1,5 @@
-local neogit = require("neogit")
 local gitsigns = require("gitsigns")
+local neogit = require("neogit")
 
 neogit.setup({})
 
