@@ -13,14 +13,14 @@ end
 local function on_attach(client, buffer)
   require("nobbz.lsp.keymap")(client, buffer)
 
-  vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave", "CursorHold", "LspAttach" }, {
+  vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave", "CursorHold", "LspAttach", }, {
     buffer = buffer,
     callback = refresh_codelens(client),
   })
 
-  vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
+  vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached", })
 
-  if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true, { bufnr = buffer }) end
+  if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true, { bufnr = buffer, }) end
 end
 
 return on_attach

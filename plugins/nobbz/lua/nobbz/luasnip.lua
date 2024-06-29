@@ -12,19 +12,19 @@ local function stepper(step_size)
 end
 
 local selection_map = {
-  ["<Tab>"] = { stepper(1), "next snippet gap" },
-  ["<S-Tab>"] = { stepper(-1), "previous snippet gap" },
-  ["<C-a>"] = { choice(1), "next choice" },
-  ["<C-s>"] = { choice(-1), "previous choice" },
+  ["<Tab>"] = { stepper(1), "next snippet gap", },
+  ["<S-Tab>"] = { stepper(-1), "previous snippet gap", },
+  ["<C-a>"] = { choice(1), "next choice", },
+  ["<C-s>"] = { choice(-1), "previous choice", },
 }
 
 local interactive_map = {
-  ["<C-e>"] = { luasnip.expand, "expand" },
+  ["<C-e>"] = { luasnip.expand, "expand", },
 }
 for k, v in pairs(selection_map) do
   interactive_map[k] = v
 end
 
-wk.register(interactive_map, { mode = "i" })
+wk.register(interactive_map, { mode = "i", })
 
-wk.register(selection_map, { mode = "s" })
+wk.register(selection_map, { mode = "s", })

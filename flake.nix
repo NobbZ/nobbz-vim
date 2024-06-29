@@ -22,7 +22,7 @@
         formatter = pkgs.writeShellScriptBin "formatter" ''
           export PATH=${pkgs.lib.makeBinPath [pkgs.alejandra inputs'.nixpkgs-emmy.legacyPackages.emmy-lua-code-style]}:$PATH
           alejandra .
-          CodeFormat format -w . -ig .direnv
+          CodeFormat format -w . -ig .direnv -c ${self}/.editorconfig
         '';
 
         packages.md-oxide = pkgs.callPackage ./pkgs/oxide.nix {inherit npins;};

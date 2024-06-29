@@ -14,13 +14,13 @@ require("lspconfig").lua_ls.setup({
     if luarc_json_exists or luarc_jsonc_exists then return end
 
     -- if there is a luarc.lua in the workspace root, import and merge.
-    local plugin_paths = vim.print(vim.split(vim.fn.glob(path .. "/plugins/*/lua"), "\n"), { trimempty = true })
+    local plugin_paths = vim.print(vim.split(vim.fn.glob(path .. "/plugins/*/lua"), "\n"), { trimempty = true, })
     vim.iter(plugin_paths):map(function(plugin_path) return vim.print(string.sub(plugin_path, -1, -4)) end)
     table.insert(plugin_paths, vim.env.VIMRUNTIME)
 
     -- Assume we are in a nvim config and configure appropriately to not warn on nvim globals
     client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
-      runtime = { version = "LuaJIT" },
+      runtime = { version = "LuaJIT", },
       -- Make the server aware of Neovim runtime files
       workspace = {
         checkThirdParty = false,
@@ -30,7 +30,7 @@ require("lspconfig").lua_ls.setup({
   end,
   settings = {
     Lua = {
-      hint = { enable = true },
+      hint = { enable = true, },
     },
   },
   capabilities = capabilities,
