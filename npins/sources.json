@@ -143,9 +143,9 @@
         "repo": "markdown.nvim"
       },
       "branch": "master",
-      "revision": "d6dd17dd36fd8d83f5bf2fef6a9acc24ffa6ff9c",
-      "url": "https://github.com/tadmccorkle/markdown.nvim/archive/d6dd17dd36fd8d83f5bf2fef6a9acc24ffa6ff9c.tar.gz",
-      "hash": "1i6ays4c4azx7fvfy4hm69psmafyvqf7q33a8692cj6q8zl5fvxd"
+      "revision": "dfa0d2def6dbf77e9206b16dc90cad4dd23d55d2",
+      "url": "https://github.com/tadmccorkle/markdown.nvim/archive/dfa0d2def6dbf77e9206b16dc90cad4dd23d55d2.tar.gz",
+      "hash": "0p454caxkd8chg0v1m085vlmrmhkvhfwq625wgy9s8bzinja5rb0"
     },
     "nvim-noice": {
       "type": "GitRelease",
