@@ -35,9 +35,9 @@
         "repo": "nvim-cmp"
       },
       "branch": "main",
-      "revision": "a110e12d0b58eefcf5b771f533fc2cf3050680ac",
-      "url": "https://github.com/hrsh7th/nvim-cmp/archive/a110e12d0b58eefcf5b771f533fc2cf3050680ac.tar.gz",
-      "hash": "0qn7yz2nqp1k5p337nys0d2sr34ybs52s8sx4gg9krl76l91zlgf"
+      "revision": "d818fd0624205b34e14888358037fb6f5dc51234",
+      "url": "https://github.com/hrsh7th/nvim-cmp/archive/d818fd0624205b34e14888358037fb6f5dc51234.tar.gz",
+      "hash": "18yjwihrr4ykq2h8yv67550358bmxi6maqvrhhbvxf402r01zkld"
     },
     "nvim-cmp-hledger": {
       "type": "Git",
