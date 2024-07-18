@@ -29,26 +29,31 @@
         packages.neovim = pkgs.callPackage ./nvim.nix {inherit npins self';};
         packages.default = self'.packages.neovim;
 
-        devShells.default = pkgs.mkShell {
-          packages = builtins.attrValues {
-            inherit (pkgs) nil stylua npins alejandra;
-            inherit (self'.packages) neovim;
-            inherit (inputs'.nixpkgs-emmy.legacyPackages) emmy-lua-code-style;
-          };
-
-          shellHook = let
-            luarc = pkgs.mk-luarc-json {
-              nvim = self'.packages.neovim.unwrapped;
-              plugins = self'.packages.neovim.packpathDirs.myNeovimPackages.start;
+        devShells.default = let
+          emmy-lua-code-style = inputs'.nixpkgs-emmy.legacyPackages.emmy-lua-code-style.overrideAttrs (_: {
+            src = npins.emmy-style;
+          });
+        in
+          pkgs.mkShell {
+            packages = builtins.attrValues {
+              inherit (pkgs) nil stylua npins alejandra;
+              inherit (self'.packages) neovim;
+              inherit emmy-lua-code-style;
             };
-          in
-            /*
-            bash
-            */
-            ''
-              ln -fs ${luarc} .luarc.json
-            '';
-        };
+
+            shellHook = let
+              luarc = pkgs.mk-luarc-json {
+                nvim = self'.packages.neovim.unwrapped;
+                plugins = self'.packages.neovim.packpathDirs.myNeovimPackages.start;
+              };
+            in
+              /*
+              bash
+              */
+              ''
+                ln -fs ${luarc} .luarc.json
+              '';
+          };
       };
     };
 

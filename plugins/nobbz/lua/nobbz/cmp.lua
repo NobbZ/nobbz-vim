@@ -27,9 +27,9 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     nvim_lsp,
-    { name = "buffer",  max_item_count = 5, },     -- text within current buffer
-    { name = "path",    max_item_count = 3, },     -- file system paths
-    { name = "luasnip", max_item_count = 3, },     -- snippets
+    { name = "buffer",  max_item_count = 5, }, -- text within current buffer
+    { name = "path",    max_item_count = 3, }, -- file system paths
+    { name = "luasnip", max_item_count = 3, }, -- snippets
     { name = "hledger", },
   }),
   experimental = {

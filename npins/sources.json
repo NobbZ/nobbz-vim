@@ -1,5 +1,17 @@
 {
   "pins": {
+    "emmy-style": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "CppCXY",
+        "repo": "EmmyLuaCodeStyle"
+      },
+      "branch": "master",
+      "revision": "abdea2d412437e2f12a38e8179cd18af61c4429a",
+      "url": "https://github.com/CppCXY/EmmyLuaCodeStyle/archive/abdea2d412437e2f12a38e8179cd18af61c4429a.tar.gz",
+      "hash": "1y0hzf884w3b71y9bwi22q5mc23vlvx4fa5vpjsi1fm09cfna4gk"
+    },
     "markdown-oxide": {
       "type": "Git",
       "repository": {
