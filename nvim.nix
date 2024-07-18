@@ -33,6 +33,9 @@ in
       old.generatedWrapperArgs
       or []
       ++ [
+        "--set"
+        "NOBBZ_NVIM_PATH"
+        "${placeholder "out"}/bin/nvim"
         "--prefix"
         "PATH"
         ":"
