@@ -159,6 +159,18 @@
       "url": "https://github.com/tadmccorkle/markdown.nvim/archive/dfa0d2def6dbf77e9206b16dc90cad4dd23d55d2.tar.gz",
       "hash": "0p454caxkd8chg0v1m085vlmrmhkvhfwq625wgy9s8bzinja5rb0"
     },
+    "nvim-nabla": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "jbyuki",
+        "repo": "nabla.nvim"
+      },
+      "branch": "master",
+      "revision": "27a6ea9ed7452bb9e0b19eb0942b5bcf7d051b2f",
+      "url": "https://github.com/jbyuki/nabla.nvim/archive/27a6ea9ed7452bb9e0b19eb0942b5bcf7d051b2f.tar.gz",
+      "hash": "1dnd6s6abwxihliqqyl1vrds14w502m0x7aadlxrrfh970bqikg0"
+    },
     "nvim-noice": {
       "type": "GitRelease",
       "repository": {
