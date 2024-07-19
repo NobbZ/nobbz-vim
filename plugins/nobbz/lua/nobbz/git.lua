@@ -6,7 +6,7 @@ neogit.setup({})
 
 -- register keys for neogit
 wk.add({
-  { "<leader>g", "<cmd>:Neogit<cr>", desc = "Neogit status" }
+  { "<leader>g", "<cmd>:Neogit<cr>", desc = "Neogit status", },
 })
 
 gitsigns.setup()
