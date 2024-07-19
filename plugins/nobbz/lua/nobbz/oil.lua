@@ -1,3 +1,5 @@
+local wk = require("which-key")
+
 local function is_always_hidden(name)
   if name == ".git" then return true end
 
@@ -12,9 +14,7 @@ require("oil").setup({
   },
 })
 
-require("which-key").register({
-  o = {
-    name = "oil file explorer",
-    ["."] = { "<cmd>Oil<cr>", "open containing directory", },
-  },
-}, { prefix = "<leader>", })
+wk.add({
+  { "<leader>o",  group = "oil file explorer", },
+  { "<leader>o.", "<cmd>Oil<cr>",             desc = "open current folder", },
+})
