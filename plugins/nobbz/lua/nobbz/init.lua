@@ -1,3 +1,14 @@
+---A small helper function to lazily require.
+---
+---It is especially helpful together with
+---@param modname string
+---@return function
+local function rf(modname)
+  return function()
+    require(modname)
+  end
+end
+
 require("nobbz.cmp")        -- foundations for completions
 require("nobbz.git")        -- set up neogit (kind of magit)
 require("nobbz.lsp")        -- LSP and related setup
@@ -13,5 +24,5 @@ require("nobbz.treesitter") -- set up treesitter
 require("nobbz.whichkey")   -- set up whichkey, which provides help as you type
 
 require("lz.n").load({
-  { "startuptime", command = "StartUptime", after = function() require("nobbz.startuptime") end, },
+  { "startuptime", command = "StartUptime", after = rf("nobbz.startuptime"), },
 })
