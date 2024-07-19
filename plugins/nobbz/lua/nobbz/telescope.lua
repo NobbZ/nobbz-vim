@@ -1,6 +1,7 @@
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 local telescope = require("telescope")
+local wk = require("which-key")
 
 local mappings = {
   ["<C-2>"] = actions.select_horizontal,
@@ -25,15 +26,11 @@ telescope.setup({
   },
 })
 
--- register keys for telescope.
--- TODO: move this to which-key
-vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "files", })
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "text (rg)", })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "buffers", })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "help", })
-vim.keymap.set("n", "<leader>fx", builtin.commands, { desc = "commands (M-x)", })
-
--- make which-key preview a but nicer
-require("which-key").register({
-  f = { name = "find", },
-}, { prefix = "<leader>", })
+wk.add({
+  { "<leader>f",  group = "find", },
+  { "<leader>ff", builtin.find_files, desc = "find file by name", },
+  { "<leader>fg", builtin.live_grep,  desc = "find file by content (rg)", },
+  { "<leader>fb", builtin.buffers,    desc = "find buffer by name", },
+  { "<leader>fh", builtin.help_tags,  desc = "open help", },
+  { "<leader>fx", builtin.commands,   desc = "run command (M-x)", },
+})
