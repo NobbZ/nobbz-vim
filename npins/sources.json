@@ -25,19 +25,16 @@
       "hash": "06h6s83g1rfvdxzgndi6krs787mvdal7am4pp1y07wz316bz7sdr"
     },
     "neovim": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "neovim",
         "repo": "neovim"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "v0.10.0",
-      "revision": "e783349fcf4d8bc9db3f44228f24e5ad82c78e7f",
-      "url": "https://api.github.com/repos/neovim/neovim/tarball/v0.10.0",
-      "hash": "0p366agcv4lz1qs453i44f9h37r09r58qj8g2wpbj0g4f6js48ql"
+      "branch": "master",
+      "revision": "f61efe3fe77c9a517dccb9fd5ff7f16c0660ced4",
+      "url": "https://github.com/neovim/neovim/archive/f61efe3fe77c9a517dccb9fd5ff7f16c0660ced4.tar.gz",
+      "hash": "0qkdpj8b1f33hp9xkhywnv49951x0s3s7k3jkh7dv7d6paj2ky58"
     },
     "nvim-cmp": {
       "type": "Git",
