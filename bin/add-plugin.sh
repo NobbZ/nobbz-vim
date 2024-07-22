@@ -5,10 +5,12 @@ set -ex
 ranch=""
 name=""
 repo_info=""
+repo_type="github"
 
-while getopts ":b:" opt; do
+while getopts ":b:t:" opt; do
   case ${opt} in
     "b") branch="${OPTARG}";;
+    "t") repo_type="${OPTARG}";;
     "?")
       printf "Invalid option: -%s" "${OPTARG}\n" 1>&2
       exit 1;;
@@ -29,7 +31,7 @@ case $repo_info in
 esac
 
 if [ -z $branch ]; then
-  npins add --name nvim-$name github $owner $repo
+  npins add --name nvim-$name $repo_type $owner $repo
 else
-  npins add --name nvim-$name github $owner $repo -b $branch
+  npins add --name nvim-$name $repo_type $owner $repo -b $branch
 fi
