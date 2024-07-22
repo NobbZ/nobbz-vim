@@ -210,6 +210,18 @@
       "url": "https://api.github.com/repos/MunifTanjim/nui.nvim/tarball/0.3.0",
       "hash": "0fjrnhfhq7sn3am7283adar0jlf6gcyq303kxkwqvxzvvdg9nirg"
     },
+    "nvim-rainbow": {
+      "type": "Git",
+      "repository": {
+        "type": "GitLab",
+        "repo_path": "HiPhish/rainbow-delimiters.nvim",
+        "server": "https://gitlab.com/"
+      },
+      "branch": "master",
+      "revision": "b29da4a6061a88270e875b38367d82c04c856128",
+      "url": "https://gitlab.com/api/v4/projects/HiPhish%2Frainbow-delimiters.nvim/repository/archive.tar.gz?sha=b29da4a6061a88270e875b38367d82c04c856128",
+      "hash": "1fvwhkmnsbs6bb1xp5l7b36h49mk7bss2p8mzxgxifb4v9bi5qzb"
+    },
     "nvim-startuptime": {
       "type": "Git",
       "repository": {
