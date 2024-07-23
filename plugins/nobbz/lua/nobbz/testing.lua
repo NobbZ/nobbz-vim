@@ -2,11 +2,17 @@ local neotest = require("neotest")
 local neotest_elixir = require("neotest-elixir")
 local wk = require("which-key")
 
-require("neotest").setup({
+-- do not specify a type here, the intention is that this is a `neotest.Config`,
+-- though due to a faulty type this would make typechecking fail. Optional keys
+-- are not specified as optional in the config (for a reason), but they should
+-- be in the argument to `neotest.setup()`.
+local neotest_config = {
   adapters = {
-    require("neotest-elixir"),
+    neotest_elixir,
   },
-})
+}
+
+neotest.setup(neotest_config)
 
 local function run_all()
   neotest.run.run({ suite = true, })
