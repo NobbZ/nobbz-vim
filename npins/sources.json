@@ -72,6 +72,18 @@
       "url": "https://github.com/hrsh7th/cmp-nvim-lsp/archive/39e2eda76828d88b773cc27a3f61d2ad782c922d.tar.gz",
       "hash": "13zcw6c7zppvbsjlr8yj3vml6ayalvhjbbqszljmn1f9hmkpwg89"
     },
+    "nvim-fix-cursor": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "antoinemadec",
+        "repo": "FixCursorHold.nvim"
+      },
+      "branch": "master",
+      "revision": "1900f89dc17c603eec29960f57c00bd9ae696495",
+      "url": "https://github.com/antoinemadec/FixCursorHold.nvim/archive/1900f89dc17c603eec29960f57c00bd9ae696495.tar.gz",
+      "hash": "0p7xh31qp836xvxbm1y3r4djv3r7ivxhx7jxwzgd380d029ql1hz"
+    },
     "nvim-gitsigns": {
       "type": "Git",
       "repository": {
@@ -168,6 +180,42 @@
       "url": "https://github.com/jbyuki/nabla.nvim/archive/27a6ea9ed7452bb9e0b19eb0942b5bcf7d051b2f.tar.gz",
       "hash": "1dnd6s6abwxihliqqyl1vrds14w502m0x7aadlxrrfh970bqikg0"
     },
+    "nvim-neotest": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neotest",
+        "repo": "neotest"
+      },
+      "branch": "master",
+      "revision": "32ff2ac21135a372a42b38ae131e531e64833bd3",
+      "url": "https://github.com/nvim-neotest/neotest/archive/32ff2ac21135a372a42b38ae131e531e64833bd3.tar.gz",
+      "hash": "144wzzadhrg48fkihffk6jf9c0ij8dg9gng6mcxq5z8mdcvz0124"
+    },
+    "nvim-neotest-elixir": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "jfpedroza",
+        "repo": "neotest-elixir"
+      },
+      "branch": "master",
+      "revision": "c5067bcc3ec6a0bba7b5694fa15aeb17f16aeb3c",
+      "url": "https://github.com/jfpedroza/neotest-elixir/archive/c5067bcc3ec6a0bba7b5694fa15aeb17f16aeb3c.tar.gz",
+      "hash": "0ld08afx7rhrji9l3jyip86hdwrkmfx9ngchcvklk9a07fx4yr4c"
+    },
+    "nvim-nio": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neotest",
+        "repo": "nvim-nio"
+      },
+      "branch": "master",
+      "revision": "a428f309119086dc78dd4b19306d2d67be884eee",
+      "url": "https://github.com/nvim-neotest/nvim-nio/archive/a428f309119086dc78dd4b19306d2d67be884eee.tar.gz",
+      "hash": "0n40q6znpy1xzywd1hwyivx7y1n0i0fcp3m7jp0vgipm6qssda4b"
+    },
     "nvim-noice": {
       "type": "GitRelease",
       "repository": {
@@ -209,6 +257,18 @@
       "revision": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733",
       "url": "https://api.github.com/repos/MunifTanjim/nui.nvim/tarball/0.3.0",
       "hash": "0fjrnhfhq7sn3am7283adar0jlf6gcyq303kxkwqvxzvvdg9nirg"
+    },
+    "nvim-plenary": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-lua",
+        "repo": "plenary.nvim"
+      },
+      "branch": "master",
+      "revision": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683",
+      "url": "https://github.com/nvim-lua/plenary.nvim/archive/a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683.tar.gz",
+      "hash": "0n2p8krzwiw682f0yb6n8faamffpp336rjy50pbqf3jmc6czd5z4"
     },
     "nvim-rainbow": {
       "type": "Git",

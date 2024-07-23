@@ -30,6 +30,7 @@ require_sub("noice")      -- setup noice for nicer notifications and messages
 require_sub("oil")        -- manage files as if it was a text buffer
 require_sub("rainbow")    -- set up rainbow parenthesis
 require_sub("telescope")  -- some fuzzy finders
+require_sub("testing")    -- set up a test runner
 require_sub("theme")      -- how shall everything look like
 require_sub("treesitter") -- set up treesitter
 require_sub("whichkey")   -- set up whichkey, which provides help as you type
