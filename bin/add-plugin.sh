@@ -2,7 +2,7 @@
 
 set -ex
 
-ranch=""
+branch=""
 name=""
 repo_info=""
 repo_type="github"
@@ -23,15 +23,15 @@ repo_info=$2
 
 case $repo_info in
   */*)
-    infos=($(echo "$repo_info" | tr "/" "\n"))
+    mapfile -t infos < <(echo "$repo_info" | tr "/" "\n")
     owner=${infos[0]}
     repo=${infos[1]}
     ;;
   *) exit 1;;
 esac
 
-if [ -z $branch ]; then
-  npins add --name nvim-$name $repo_type $owner $repo
+if [ -z "$branch" ]; then
+  npins add --name nvim-"$name" "$repo_type" "$owner" "$repo"
 else
-  npins add --name nvim-$name $repo_type $owner $repo -b $branch
+  npins add --name nvim-"$name" "$repo_type" "$owner" "$repo" -b "$branch"
 fi
