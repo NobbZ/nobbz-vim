@@ -128,9 +128,9 @@
         "repo": "lspkind.nvim"
       },
       "branch": "master",
-      "revision": "1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf",
-      "url": "https://github.com/onsails/lspkind.nvim/archive/1735dd5a5054c1fb7feaf8e8658dbab925f4f0cf.tar.gz",
-      "hash": "0sjd244122q7hs3xaxzxhfcfpnzjz082rbnishq6khnr9w2xs0px"
+      "revision": "cff4ae321a91ee3473a92ea1a8c637e3a9510aec",
+      "url": "https://github.com/onsails/lspkind.nvim/archive/cff4ae321a91ee3473a92ea1a8c637e3a9510aec.tar.gz",
+      "hash": "0l66zyawfjy0r7rhi80skk6x156ybr72jlh4qxk0xd0l2hkbm8nl"
     },
     "nvim-luasnip": {
       "type": "Git",
