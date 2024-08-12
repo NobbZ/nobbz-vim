@@ -10,12 +10,16 @@
       updatePlugins = pkgs.callPackage ./update-plugins.nix {inherit self;};
     };
 
-    apps.add-plugin.program = self'.packages.addPlugin;
-    apps.update-nvim.program = self'.packages.updateNvim;
-    apps.update-plugins.program = self'.packages.updatePlugins;
+    apps = {
+      add-plugin.program = self'.packages.addPlugin;
+      update-nvim.program = self'.packages.updateNvim;
+      update-plugins.program = self'.packages.updatePlugins;
+    };
 
-    checks.addPlugin = self'.packages.addPlugin;
-    checks.updateNvim = self'.packages.updateNvim;
-    checks.updatePlugins = self'.packages.updatePlugins;
+    checks = {
+      addPlugin = self'.packages.addPlugin;
+      updateNvim = self'.packages.updateNvim;
+      updatePlugins = self'.packages.updatePlugins;
+    };
   };
 }
