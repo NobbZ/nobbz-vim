@@ -1,5 +1,9 @@
 {self, ...}: {
-  perSystem = {self', pkgs, ...}: {
+  perSystem = {
+    self',
+    pkgs,
+    ...
+  }: {
     packages = {
       addPlugin = pkgs.callPackage ./add-plugin.nix {inherit self;};
       updatePlugins = pkgs.callPackage ./update-plugins.nix {inherit self;};
