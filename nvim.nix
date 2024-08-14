@@ -16,7 +16,6 @@
   libiconv,
   libvterm-neovim,
   luajit,
-  msgpack-c,
   tree-sitter,
   rustPlatform,
 }: let
@@ -60,9 +59,6 @@
       src = deps.libvterm;
     };
     lua = luajit;
-    msgpack-c = msgpack-c.overrideAttrs {
-      src = deps.msgpack;
-    };
     tree-sitter = tree-sitter.override {
       rustPlatform =
         rustPlatform

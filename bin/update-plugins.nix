@@ -7,9 +7,9 @@
   version = self.rev or self.dirtyRev or "dirty";
 in
   writeShellApplication {
-    name = "add-plugin-${version}";
+    name = "update-plugin-${version}";
 
     runtimeInputs = [npins git];
 
-    text = builtins.readFile ./add-plugin.sh;
+    text = builtins.readFile ./update-plugins.sh;
   }
