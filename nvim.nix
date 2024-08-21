@@ -55,9 +55,6 @@
     libiconv = libiconv.overrideAttrs {
       src = deps.libiconv;
     };
-    libvterm-neovim = libvterm-neovim.overrideAttrs {
-      src = deps.libvterm;
-    };
     lua = luajit;
     tree-sitter = tree-sitter.override {
       rustPlatform =

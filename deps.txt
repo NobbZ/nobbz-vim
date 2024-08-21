@@ -1,17 +1,14 @@
 LIBUV_URL https://github.com/libuv/libuv/archive/v1.48.0.tar.gz
 LIBUV_SHA256 8c253adb0f800926a6cbd1c6576abae0bc8eb86a4f891049b72f9e5b7dc58f33
 
-LUAJIT_URL https://github.com/LuaJIT/LuaJIT/archive/04dca7911ea255f37be799c18d74c305b921c1a6.tar.gz
-LUAJIT_SHA256 346b028d9ba85e04b7e23a43cc51ec076574d2efc0d271d4355141b0145cd6e0
+LUAJIT_URL https://github.com/LuaJIT/LuaJIT/archive/304da39cc5ee43491f7b1f4e0c9c52d477ce0d98.tar.gz
+LUAJIT_SHA256 e43f8710dbab95b3456a81c584264d9012782ab88d7ba2779ccc7042247e2a2d
 
 LUA_URL https://www.lua.org/ftp/lua-5.1.5.tar.gz
 LUA_SHA256 2640fc56a795f29d28ef15e13c34a47e223960b0240e8cb0a82d9b0738695333
 
 UNIBILIUM_URL https://github.com/neovim/unibilium/archive/d72c3598e7ac5d1ebf86ee268b8b4ed95c0fa628.tar.gz
 UNIBILIUM_SHA256 9c4747c862ab5e3076dcf8fa8f0ea7a6b50f20ec5905618b9536655596797487
-
-LIBVTERM_URL https://github.com/neovim/libvterm/archive/0a15c6e983b0db7ef8276e0792414a805d01bdaf.tar.gz
-LIBVTERM_SHA256 c4683e7a2d71c04781fd0ab7719a94202800e97a9e091514c16983bb732b0fa7
 
 LUV_URL https://github.com/luvit/luv/releases/download/1.48.0-2/luv-1.48.0-2.tar.gz
 LUV_SHA256 2c3a1ddfebb4f6550293a40ee789f7122e97647eede51511f57203de48c03b7a
