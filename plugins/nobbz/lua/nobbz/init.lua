@@ -1,3 +1,5 @@
+WK = require("which-key")
+
 ---A small helper function to lazily require.
 ---
 ---It is especially helpful together with

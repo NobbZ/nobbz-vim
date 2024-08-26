@@ -1,7 +1,6 @@
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 local telescope = require("telescope")
-local wk = require("which-key")
 
 local mappings = {
   ["<C-2>"] = actions.select_horizontal,
@@ -26,7 +25,7 @@ telescope.setup({
   },
 })
 
-wk.add({
+WK.add({
   { "<leader>f",  group = "find", },
   { "<leader>ff", builtin.find_files, desc = "find file by name", },
   { "<leader>fg", builtin.live_grep,  desc = "find file by content (rg)", },

@@ -1,11 +1,9 @@
-local wk = require("which-key")
-
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
-wk.setup({})
+WK.setup({})
 
-wk.add({
+WK.add({
   { "w",     "<Up>",    mode = { "v", "n", }, },
   { "a",     "<Left>",  mode = { "v", "n", }, },
   { "s",     "<Down>",  mode = { "v", "n", }, },

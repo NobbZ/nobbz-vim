@@ -1,5 +1,4 @@
 local luasnip = require("luasnip")
-local wk = require("which-key")
 
 ---returns a function that steps a choice if available by `step`
 ---@param step integer
@@ -17,7 +16,7 @@ local function stepper(step_size)
   return function() luasnip.jump(step_size) end
 end
 
-wk.add({
+WK.add({
   { "<tab>",   stepper(1),     desc = "next snippet gap",     mode = { "s", "i", }, },
   { "<s-tab>", stepper(-1),    desc = "previous snippet gap", mode = { "s", "i", }, },
   { "<c-a>",   choice(1),      desc = "next choice",          mode = { "s", "i", }, },

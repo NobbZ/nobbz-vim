@@ -1,6 +1,5 @@
 local neotest = require("neotest")
 local neotest_elixir = require("neotest-elixir")
-local wk = require("which-key")
 
 -- do not specify a type here, the intention is that this is a `neotest.Config`,
 -- though due to a faulty type this would make typechecking fail. Optional keys
@@ -30,7 +29,7 @@ local function watch_file()
   neotest.watch.watch(vim.fn.expand("%"))
 end
 
-wk.add({
+WK.add({
   { "<leader>t",   group = "tests", },
   { "<leader>tt",  neotest.run.run,        desc = "run nearest", },
   { "<leader>tf",  run_file,               desc = "run file", },

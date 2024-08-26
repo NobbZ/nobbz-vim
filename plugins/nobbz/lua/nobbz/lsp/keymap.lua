@@ -1,5 +1,3 @@
-local wk = require("which-key")
-
 ---Triggers a reformat of the current buffer when called
 local function format_buffer() vim.lsp.buf.format({ async = true, }) end
 
@@ -7,7 +5,7 @@ local function format_buffer() vim.lsp.buf.format({ async = true, }) end
 ---@param client vim.lsp.Client
 ---@param buffer integer
 local function attach_keymap(client, buffer) ---@diagnostic disable-line:unused-local
-  wk.add({
+  WK.add({
     { "<leader>l",   group = "language server", },
     { "<leader>lg",  group = "goto", },
     { "<leader>lgD", vim.lsp.buf.declaration,     desc = "jump to declaration", },
