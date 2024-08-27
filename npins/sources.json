@@ -306,6 +306,18 @@
       "url": "https://github.com/nvim-telescope/telescope.nvim/archive/5972437de807c3bc101565175da66a1aa4f8707a.tar.gz",
       "hash": "199hg402lld72wyiz501ynq34ncsrbx8pd6xjqhalv3gwjfdzp5c"
     },
+    "nvim-trouble": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "trouble.nvim"
+      },
+      "branch": "main",
+      "revision": "6efc446226679fda0547c0fd6a7892fd5f5b15d8",
+      "url": "https://github.com/folke/trouble.nvim/archive/6efc446226679fda0547c0fd6a7892fd5f5b15d8.tar.gz",
+      "hash": "0s0b462qzhsamnhvxnzm9lj1fxp0q28w94aa34hf9ayarn4fpgvm"
+    },
     "nvim-which-key": {
       "type": "Git",
       "repository": {

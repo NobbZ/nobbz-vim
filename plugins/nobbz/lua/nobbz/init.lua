@@ -1,5 +1,7 @@
 WK = require("which-key")
 
+local lz_n = require("lz.n")
+
 ---A small helper function to lazily require.
 ---
 ---It is especially helpful together with
@@ -35,8 +37,9 @@ require_sub("telescope")  -- some fuzzy finders
 require_sub("testing")    -- set up a test runner
 require_sub("theme")      -- how shall everything look like
 require_sub("treesitter") -- set up treesitter
+require_sub("trouble")    -- load trouble
 require_sub("whichkey")   -- set up whichkey, which provides help as you type
 
-require("lz.n").load({
+lz_n.load({
   { "startuptime", command = "StartUptime", after = rf("nobbz.startuptime"), },
 })
