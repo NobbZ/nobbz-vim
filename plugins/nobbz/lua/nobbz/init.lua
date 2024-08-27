@@ -18,27 +18,27 @@ local this_module = ...
 ---A small helper function to require a submodule "relatively"
 ---@param submodule string
 ---@return unknown
-local function require_sub(submodule)
+local function rs(submodule)
   return require(this_module .. "." .. submodule)
 end
 
-require_sub("cmp")        -- foundations for completions
-require_sub("git")        -- set up neogit (kind of magit)
-require_sub("lsp")        -- LSP and related setup
-require_sub("lualine")    -- Set up the status bar at the bottom
-require_sub("luasnip")    -- Snippet tool
-require_sub("markdown")   -- Set up markdown editing
-require_sub("misc")       -- miscelanous editor settings
-require_sub("nabla")      -- set up and load nabla (nice maths)
-require_sub("noice")      -- setup noice for nicer notifications and messages
-require_sub("oil")        -- manage files as if it was a text buffer
-require_sub("rainbow")    -- set up rainbow parenthesis
-require_sub("telescope")  -- some fuzzy finders
-require_sub("testing")    -- set up a test runner
-require_sub("theme")      -- how shall everything look like
-require_sub("treesitter") -- set up treesitter
-require_sub("trouble")    -- load trouble
-require_sub("whichkey")   -- set up whichkey, which provides help as you type
+rs("cmp")        -- foundations for completions
+rs("git")        -- set up neogit (kind of magit)
+rs("lsp")        -- LSP and related setup
+rs("lualine")    -- Set up the status bar at the bottom
+rs("luasnip")    -- Snippet tool
+rs("markdown")   -- Set up markdown editing
+rs("misc")       -- miscelanous editor settings
+rs("nabla")      -- set up and load nabla (nice maths)
+rs("noice")      -- setup noice for nicer notifications and messages
+rs("oil")        -- manage files as if it was a text buffer
+rs("rainbow")    -- set up rainbow parenthesis
+rs("telescope")  -- some fuzzy finders
+rs("testing")    -- set up a test runner
+rs("theme")      -- how shall everything look like
+rs("treesitter") -- set up treesitter
+rs("trouble")    -- load trouble
+rs("whichkey")   -- set up whichkey, which provides help as you type
 
 lz_n.load({
   { "startuptime", command = "StartUptime", after = rf("nobbz.startuptime"), },
