@@ -64,7 +64,7 @@
             rustPlatform.buildRustPackage (args
               // {
                 src = deps.treesitter;
-                cargoHash = "sha256-U2YXpNwtaSSEftswI0p0+npDJqOq5GqxEUlOPRlJGmQ=";
+                cargoHash = "sha256-44FIO0kPso6NxjLwmggsheILba3r9GEhDld2ddt601g=";
               });
         };
     };
