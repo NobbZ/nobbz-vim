@@ -64,7 +64,7 @@
             rustPlatform.buildRustPackage (args
               // {
                 src = deps.treesitter;
-                cargoHash = "sha256-U2YXpNwtaSSEftswI0p0+npDJqOq5GqxEUlOPRlJGmQ=";
+                cargoHash = "sha256-QvxH5uukaCmpHkWMle1klR5/rA2/HgNehmYIaESNpxc=";
               });
         };
     };
@@ -85,7 +85,7 @@
     src = npins.neovim;
     version = npins.neovim.revision;
     patches = [];
-    buildInputs = (old.buildInputs or []) ++ [utf8proc];
+    buildInputs = (old.buildInputs or []) ++ [(utf8proc.overrideAttrs (_: {src = deps.utf8proc;}))];
     preConfigure = ''
       ${old.preConfigure}
       sed -i cmake.config/versiondef.h.in -e "s/@NVIM_VERSION_PRERELEASE@/-dev-$version/"
