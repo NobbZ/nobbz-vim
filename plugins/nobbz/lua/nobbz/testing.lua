@@ -1,5 +1,6 @@
 local neotest = require("neotest")
 local neotest_elixir = require("neotest-elixir")
+local neotest_rust = require("neotest-rust")
 
 -- do not specify a type here, the intention is that this is a `neotest.Config`,
 -- though due to a faulty type this would make typechecking fail. Optional keys
@@ -8,6 +9,7 @@ local neotest_elixir = require("neotest-elixir")
 local neotest_config = {
   adapters = {
     neotest_elixir,
+    neotest_rust,
   },
 }
 

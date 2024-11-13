@@ -204,6 +204,18 @@
       "url": "https://github.com/jfpedroza/neotest-elixir/archive/c5067bcc3ec6a0bba7b5694fa15aeb17f16aeb3c.tar.gz",
       "hash": "0ld08afx7rhrji9l3jyip86hdwrkmfx9ngchcvklk9a07fx4yr4c"
     },
+    "nvim-neotest-rust": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rouge8",
+        "repo": "neotest-rust"
+      },
+      "branch": "main",
+      "revision": "f2e0b3713d3559ce33be9aa32ace3a6051ec5593",
+      "url": "https://github.com/rouge8/neotest-rust/archive/f2e0b3713d3559ce33be9aa32ace3a6051ec5593.tar.gz",
+      "hash": "1nm03cb1vwak6qc3l9f3zj51iabsz6bh3x9sip5jy88rfxpxgp6l"
+    },
     "nvim-nio": {
       "type": "Git",
       "repository": {
