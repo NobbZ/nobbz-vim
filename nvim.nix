@@ -13,8 +13,6 @@
   utf8proc,
   fetchurl,
   gettext,
-  libiconv,
-  libvterm-neovim,
   luajit,
   tree-sitter,
   rustPlatform,
@@ -50,24 +48,28 @@
       src = deps.gettext;
     };
 
-    # pkgs.libiconv.src is pointing at the darwin fork of libiconv.
-    # Hence, overriding its source does not make sense on darwin.
-    libiconv = libiconv.overrideAttrs {
-      src = deps.libiconv;
-    };
     lua = luajit;
-    tree-sitter = tree-sitter.override {
-      rustPlatform =
-        rustPlatform
-        // {
-          buildRustPackage = args:
-            rustPlatform.buildRustPackage (args
-              // {
-                src = deps.treesitter;
-                cargoHash = "sha256-QvxH5uukaCmpHkWMle1klR5/rA2/HgNehmYIaESNpxc=";
-              });
-        };
-    };
+    tree-sitter =
+      (tree-sitter.override {
+        rustPlatform =
+          rustPlatform
+          // {
+            buildRustPackage = args:
+              rustPlatform.buildRustPackage (args
+                // {
+                  version = "bundled";
+                  src = deps.treesitter;
+                  cargoHash = "sha256-gDlb+Y3E4sv9MHXvPmUFYT9DCtnFyPQsvwRaAu5Iu3M=";
+                });
+          };
+      })
+      .overrideAttrs (oa: {
+        postPatch = ''
+          ${oa.postPatch}
+          sed -e 's/playground::serve(.*$/println!("ERROR: web-ui is not available in this nixpkgs build; enable the webUISupport"); std::process::exit(1);/' \
+              -i cli/src/main.rs
+        '';
+      });
     treesitter-parsers = let
       grammars = lib.filterAttrs (name: _: lib.hasPrefix "treesitter_" name) deps;
     in
