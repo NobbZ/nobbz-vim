@@ -32,9 +32,9 @@
         "repo": "neovim"
       },
       "branch": "master",
-      "revision": "9570ad24f52442d75d677412cfe2fa83a7ff7a88",
-      "url": "https://github.com/neovim/neovim/archive/9570ad24f52442d75d677412cfe2fa83a7ff7a88.tar.gz",
-      "hash": "02q8a8mc0fs6km1xnd718fw6vsrp10n5x9lb9jzk84p6mdib65xi"
+      "revision": "e5cd5098f8fabba41efd3b8491b264c5f73326d3",
+      "url": "https://github.com/neovim/neovim/archive/e5cd5098f8fabba41efd3b8491b264c5f73326d3.tar.gz",
+      "hash": "0wp1wwpjfz2x8a19nrgx6m4jrjdgmrm4ci36mhz0jvr8sgf01ss1"
     },
     "nvim-cmp": {
       "type": "Git",
