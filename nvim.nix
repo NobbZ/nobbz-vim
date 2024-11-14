@@ -13,8 +13,6 @@
   utf8proc,
   fetchurl,
   gettext,
-  libiconv,
-  libvterm-neovim,
   luajit,
   tree-sitter,
   rustPlatform,
@@ -50,11 +48,6 @@
       src = deps.gettext;
     };
 
-    # pkgs.libiconv.src is pointing at the darwin fork of libiconv.
-    # Hence, overriding its source does not make sense on darwin.
-    libiconv = libiconv.overrideAttrs {
-      src = deps.libiconv;
-    };
     lua = luajit;
     tree-sitter = tree-sitter.override {
       rustPlatform =
@@ -64,7 +57,7 @@
             rustPlatform.buildRustPackage (args
               // {
                 src = deps.treesitter;
-                cargoHash = "sha256-QvxH5uukaCmpHkWMle1klR5/rA2/HgNehmYIaESNpxc=";
+                cargoHash = "sha256-XdfKQbHu15+8Zkdr0s+NRwedQe3coak9kPgVBNFnX7o=";
               });
         };
     };
