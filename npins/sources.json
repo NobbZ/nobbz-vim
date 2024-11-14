@@ -188,9 +188,9 @@
         "repo": "neotest"
       },
       "branch": "master",
-      "revision": "6d6ad113f56edc7c3f2a77a0836ea8c1b955ebea",
-      "url": "https://github.com/nvim-neotest/neotest/archive/6d6ad113f56edc7c3f2a77a0836ea8c1b955ebea.tar.gz",
-      "hash": "1v8y7jpwb0a6w5gcr6r17zcgrvdqs7y396c67xxpz5f2bibxzbxr"
+      "revision": "6d3d22cdad49999ef774ebe1bc250a4994038964",
+      "url": "https://github.com/nvim-neotest/neotest/archive/6d3d22cdad49999ef774ebe1bc250a4994038964.tar.gz",
+      "hash": "10zac93v1i9iqbwwy4hb1q4wmwxg1nf9dmlywx6qmlkq0scnqg80"
     },
     "nvim-neotest-elixir": {
       "type": "Git",
