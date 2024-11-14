@@ -290,9 +290,9 @@
         "server": "https://gitlab.com/"
       },
       "branch": "master",
-      "revision": "8f47c3d70286a85940cafe990a64b0eac1033671",
-      "url": "https://gitlab.com/api/v4/projects/HiPhish%2Frainbow-delimiters.nvim/repository/archive.tar.gz?sha=8f47c3d70286a85940cafe990a64b0eac1033671",
-      "hash": "0qwlq6h2skpppn2aai7d9qhfk6cwfl8zz3lj7llyid0y8qqig41z"
+      "revision": "f22496dfdd46da4d571f5254c72eff65ff5a1c27",
+      "url": "https://gitlab.com/api/v4/projects/HiPhish%2Frainbow-delimiters.nvim/repository/archive.tar.gz?sha=f22496dfdd46da4d571f5254c72eff65ff5a1c27",
+      "hash": "1kl0pqp1hcdyj83hk53qlbr9lzz46wqxa73nnpzi6gp7085a1ckg"
     },
     "nvim-startuptime": {
       "type": "Git",
