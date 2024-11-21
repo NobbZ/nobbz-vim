@@ -1,4 +1,5 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local helpers = require("nobbz.lsp.helpers")
 
 vim.filetype.add({
   extension = {
@@ -7,6 +8,6 @@ vim.filetype.add({
 })
 
 require("lspconfig").mdx_analyzer.setup({
-  on_attach = require("nobbz.lsp.keymap"),
+  on_attach = helpers.keymap,
   capabilities = capabilities,
 })

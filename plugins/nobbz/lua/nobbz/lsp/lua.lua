@@ -1,9 +1,10 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local helpers = require("nobbz.lsp.helpers")
 
-require "lspconfig".lua_ls.setup({
-  on_attach = function(client, buffer)
-    require("nobbz.lsp.attach")(client --[[@as vim.lsp.Client]], buffer)
-
+require("lspconfig").lua_ls.setup({
+  on_attach = helpers.combine({
+    helpers.default,
+    function(_, buffer)
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = buffer,
       callback = function()
@@ -13,7 +14,8 @@ require "lspconfig".lua_ls.setup({
         })
       end,
     })
-  end,
+    end,
+  }),
 
   -- this snippet is adopted from:
   -- https://github.com/neovim/nvim-lspconfig/blob/37f362ef42d1a604d332e8d3d7d47593852b4313/doc/server_configurations.md#lua_ls

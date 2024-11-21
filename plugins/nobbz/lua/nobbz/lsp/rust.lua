@@ -1,20 +1,22 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
+local helpers = require("nobbz.lsp.helpers")
 
 lspconfig.rust_analyzer.setup({
-  on_attach = function(client, buffer)
-    require("nobbz.lsp.attach")(client --[[@as vim.lsp.Client]], buffer)
-
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = buffer,
-      callback = function()
-        vim.lsp.buf.format({
-          async = false,
-          bufnr = buffer,
-        })
-      end,
-    })
-  end,
+  on_attach = helpers.combine({
+    helpers.default,
+    function(client, buffer)
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = buffer,
+        callback = function()
+          vim.lsp.buf.format({
+            async = false,
+            bufnr = buffer,
+          })
+        end,
+      })
+    end,
+  }),
   capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {

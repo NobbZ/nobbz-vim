@@ -1,7 +1,8 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local helpers = require("nobbz.lsp.helpers")
 
 require("lspconfig").elixirls.setup({
-  on_attach = require("nobbz.lsp.keymap"),
+  on_attach = helpers.keymap,
   capabilities = capabilities,
   cmd = { "elixir-ls", },
 })
