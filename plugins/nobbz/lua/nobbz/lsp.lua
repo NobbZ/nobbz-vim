@@ -16,7 +16,7 @@ null_ls.setup({
   debounce = 250,
   default_timeout = 5000,
   sources = ls_sources,
-  on_attach = require("nobbz.lsp.attach"),
+  on_attach = require("nobbz.lsp.helpers").default,
 })
 
 -- Enable lspconfig

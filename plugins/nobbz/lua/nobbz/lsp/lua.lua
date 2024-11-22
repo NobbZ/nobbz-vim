@@ -5,15 +5,15 @@ require("lspconfig").lua_ls.setup({
   on_attach = helpers.combine({
     helpers.default,
     function(_, buffer)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = buffer,
-      callback = function()
-        vim.lsp.buf.format({
-          async = false,
-          bufnr = buffer,
-        })
-      end,
-    })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = buffer,
+        callback = function()
+          vim.lsp.buf.format({
+            async = false,
+            bufnr = buffer,
+          })
+        end,
+      })
     end,
   }),
 

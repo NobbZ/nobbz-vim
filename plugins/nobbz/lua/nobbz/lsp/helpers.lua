@@ -64,7 +64,7 @@ local function default(client, buffer)
   if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true, { bufnr = buffer, }) end
 end
 
----@alias Handler fun(client: vim.lsp.Client, buffer: integer) an `on_attach` handler.
+---@alias nobbz.lsp.helpers.Handler fun(client: vim.lsp.Client, buffer: integer) an `on_attach` handler.
 
 ---Iterates over all the given `handler`s and calls them in order of appearance.
 ---@param handler Handler | Handler[]
@@ -73,7 +73,7 @@ local function combine(handler)
   if type(handler) ~= "table" then handler = { handler, } end
 
   return function(client, buffer)
-    for handle_fun in handler do
+    for _, handle_fun in ipairs(handler) do
       handle_fun(client, buffer)
     end
   end
