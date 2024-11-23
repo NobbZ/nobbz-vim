@@ -12,6 +12,9 @@ vim.o.relativenumber = false     -- vim poeple seem to love it, I don't. Explici
 vim.o.cursorline = true          -- slightly color the line the cursor is on
 vim.o.cursorcolumn = true        -- slightly color the column the cursor is on
 vim.o.clipboard = "unnamedplus"  -- yank/delete into system clipboard
+vim.o.list = true
+vim.o.listchars = "tab:⇢⇥,trail:⎵,eol:↩"
+vim.o.wrap = false
 -- stylua: ignore end
 
 vim.g.mapleader = " " -- set `<leader>` to the space key
