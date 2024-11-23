@@ -40,6 +40,7 @@ rs("treesitter")   -- set up treesitter
 rs("trouble")      -- load trouble
 rs("whichkey")     -- set up whichkey, which provides help as you type
 rs("precognition") -- set up precognition, which helps with motions
+rs("leap")         -- some easier motions
 
 lz_n.load({
   { "startuptime", command = "StartUptime", after = rf("nobbz.startuptime"), },
