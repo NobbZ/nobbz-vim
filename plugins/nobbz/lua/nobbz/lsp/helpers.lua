@@ -40,7 +40,7 @@ local function keymap(client, buffer) ---@diagnostic disable-line:unused-local
     { "<leader>ls",  vim.lsp.buf.signature_help,  desc = "show signature info", },
     { "<leader>lr",  vim.lsp.buf.rename,          desc = "rename symbol", },
     { "<leader>lf",  format_buffer,               desc = "format buffer", },
-    { "<c-.>",       vim.lsp.buf.code_action,     desc = "show code actions", },
+    { "<leader>l.",  vim.lsp.buf.code_action,     desc = "show code actions", },
   })
 end
 
