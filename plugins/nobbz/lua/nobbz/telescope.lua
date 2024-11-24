@@ -25,6 +25,8 @@ telescope.setup({
   },
 })
 
+telescope.load_extension("ui-select")
+
 WK.add({
   { "<leader>f",  group = "find", },
   { "<leader>ff", builtin.find_files, desc = "find file by name", },
