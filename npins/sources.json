@@ -267,6 +267,18 @@
       "url": "https://github.com/nvimtools/none-ls.nvim/archive/fb7acad9e98ad9c617775451c1aea95157e17942.tar.gz",
       "hash": "13x4mr9ypynd1gy83rdfm1l4m19xvw4gb7bc8ll58vwhfarphksm"
     },
+    "nvim-notify": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rcarriga",
+        "repo": "nvim-notify"
+      },
+      "branch": "master",
+      "revision": "fbef5d32be8466dd76544a257d3f3dce20082a07",
+      "url": "https://github.com/rcarriga/nvim-notify/archive/fbef5d32be8466dd76544a257d3f3dce20082a07.tar.gz",
+      "hash": "0wbsib27kgrk632c094ivjbc8rw51kbalq9c8j576p78k93wipj9"
+    },
     "nvim-nui": {
       "type": "GitRelease",
       "repository": {
