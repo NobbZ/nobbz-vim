@@ -24,6 +24,7 @@ end
 
 rs("cmp")          -- foundations for completions
 rs("git")          -- set up neogit (kind of magit)
+rs("leap")         -- some easier motions
 rs("lsp")          -- LSP and related setup
 rs("lualine")      -- Set up the status bar at the bottom
 rs("luasnip")      -- Snippet tool
@@ -32,15 +33,15 @@ rs("misc")         -- miscelanous editor settings
 rs("nabla")        -- set up and load nabla (nice maths)
 rs("noice")        -- setup noice for nicer notifications and messages
 rs("oil")          -- manage files as if it was a text buffer
+rs("precognition") -- set up precognition, which helps with motions
 rs("rainbow")      -- set up rainbow parenthesis
+rs("surround")     -- gelps with surrounding in parens or quotes
 rs("telescope")    -- some fuzzy finders
 rs("testing")      -- set up a test runner
 rs("theme")        -- how shall everything look like
 rs("treesitter")   -- set up treesitter
 rs("trouble")      -- load trouble
 rs("whichkey")     -- set up whichkey, which provides help as you type
-rs("precognition") -- set up precognition, which helps with motions
-rs("leap")         -- some easier motions
 
 lz_n.load({
   { "startuptime", command = "StartUptime", after = rf("nobbz.startuptime"), },
