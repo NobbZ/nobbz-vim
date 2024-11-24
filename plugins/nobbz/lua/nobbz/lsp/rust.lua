@@ -37,3 +37,13 @@ lspconfig.rust_analyzer.setup({
     },
   },
 })
+
+require("crates").setup({
+  lsp = {
+    enabled = true,
+    on_attach = helpers.default,
+    actions = true,
+    completion = true,
+    hover = true,
+  },
+})
