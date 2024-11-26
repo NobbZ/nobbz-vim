@@ -176,9 +176,9 @@
         "repo": "lz.n"
       },
       "branch": "master",
-      "revision": "ce8dca63fb0b965d9888c7ad0b65c6d1ce43f5b6",
-      "url": "https://github.com/nvim-neorocks/lz.n/archive/ce8dca63fb0b965d9888c7ad0b65c6d1ce43f5b6.tar.gz",
-      "hash": "04j3w3mi6q0wmd7kpmi71lwpxfgrzcd271gln21a9gd6z23vy2qn"
+      "revision": "766bbf32cfe9fab069a3cd26e8aedcbe7062a726",
+      "url": "https://github.com/nvim-neorocks/lz.n/archive/766bbf32cfe9fab069a3cd26e8aedcbe7062a726.tar.gz",
+      "hash": "0k09dhx56qlg7mpvva7fiwbrm1aq3p1z07w1xxjh3s91p66wrwbn"
     },
     "nvim-markdown": {
       "type": "Git",
