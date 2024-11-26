@@ -164,9 +164,9 @@
         "repo": "LuaSnip"
       },
       "branch": "master",
-      "revision": "659c4479529a05cc9b05ef762639a09d366cc690",
-      "url": "https://github.com/L3MON4D3/LuaSnip/archive/659c4479529a05cc9b05ef762639a09d366cc690.tar.gz",
-      "hash": "1x080hp7m316l9af9bjfq3mlnr93jv1m35hffh1yiricld6na60h"
+      "revision": "0f7bbce41ea152a94d12aea286f2ce98e63c0f58",
+      "url": "https://github.com/L3MON4D3/LuaSnip/archive/0f7bbce41ea152a94d12aea286f2ce98e63c0f58.tar.gz",
+      "hash": "18pqzkrd2ibjdfssqzjpsv1q3qsh572818p4faxapvzlfb77jpv2"
     },
     "nvim-lz-n": {
       "type": "Git",
