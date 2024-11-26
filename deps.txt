@@ -1,8 +1,8 @@
 LIBUV_URL https://github.com/libuv/libuv/archive/v1.49.2.tar.gz
 LIBUV_SHA256 388ffcf3370d4cf7c4b3a3205504eea06c4be5f9e80d2ab32d19f8235accc1cf
 
-LUAJIT_URL https://github.com/LuaJIT/LuaJIT/archive/69bbf3c1b01de8239444b0c430a89fa868978fea.tar.gz
-LUAJIT_SHA256 1375ebdbe04df03bf5f21a576885a7a7e7caf3a0191d68eef513ec1fb2921512
+LUAJIT_URL https://github.com/LuaJIT/LuaJIT/archive/fe71d0fb54ceadfb5b5f3b6baf29e486d97f6059.tar.gz
+LUAJIT_SHA256 92325f209b21aaf0a67b099bc73cf9bbac5789a9749bdc3898d4a990abb4f36e
 
 LUA_URL https://www.lua.org/ftp/lua-5.1.5.tar.gz
 LUA_SHA256 2640fc56a795f29d28ef15e13c34a47e223960b0240e8cb0a82d9b0738695333
@@ -38,8 +38,8 @@ LIBICONV_SHA256 8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313
 UTF8PROC_URL https://github.com/JuliaStrings/utf8proc/archive/3de4596fbe28956855df2ecb3c11c0bbc3535838.tar.gz
 UTF8PROC_SHA256 fb4a16bb659b58afb7f921fcc8928d0b3c1fcab135366c8a4f9ca7de1b1cfada
 
-TREESITTER_C_URL https://github.com/tree-sitter/tree-sitter-c/archive/v0.23.0.tar.gz
-TREESITTER_C_SHA256 ee58c925e2e507c23d735aad46bf7fb0af31ca06d6f4f41bc008216d9232b0cb
+TREESITTER_C_URL https://github.com/tree-sitter/tree-sitter-c/archive/v0.23.2.tar.gz
+TREESITTER_C_SHA256 d8b9c1b2ffb6a42caf9bc76e07c52507d4e60b17175ed9beb0e779be8db1200c
 TREESITTER_LUA_URL https://github.com/tree-sitter-grammars/tree-sitter-lua/archive/v0.2.0.tar.gz
 TREESITTER_LUA_SHA256 6c41227cd0a59047b19d31f0031d4d901f08bfd78d6fc7f55c89e5b8374c794e
 TREESITTER_VIM_URL https://github.com/neovim/tree-sitter-vim/archive/v0.4.0.tar.gz
@@ -56,7 +56,7 @@ TREESITTER_SHA256 61a21f5d83cfe256472bfa941123a6941fb45073784ee7ec0bc32fdd52f7a4
 WASMTIME_URL https://github.com/bytecodealliance/wasmtime/archive/v25.0.2.tar.gz
 WASMTIME_SHA256 6d1c17c756b83f29f629963228e5fa208ba9d6578421ba2cd07132b6a120accb
 
-UNCRUSTIFY_URL https://github.com/uncrustify/uncrustify/archive/uncrustify-0.79.0.tar.gz
-UNCRUSTIFY_SHA256 e7afaeabf636b7f0ce4e3e9747b95f7bd939613a8db49579755dddf44fedca5f
+UNCRUSTIFY_URL https://github.com/uncrustify/uncrustify/archive/uncrustify-0.80.1.tar.gz
+UNCRUSTIFY_SHA256 0e2616ec2f78e12816388c513f7060072ff7942b42f1175eb28b24cb75aaec48
 LUA_DEV_DEPS_URL https://github.com/neovim/deps/raw/5a1f71cceb24990a0b15fd9a472a5f549f019248/opt/lua-dev-deps.tar.gz
 LUA_DEV_DEPS_SHA256 27db2495f5eddc7fc191701ec9b291486853530c6125609d3197d03481e8d5a2
