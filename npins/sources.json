@@ -398,9 +398,9 @@
         "repo": "trouble.nvim"
       },
       "branch": "main",
-      "revision": "3dc00c0447c016cd43e03054c3d49436a1f2076d",
-      "url": "https://github.com/folke/trouble.nvim/archive/3dc00c0447c016cd43e03054c3d49436a1f2076d.tar.gz",
-      "hash": "1y6mxs9xlrx3n7brk2zvapfn61nai0zhdqvj97650ib2xaip8j6d"
+      "revision": "b4b9355ccb2aa02043d830c37ceba71b3cdf375f",
+      "url": "https://github.com/folke/trouble.nvim/archive/b4b9355ccb2aa02043d830c37ceba71b3cdf375f.tar.gz",
+      "hash": "0db8y0s400nwngllg9yjssb2ng2inhq25q2cw6m2i06fa33i0j5s"
     },
     "nvim-which-key": {
       "type": "Git",
