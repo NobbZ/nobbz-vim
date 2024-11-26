@@ -236,9 +236,9 @@
         "repo": "neotest-rust"
       },
       "branch": "main",
-      "revision": "f2e0b3713d3559ce33be9aa32ace3a6051ec5593",
-      "url": "https://github.com/rouge8/neotest-rust/archive/f2e0b3713d3559ce33be9aa32ace3a6051ec5593.tar.gz",
-      "hash": "1nm03cb1vwak6qc3l9f3zj51iabsz6bh3x9sip5jy88rfxpxgp6l"
+      "revision": "eec7eaf8491e619fe99e620e2da3cd31b30e406b",
+      "url": "https://github.com/rouge8/neotest-rust/archive/eec7eaf8491e619fe99e620e2da3cd31b30e406b.tar.gz",
+      "hash": "1a3bcmgy4shpn10wx7nf5lv4zql9knlsw58ikz5ahpmm6i6c2vrn"
     },
     "nvim-nio": {
       "type": "Git",
