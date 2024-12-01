@@ -5,6 +5,7 @@ vim.o.softtabstop = 2            -- |
 vim.o.shiftwidth = 2             -- > Set tab behaviour
 vim.o.expandtab = true           -- /
 vim.o.autoindent = true          -- Auto indent
+vim.o.smartindent = true
 vim.o.colorcolumn = "80,100,120" -- set column markers
 vim.o.signcolumn = "yes"         -- always show signcolumn
 vim.o.number = true              -- always show line numbers
