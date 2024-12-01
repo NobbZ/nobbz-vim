@@ -23,6 +23,6 @@ vim.g.mapleader = " " -- set `<leader>` to the space key
 
 -- Set up indent markers
 require("ibl").setup({
-	indent = { char = "┊", },
-	scope = { enabled = true, },
+  indent = { char = "┊", },
+  scope = { enabled = true, },
 })
