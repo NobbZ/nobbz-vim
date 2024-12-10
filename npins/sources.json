@@ -275,9 +275,9 @@
         "repo": "none-ls.nvim"
       },
       "branch": "main",
-      "revision": "8fd7b29648a48502f1aa72ffe0c19e56069258c6",
-      "url": "https://github.com/nvimtools/none-ls.nvim/archive/8fd7b29648a48502f1aa72ffe0c19e56069258c6.tar.gz",
-      "hash": "0yh14x95brwzk6vdj8zkh297cjjw2rpa3rz3yd5vlw5cvaskxzwd"
+      "revision": "58866c670d68ef80397c317a3a1ee5f53ca646fd",
+      "url": "https://github.com/nvimtools/none-ls.nvim/archive/58866c670d68ef80397c317a3a1ee5f53ca646fd.tar.gz",
+      "hash": "11jcq0c2azqrdkfqmmh9p2six8bjgy5izj5plmjw770a9j9avlf2"
     },
     "nvim-notify": {
       "type": "Git",
