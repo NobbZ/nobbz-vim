@@ -68,9 +68,9 @@
         "repo": "cmp-nvim-lsp"
       },
       "branch": "main",
-      "revision": "39e2eda76828d88b773cc27a3f61d2ad782c922d",
-      "url": "https://github.com/hrsh7th/cmp-nvim-lsp/archive/39e2eda76828d88b773cc27a3f61d2ad782c922d.tar.gz",
-      "hash": "13zcw6c7zppvbsjlr8yj3vml6ayalvhjbbqszljmn1f9hmkpwg89"
+      "revision": "99290b3ec1322070bcfb9e846450a46f6efa50f0",
+      "url": "https://github.com/hrsh7th/cmp-nvim-lsp/archive/99290b3ec1322070bcfb9e846450a46f6efa50f0.tar.gz",
+      "hash": "08q5mf5jrqjjcl1s4h9zj2vd1kcizz0a5a6p65wv1rc5s1fa3a49"
     },
     "nvim-crates": {
       "type": "Git",
