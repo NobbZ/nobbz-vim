@@ -1,8 +1,8 @@
 LIBUV_URL https://github.com/libuv/libuv/archive/v1.49.2.tar.gz
 LIBUV_SHA256 388ffcf3370d4cf7c4b3a3205504eea06c4be5f9e80d2ab32d19f8235accc1cf
 
-LUAJIT_URL https://github.com/LuaJIT/LuaJIT/archive/19878ec05c239ccaf5f3d17af27670a963e25b8b.tar.gz
-LUAJIT_SHA256 e91acbe181cf6ffa3ef15870b8e620131002240ba24c5c779fd0131db021517f
+LUAJIT_URL https://github.com/LuaJIT/LuaJIT/archive/f73e649a954b599fc184726c376476e7a5c439ca.tar.gz
+LUAJIT_SHA256 bc992b3ae0a8f5f0ebbf141626b7c99fac794c94ec6896d973582525c7ef868d
 
 LUA_URL https://www.lua.org/ftp/lua-5.1.5.tar.gz
 LUA_SHA256 2640fc56a795f29d28ef15e13c34a47e223960b0240e8cb0a82d9b0738695333
@@ -50,13 +50,13 @@ TREESITTER_QUERY_URL https://github.com/tree-sitter-grammars/tree-sitter-query/a
 TREESITTER_QUERY_SHA256 d3a423ab66dc62b2969625e280116678a8a22582b5ff087795222108db2f6a6e
 TREESITTER_MARKDOWN_URL https://github.com/tree-sitter-grammars/tree-sitter-markdown/archive/v0.3.2.tar.gz
 TREESITTER_MARKDOWN_SHA256 5dac48a6d971eb545aab665d59a18180d21963afc781bbf40f9077c06cb82ae5
-TREESITTER_URL https://github.com/tree-sitter/tree-sitter/archive/e3c82633389256ccc2c5ab2e509046cbf20453d3.tar.gz
-TREESITTER_SHA256 61a21f5d83cfe256472bfa941123a6941fb45073784ee7ec0bc32fdd52f7a4e4
+TREESITTER_URL https://github.com/tree-sitter/tree-sitter/archive/v0.24.5.tar.gz
+TREESITTER_SHA256 b5ac48acf5a04fd82ccd4246ad46354d9c434be26c9606233917549711e4252c
 
 WASMTIME_URL https://github.com/bytecodealliance/wasmtime/archive/v25.0.2.tar.gz
 WASMTIME_SHA256 6d1c17c756b83f29f629963228e5fa208ba9d6578421ba2cd07132b6a120accb
 
 UNCRUSTIFY_URL https://github.com/uncrustify/uncrustify/archive/uncrustify-0.80.1.tar.gz
 UNCRUSTIFY_SHA256 0e2616ec2f78e12816388c513f7060072ff7942b42f1175eb28b24cb75aaec48
-LUA_DEV_DEPS_URL https://github.com/neovim/deps/raw/5a1f71cceb24990a0b15fd9a472a5f549f019248/opt/lua-dev-deps.tar.gz
-LUA_DEV_DEPS_SHA256 27db2495f5eddc7fc191701ec9b291486853530c6125609d3197d03481e8d5a2
+LUA_DEV_DEPS_URL https://github.com/neovim/deps/raw/06ef2b58b0876f8de1a3f5a710473dcd7afff251/opt/lua-dev-deps.tar.gz
+LUA_DEV_DEPS_SHA256 49f8399e453103064a23c65534f266f3067cda716b6502f016bfafeed5799354
