@@ -1,4 +1,5 @@
 WK = require("which-key")
+LSP_CAPAS = require("blink.cmp").get_lsp_capabilities()
 
 local lz_n = require("lz.n")
 
@@ -22,7 +23,7 @@ local function rs(submodule)
   return require(this_module .. "." .. submodule)
 end
 
-rs("cmp")          -- foundations for completions
+rs("blink")        -- foundations for completions
 rs("git")          -- set up neogit (kind of magit)
 rs("leap")         -- some easier motions
 rs("lsp")          -- LSP and related setup

@@ -36,42 +36,6 @@
       "url": "https://github.com/neovim/neovim/archive/a5b1b83a2693ffa7a5a0a22b3693d36ea60051be.tar.gz",
       "hash": "0nqkddz07z180v9lryhxgbnbvk8q9j6k6a94jy8rgxps2jg5c9qw"
     },
-    "nvim-cmp": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hrsh7th",
-        "repo": "nvim-cmp"
-      },
-      "branch": "main",
-      "revision": "8c82d0bd31299dbff7f8e780f5e06d2283de9678",
-      "url": "https://github.com/hrsh7th/nvim-cmp/archive/8c82d0bd31299dbff7f8e780f5e06d2283de9678.tar.gz",
-      "hash": "0yjll1qz4qbdg28c43lgx307qpfmc0va4pp9wgkp2n8g14rfjraf"
-    },
-    "nvim-cmp-hledger": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "kirasok",
-        "repo": "cmp-hledger"
-      },
-      "branch": "main",
-      "revision": "ea2211cdd4f5d171ad2bdb0d66197173ce384ddd",
-      "url": "https://github.com/kirasok/cmp-hledger/archive/ea2211cdd4f5d171ad2bdb0d66197173ce384ddd.tar.gz",
-      "hash": "1nim0bnryl2684aqwfpj1b5gaa5080lab3s02rfh3wr95aq8zzp4"
-    },
-    "nvim-cmp-nvim-lsp": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hrsh7th",
-        "repo": "cmp-nvim-lsp"
-      },
-      "branch": "main",
-      "revision": "99290b3ec1322070bcfb9e846450a46f6efa50f0",
-      "url": "https://github.com/hrsh7th/cmp-nvim-lsp/archive/99290b3ec1322070bcfb9e846450a46f6efa50f0.tar.gz",
-      "hash": "08q5mf5jrqjjcl1s4h9zj2vd1kcizz0a5a6p65wv1rc5s1fa3a49"
-    },
     "nvim-crates": {
       "type": "Git",
       "repository": {
