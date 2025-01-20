@@ -36,18 +36,6 @@
       "url": "https://github.com/neovim/neovim/archive/a5b1b83a2693ffa7a5a0a22b3693d36ea60051be.tar.gz",
       "hash": "0nqkddz07z180v9lryhxgbnbvk8q9j6k6a94jy8rgxps2jg5c9qw"
     },
-    "nvim-cmp-nvim-lsp": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hrsh7th",
-        "repo": "cmp-nvim-lsp"
-      },
-      "branch": "main",
-      "revision": "99290b3ec1322070bcfb9e846450a46f6efa50f0",
-      "url": "https://github.com/hrsh7th/cmp-nvim-lsp/archive/99290b3ec1322070bcfb9e846450a46f6efa50f0.tar.gz",
-      "hash": "08q5mf5jrqjjcl1s4h9zj2vd1kcizz0a5a6p65wv1rc5s1fa3a49"
-    },
     "nvim-crates": {
       "type": "Git",
       "repository": {

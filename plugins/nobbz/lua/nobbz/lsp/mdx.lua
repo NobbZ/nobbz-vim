@@ -1,4 +1,3 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local helpers = require("nobbz.lsp.helpers")
 
 vim.filetype.add({
@@ -9,5 +8,5 @@ vim.filetype.add({
 
 require("lspconfig").mdx_analyzer.setup({
   on_attach = helpers.keymap,
-  capabilities = capabilities,
+  capabilities = LSP_CAPAS,
 })

@@ -1,4 +1,3 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local helpers = require("nobbz.lsp.helpers")
 
 require("lspconfig").lua_ls.setup({
@@ -47,5 +46,5 @@ require("lspconfig").lua_ls.setup({
       hint = { enable = true, },
     },
   },
-  capabilities = capabilities,
+  capabilities = LSP_CAPAS,
 })

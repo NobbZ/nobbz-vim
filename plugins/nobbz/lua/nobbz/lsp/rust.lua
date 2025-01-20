@@ -1,4 +1,3 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
 local helpers = require("nobbz.lsp.helpers")
 
@@ -17,7 +16,7 @@ lspconfig.rust_analyzer.setup({
       })
     end,
   }),
-  capabilities = capabilities,
+  capabilities = LSP_CAPAS,
   settings = {
     ["rust-analyzer"] = {
       inlayHints = {
