@@ -96,7 +96,7 @@
 
   config = neovimUtils.makeNeovimConfig {
     plugins = builtins.attrValues ({
-        inherit (vimPlugins) onedark-nvim lualine-nvim;
+        inherit (vimPlugins) onedark-nvim lualine-nvim blink-cmp;
         inherit (vimPlugins) neogit oil-nvim nvim-web-devicons;
       }
       // self'.legacyPackages.vimPlugins);
