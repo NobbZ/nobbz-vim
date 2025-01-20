@@ -224,9 +224,9 @@
         "repo": "neotest-elixir"
       },
       "branch": "master",
-      "revision": "c5067bcc3ec6a0bba7b5694fa15aeb17f16aeb3c",
-      "url": "https://github.com/jfpedroza/neotest-elixir/archive/c5067bcc3ec6a0bba7b5694fa15aeb17f16aeb3c.tar.gz",
-      "hash": "0ld08afx7rhrji9l3jyip86hdwrkmfx9ngchcvklk9a07fx4yr4c"
+      "revision": "a242aebeaa6997c1c149138ff77f6cacbe33b6fc",
+      "url": "https://github.com/jfpedroza/neotest-elixir/archive/a242aebeaa6997c1c149138ff77f6cacbe33b6fc.tar.gz",
+      "hash": "0dfz6x0yc9pd8z2irc3dwbvd64zs35rwnllbdp88c6k4fnkyjjr1"
     },
     "nvim-neotest-rust": {
       "type": "Git",
