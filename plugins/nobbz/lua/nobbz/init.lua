@@ -1,4 +1,5 @@
 WK = require("which-key")
+-- TODO: make this available via lsp-helpers
 LSP_CAPAS = require("blink.cmp").get_lsp_capabilities()
 
 local lz_n = require("lz.n")
