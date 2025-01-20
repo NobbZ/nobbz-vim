@@ -1,3 +1,7 @@
+require("notify").setup({
+  background_color = "#000000",
+})
+
 require("noice").setup({
   lsp = {
     -- override markdown rendering so that **com** and other plugins use **trees**
