@@ -12,7 +12,10 @@ require("blink.cmp").setup({
       end,
       winhighlight = winhighlight,
       border = "single",
-      draw = { treesitter = { "lsp", }, },
+      draw = {
+        treesitter = { "lsp", },
+        columns = { { "kind_icon", }, { "label", "label_description", gap = 1, }, { "source_name", }, },
+      },
     },
     ghost_text = { enabled = true, },
     list = {
