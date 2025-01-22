@@ -1,6 +1,9 @@
 local winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel"
 
 require("blink.cmp").setup({
+  appearance = {
+    use_nvim_cmp_as_default = true,
+  },
   signature = {
     enabled = true,
     window = { border = "single", },
@@ -28,7 +31,7 @@ require("blink.cmp").setup({
       auto_show = true,
       window = {
         border = "single",
-        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+        winhighlight = winhighlight,
       },
       auto_show_delay_ms = 500,
     },
