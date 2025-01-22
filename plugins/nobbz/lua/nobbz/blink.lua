@@ -28,7 +28,7 @@ require("blink.cmp").setup({
       auto_show = true,
       window = {
         border = "single",
-        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+        winhighlight = winhighlight,
       },
       auto_show_delay_ms = 500,
     },
