@@ -26,6 +26,7 @@ null_ls.setup({
 
 -- Load individual languages configuration
 require("nobbz.lsp.astro")
+require("nobbz.lsp.beancount")
 require("nobbz.lsp.digestif")
 require("nobbz.lsp.elixir")
 require("nobbz.lsp.gleam")
