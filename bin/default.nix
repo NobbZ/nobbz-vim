@@ -5,21 +5,15 @@
     ...
   }: {
     packages = {
-      addPlugin = pkgs.callPackage ./add-plugin.nix {inherit self;};
-      updateNvim = pkgs.callPackage ./update-nvim.nix {inherit self;};
-      updatePlugins = pkgs.callPackage ./update-plugins.nix {inherit self;};
-    };
-
-    apps = {
-      add-plugin.program = self'.packages.addPlugin;
-      update-nvim.program = self'.packages.updateNvim;
-      update-plugins.program = self'.packages.updatePlugins;
+      add-plugin = pkgs.callPackage ./add-plugin.nix {inherit self;};
+      update-nvim = pkgs.callPackage ./update-nvim.nix {inherit self;};
+      update-plugins = pkgs.callPackage ./update-plugins.nix {inherit self;};
     };
 
     checks = {
-      addPlugin = self'.packages.addPlugin;
-      updateNvim = self'.packages.updateNvim;
-      updatePlugins = self'.packages.updatePlugins;
+      add-plugin = self'.packages.add-plugin;
+      update-nvim = self'.packages.update-nvim;
+      update-plugins = self'.packages.update-plugins;
     };
   };
 }
