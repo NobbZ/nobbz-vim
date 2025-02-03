@@ -212,9 +212,9 @@
         "repo": "nvim-nio"
       },
       "branch": "master",
-      "revision": "a428f309119086dc78dd4b19306d2d67be884eee",
-      "url": "https://github.com/nvim-neotest/nvim-nio/archive/a428f309119086dc78dd4b19306d2d67be884eee.tar.gz",
-      "hash": "0n40q6znpy1xzywd1hwyivx7y1n0i0fcp3m7jp0vgipm6qssda4b"
+      "revision": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
+      "url": "https://github.com/nvim-neotest/nvim-nio/archive/21f5324bfac14e22ba26553caf69ec76ae8a7662.tar.gz",
+      "hash": "1bz5msxwk232zkkhfxcmr7a665la8pgkdx70q99ihl4x04jg6dkq"
     },
     "nvim-noice": {
       "type": "GitRelease",
