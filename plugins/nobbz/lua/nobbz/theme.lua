@@ -1,7 +1,13 @@
-local onedark = require("onedark")
+local catppuccin = require("catppuccin")
 
-onedark.setup({
-  style = "darker",
+catppuccin.setup({
+  flavour = "mocha",
+  integrations = {
+    blink_cmp = true,
+    noice = true,
+    cmp = false,
+    which_key = true,
+  },
 })
 
-onedark.load()
+vim.cmd.colorscheme("catppuccin")

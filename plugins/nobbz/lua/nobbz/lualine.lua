@@ -1,7 +1,7 @@
 local lualine = require("lualine")
 
 lualine.setup({
-  theme = "onedark",
+  theme = "catppuccin",
   sections = {
     lualine_c = {
       "filename",
