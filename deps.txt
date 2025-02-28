@@ -10,8 +10,8 @@ LUA_SHA256 2640fc56a795f29d28ef15e13c34a47e223960b0240e8cb0a82d9b0738695333
 UNIBILIUM_URL https://github.com/neovim/unibilium/archive/v2.1.2.tar.gz
 UNIBILIUM_SHA256 370ecb07fbbc20d91d1b350c55f1c806b06bf86797e164081ccc977fc9b3af7a
 
-LUV_URL https://github.com/luvit/luv/releases/download/1.48.0-2/luv-1.48.0-2.tar.gz
-LUV_SHA256 2c3a1ddfebb4f6550293a40ee789f7122e97647eede51511f57203de48c03b7a
+LUV_URL https://github.com/luvit/luv/archive/1.50.0-1.tar.gz
+LUV_SHA256 bb4f0570571e40c1d2a7644f6f9c1309a6ccdb19bf4d397e8d7bfd0c6b88e613
 
 LPEG_URL https://github.com/neovim/deps/raw/d495ee6f79e7962a53ad79670cb92488abe0b9b4/opt/lpeg-1.1.0.tar.gz
 LPEG_SHA256 4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a
@@ -19,10 +19,6 @@ LPEG_SHA256 4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a
 LUA_COMPAT53_URL https://github.com/lunarmodules/lua-compat-5.3/archive/v0.13.tar.gz
 LUA_COMPAT53_SHA256 f5dc30e7b1fda856ee4d392be457642c1f0c259264a9b9bfbcb680302ce88fc2
 
-CAT_URL https://github.com/neovim/deps/raw/21c5e8bdda33521a6ed497b315e03265a2785cbc/opt/cat.exe
-CAT_SHA256 93b8d307bb15af3968920bdea3beb869a49d166f9164853c58a4e6ffdcae61c6
-TEE_URL https://github.com/neovim/deps/raw/21c5e8bdda33521a6ed497b315e03265a2785cbc/opt/tee.exe
-TEE_SHA256 950eea4e17fa3a7e89fa2c55374037b5797b3f1a54fea1304634884ab42ec14d
 XXD_URL https://github.com/neovim/deps/raw/21c5e8bdda33521a6ed497b315e03265a2785cbc/opt/xxd.exe
 XXD_SHA256 7a581e3882d28161cc52850f9a11d634b3eaf2c029276f093c1ed4c90e45a10c
 
@@ -46,12 +42,12 @@ TREESITTER_VIM_URL https://github.com/neovim/tree-sitter-vim/archive/v0.4.0.tar.
 TREESITTER_VIM_SHA256 9f856f8b4a10ab43348550fa2d3cb2846ae3d8e60f45887200549c051c66f9d5
 TREESITTER_VIMDOC_URL https://github.com/neovim/tree-sitter-vimdoc/archive/v3.0.0.tar.gz
 TREESITTER_VIMDOC_SHA256 a639bf92bf57bfa1cdc90ca16af27bfaf26a9779064776dd4be34c1ef1453f6c
-TREESITTER_QUERY_URL https://github.com/tree-sitter-grammars/tree-sitter-query/archive/v0.4.0.tar.gz
-TREESITTER_QUERY_SHA256 d3a423ab66dc62b2969625e280116678a8a22582b5ff087795222108db2f6a6e
+TREESITTER_QUERY_URL https://github.com/tree-sitter-grammars/tree-sitter-query/archive/v0.5.0.tar.gz
+TREESITTER_QUERY_SHA256 e33907fd334350e32e49b3875c36bcf070defe490357632fac9398e6d4540a80
 TREESITTER_MARKDOWN_URL https://github.com/tree-sitter-grammars/tree-sitter-markdown/archive/v0.3.2.tar.gz
 TREESITTER_MARKDOWN_SHA256 5dac48a6d971eb545aab665d59a18180d21963afc781bbf40f9077c06cb82ae5
-TREESITTER_URL https://github.com/tree-sitter/tree-sitter/archive/v0.25.1.tar.gz
-TREESITTER_SHA256 99a2446075c2edf60e82755c48415d5f6e40f2d9aacb3423c6ca56809b70fe59
+TREESITTER_URL https://github.com/tree-sitter/tree-sitter/archive/v0.25.2.tar.gz
+TREESITTER_SHA256 26791f69182192fef179cd58501c3226011158823557a86fe42682cb4a138523
 
 WASMTIME_URL https://github.com/bytecodealliance/wasmtime/archive/v29.0.1.tar.gz
 WASMTIME_SHA256 b94b6c6fd6aebaf05d4c69c1b12b5dc217b0d42c1a95f435b33af63dddfa5304
