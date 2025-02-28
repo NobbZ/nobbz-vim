@@ -36,6 +36,21 @@
       "url": "https://github.com/neovim/neovim/archive/3eee6f9d631b6c220564ef792c542964ed5e1cb9.tar.gz",
       "hash": "09mi1yshbnwrybjc81afyviga2705d6shjkb4a28z70cc3njag8a"
     },
+    "nvim-catppuccin": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v1.9.0",
+      "revision": "c9e205fe035d622b3c2d66ee42edf368c0c31fd5",
+      "url": "https://api.github.com/repos/catppuccin/nvim/tarball/v1.9.0",
+      "hash": "1y5f1fj672q8drr06q6w8yhwrqzp0265jb2gmr0ql8m3hd1v0sj0"
+    },
     "nvim-crates": {
       "type": "Git",
       "repository": {
