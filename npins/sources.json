@@ -314,9 +314,9 @@
         "repo": "vim-startuptime"
       },
       "branch": "master",
-      "revision": "9aaa3c0880e63a8934ba58a430c6139225bba238",
-      "url": "https://github.com/dstein64/vim-startuptime/archive/9aaa3c0880e63a8934ba58a430c6139225bba238.tar.gz",
-      "hash": "0hdqhj36gz34gjpl3vd7p3y7x7rdrim5wkqpwyymzc75nv65jpqi"
+      "revision": "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6",
+      "url": "https://github.com/dstein64/vim-startuptime/archive/b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6.tar.gz",
+      "hash": "15kbm6g04kpjn0gxvf6k6wj2j92iz6hwaq5vrywx7wvj9n8w70ni"
     },
     "nvim-surround": {
       "type": "Git",
