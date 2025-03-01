@@ -37,19 +37,16 @@
       "hash": "09mi1yshbnwrybjc81afyviga2705d6shjkb4a28z70cc3njag8a"
     },
     "nvim-catppuccin": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "catppuccin",
         "repo": "nvim"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "v1.9.0",
-      "revision": "c9e205fe035d622b3c2d66ee42edf368c0c31fd5",
-      "url": "https://api.github.com/repos/catppuccin/nvim/tarball/v1.9.0",
-      "hash": "1y5f1fj672q8drr06q6w8yhwrqzp0265jb2gmr0ql8m3hd1v0sj0"
+      "branch": "main",
+      "revision": "5b5e3aef9ad7af84f463d17b5479f06b87d5c429",
+      "url": "https://github.com/catppuccin/nvim/archive/5b5e3aef9ad7af84f463d17b5479f06b87d5c429.tar.gz",
+      "hash": "0jmrwag2dx4b1g9x32xwxcr8y0l159hqks09z5miy99wav6dy7z2"
     },
     "nvim-crates": {
       "type": "Git",
