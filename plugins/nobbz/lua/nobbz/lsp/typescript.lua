@@ -1,6 +1,6 @@
 local helpers = require("nobbz.lsp.helpers")
 
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
   on_attach = helpers.keymap,
   capabilities = LSP_CAPAS,
 })
