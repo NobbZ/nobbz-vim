@@ -56,9 +56,9 @@
         "repo": "crates.nvim"
       },
       "branch": "main",
-      "revision": "6bf1b4ceb62f205c903590ccc62061aafc17024a",
-      "url": "https://github.com/Saecki/crates.nvim/archive/6bf1b4ceb62f205c903590ccc62061aafc17024a.tar.gz",
-      "hash": "1qhxgn865wmf7jf0aw502lq94piigvaqc4z2h7ix8b6jlvnv6fwa"
+      "revision": "403a0abef0e2aec12749a534dc468d6fd50c6741",
+      "url": "https://github.com/Saecki/crates.nvim/archive/403a0abef0e2aec12749a534dc468d6fd50c6741.tar.gz",
+      "hash": "19ix86nbww5vljinfwfpjkz806j7dzw4pgjyjya201jb0n22lrc6"
     },
     "nvim-fix-cursor": {
       "type": "Git",
