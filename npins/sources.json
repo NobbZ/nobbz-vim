@@ -302,9 +302,9 @@
         "repo": "precognition.nvim"
       },
       "branch": "main",
-      "revision": "24f2cc51dccecec4cf3de04bfbd14f5b9e79df0b",
-      "url": "https://github.com/tris203/precognition.nvim/archive/24f2cc51dccecec4cf3de04bfbd14f5b9e79df0b.tar.gz",
-      "hash": "0x7i2cim9jwc90v11wm61qbbq54m5581hsvj5jaash3gb5piacvw"
+      "revision": "4223fb903cbafc3bd8a87a314dac375bbd1c01ce",
+      "url": "https://github.com/tris203/precognition.nvim/archive/4223fb903cbafc3bd8a87a314dac375bbd1c01ce.tar.gz",
+      "hash": "11ng6p0xmrjky5xr9jdkrrav7is9r090qhs2fsnbg16124bgb0g5"
     },
     "nvim-rainbow": {
       "type": "Git",
