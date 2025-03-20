@@ -45,7 +45,8 @@
 
   overrides = {
     gettext = gettext.overrideAttrs {
-      src = deps.gettext;
+      # https://github.com/nix-community/neovim-nightly-overlay/blob/master/flake/packages/neovim.nix#L35-L37
+      # src = deps.gettext;
     };
 
     lua = luajit;
@@ -59,7 +60,7 @@
                 // {
                   version = "bundled";
                   src = deps.treesitter;
-                  cargoHash = "sha256-ie+/48dVU3r+tx/sQBWRIZEWSNWwMBANCqQLnv96JXs=";
+                  cargoHash = "sha256-rjUn8F6WSxLQGrFzK23q4ClLePSpcMN2+i7rC02Fisk=";
                 });
           };
       })

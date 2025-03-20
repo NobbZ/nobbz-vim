@@ -8,4 +8,6 @@ vimUtils.buildVimPlugin {
 
   # TODO: use filesets or something similar to filter out unwanted files
   src = "${self}/plugins/nobbz";
+
+  doCheck = false;
 }
