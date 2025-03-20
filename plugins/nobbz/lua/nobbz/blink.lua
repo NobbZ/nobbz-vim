@@ -4,6 +4,7 @@ require("blink.cmp").setup({
   appearance = {
     use_nvim_cmp_as_default = true,
   },
+  snippets = { preset = "luasnip", },
   signature = {
     enabled = true,
     window = { border = "single", },
@@ -23,7 +24,7 @@ require("blink.cmp").setup({
     ghost_text = { enabled = true, },
     list = {
       selection = {
-        preselect = false,
+        preselect = true,
         auto_insert = false,
       },
     },
