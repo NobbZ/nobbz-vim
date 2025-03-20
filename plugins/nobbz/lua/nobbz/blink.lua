@@ -4,6 +4,7 @@ require("blink.cmp").setup({
   appearance = {
     use_nvim_cmp_as_default = true,
   },
+  snippets = { preset = "luasnip", },
   signature = {
     enabled = true,
     window = { border = "single", },
