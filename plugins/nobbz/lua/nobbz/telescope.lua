@@ -16,6 +16,13 @@ local mappings_for_modes = {
   i = mappings,
 }
 
+local function find_files()
+  builtin.find_files({
+    hidden = true,
+    find_command = { "rg", "--files", "--color", "never", "--glob=!.git", },
+  })
+end
+
 --  set internal mappings for telescope
 telescope.setup({
   pickers = {
@@ -29,9 +36,9 @@ telescope.load_extension("ui-select")
 
 WK.add({
   { "<leader>f",  group = "find", },
-  { "<leader>ff", builtin.find_files, desc = "find file by name", },
-  { "<leader>fg", builtin.live_grep,  desc = "find file by content (rg)", },
-  { "<leader>fb", builtin.buffers,    desc = "find buffer by name", },
-  { "<leader>fh", builtin.help_tags,  desc = "open help", },
-  { "<leader>fx", builtin.commands,   desc = "run command (M-x)", },
+  { "<leader>ff", find_files,        desc = "find file by name", },
+  { "<leader>fg", builtin.live_grep, desc = "find file by content (rg)", },
+  { "<leader>fb", builtin.buffers,   desc = "find buffer by name", },
+  { "<leader>fh", builtin.help_tags, desc = "open help", },
+  { "<leader>fx", builtin.commands,  desc = "run command (M-x)", },
 })
