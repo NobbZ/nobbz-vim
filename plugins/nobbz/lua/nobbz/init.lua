@@ -2,7 +2,7 @@ WK = require("which-key")
 -- TODO: make this available via lsp-helpers
 LSP_CAPAS = require("blink.cmp").get_lsp_capabilities()
 
-local lz_n = require("lz.n")
+local lazy = require("nobbz.lazy")
 
 ---A small helper function to lazily require.
 ---
@@ -45,6 +45,8 @@ rs("treesitter")   -- set up treesitter
 rs("trouble")      -- load trouble
 rs("whichkey")     -- set up whichkey, which provides help as you type
 
-lz_n.load({
+lazy.add_specs({
   { "startuptime", command = "StartUptime", after = rf("nobbz.startuptime"), },
 })
+
+lazy.finish()
