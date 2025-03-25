@@ -6,6 +6,7 @@
   vimPlugins,
   self',
   lib,
+  nodejs,
   lua-language-server,
   stylua,
   markdown-oxide,
@@ -111,6 +112,9 @@ in
         "--set"
         "NOBBZ_NVIM_PATH"
         "${placeholder "out"}/bin/nvim"
+        "--set"
+        "AUGMENT_NODE"
+        "${lib.getExe nodejs}"
         "--prefix"
         "PATH"
         ":"
