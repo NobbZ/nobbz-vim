@@ -21,7 +21,7 @@
       lz-n = false;
       promis-async = false;
     };
-    makeOptional = name: plugin: {
+    applyOptional = name: plugin: {
       inherit plugin;
       optional = optionalPlugins.${name} or (lib.warn "${name} has no explicit optionality, assuming mandatory status" false);
     };
@@ -30,7 +30,7 @@
       (lib.mapAttrs' (name: pin: lib.nameValuePair (lib.removePrefix "nvim-" name) pin))
       (lib.mapAttrs makePluginFromPin)
       (lib.mapAttrs overrideCheck)
-      (lib.mapAttrs makeOptional)
+      (lib.mapAttrs applyOptional)
     ];
   in {
     legacyPackages.vimPlugins =
