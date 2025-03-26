@@ -20,6 +20,7 @@
       which-key = false;
       # optional plugins (aka opt)
       augment = true;
+      trouble = true;
       startuptime = true;
     };
     applyOptional = name: plugin: {
