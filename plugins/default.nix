@@ -18,6 +18,8 @@
       catppuccin = false;
       lz-n = false;
       which-key = false;
+      telescope = false;
+      telescope-ui-select = false;
       # optional plugins (aka opt)
       augment = true;
       trouble = true;
