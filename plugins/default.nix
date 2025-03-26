@@ -14,13 +14,16 @@
         src = pin;
       };
     optionalPlugins = {
+      # mandatory plugins (aka start)
+      catppuccin = false;
+      lz-n = false;
+      promis-async = false;
+      which-key = false;
+      # optional plugins (aka opt)
       augment = true;
       lspsaga = true;
       nvim-ufo = true;
       startuptime = true;
-      catppuccin = false;
-      lz-n = false;
-      promis-async = false;
     };
     applyOptional = name: plugin: {
       inherit plugin;
