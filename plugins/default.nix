@@ -26,6 +26,7 @@
       lspsaga = true;
       nvim-ufo = true;
       startuptime = true;
+      surround = true;
       trouble = true;
     };
     applyOptional = name: plugin: {
