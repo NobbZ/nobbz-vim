@@ -1,6 +1,9 @@
 local M = {}
 
----finishes the configuration of `lz.n`.
+--- Completes the configuration by loading all specifications.
+--- This *must* be called after all specs have been added.
+---
+--- After this has been called, there is no way to effectively add more specs.
 M.finish = function()
   require("lz.n").load(require("nobbz.lazy.specs"))
 end
