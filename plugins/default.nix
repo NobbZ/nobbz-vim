@@ -24,6 +24,7 @@
       lspsaga = true;
       nvim-ufo = true;
       startuptime = true;
+      trouble = true;
     };
     applyOptional = name: plugin: {
       inherit plugin;
