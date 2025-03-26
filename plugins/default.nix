@@ -15,6 +15,7 @@
       };
     optionalPlugins = {
       augment = true;
+      catppuccin = false;
       lz-n = false;
       startuptime = true;
     };
