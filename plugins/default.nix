@@ -19,6 +19,8 @@
       lz-n = false;
       promis-async = false;
       which-key = false;
+      telescope = false;
+      telescope-ui-select = false;
       # optional plugins (aka opt)
       augment = true;
       lspsaga = true;
