@@ -15,15 +15,23 @@ end
 
 ---@param name string
 M.load_once = function(name)
+  if not name or type(name) ~= "string" then
+    vim.notify("Invalid plugin name provided", vim.log.levels.ERROR)
+    return
+  end
+
   local state = require("lz.n.state").plugins
   require("lz.n").trigger_load(name)
 
   for k, v in ipairs(state) do
     if v == name then
       table.remove(state, k)
-      break
+      return
     end
   end
+
+  -- Only reached if `name` was not in `state`:
+  vim.notify("Plugin " .. name .. " not found in state", vim.log.levels.WARN)
 end
 
 ---@param specs lz.n.Spec[]
