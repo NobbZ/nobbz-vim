@@ -17,7 +17,7 @@ M.load_once = function(name)
 
   for k, v in ipairs(state) do
     if v == name then
-      table.remove(state, name)
+      table.remove(state, k)
       break
     end
   end
