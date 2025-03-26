@@ -17,6 +17,13 @@
       # mandatory plugins (aka start)
       catppuccin = false;
       lz-n = false;
+      nio = false;
+      noice = false;
+      none-ls = false;
+      notify = false;
+      nui = false;
+      plenary = false;
+      precognition = false;
       promis-async = false;
       rainbow = false;
       telescope = false;
