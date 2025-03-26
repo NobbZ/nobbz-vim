@@ -18,9 +18,10 @@
       catppuccin = false;
       lz-n = false;
       promis-async = false;
-      which-key = false;
+      rainbow = false;
       telescope = false;
       telescope-ui-select = false;
+      which-key = false;
       # optional plugins (aka opt)
       augment = true;
       lspsaga = true;
