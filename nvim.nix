@@ -109,9 +109,12 @@ in
       old.generatedWrapperArgs
       or []
       ++ [
+        # This is needed to be able to point `startuptime` at the correct
+        # nvim binary, it checks the unwrapped nvim otherwise
         "--set"
         "NOBBZ_NVIM_PATH"
         "${placeholder "out"}/bin/nvim"
+        # This tells augment which node binary to use.
         "--set"
         "AUGMENT_NODE"
         "${lib.getExe nodejs}"
