@@ -17,9 +17,10 @@
       # mandatory plugins (aka start)
       catppuccin = false;
       lz-n = false;
-      which-key = false;
+      rainbow = false;
       telescope = false;
       telescope-ui-select = false;
+      which-key = false;
       # optional plugins (aka opt)
       augment = true;
       startuptime = true;
