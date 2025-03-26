@@ -18,6 +18,7 @@
       lspsaga = true;
       nvim-ufo = true;
       startuptime = true;
+      catppuccin = false;
       lz-n = false;
       promis-async = false;
     };
