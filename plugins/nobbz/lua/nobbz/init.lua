@@ -1,8 +1,8 @@
+local lazy = require("nobbz.lazy")
+
 WK = require("which-key")
 -- TODO: make this available via lsp-helpers
 LSP_CAPAS = require("blink.cmp").get_lsp_capabilities()
-
-local lz_n = require("lz.n")
 
 ---A small helper function to lazily require.
 ---
@@ -25,6 +25,7 @@ local function rs(submodule)
 end
 
 rs("blink")        -- foundations for completions
+rs("augment")      -- Some AI thingy
 rs("git")          -- set up neogit (kind of magit)
 rs("leap")         -- some easier motions
 rs("lsp")          -- LSP and related setup
@@ -45,6 +46,8 @@ rs("treesitter")   -- set up treesitter
 rs("trouble")      -- load trouble
 rs("whichkey")     -- set up whichkey, which provides help as you type
 
-lz_n.load({
+lazy.add_specs({
   { "startuptime", command = "StartUptime", after = rf("nobbz.startuptime"), },
 })
+
+lazy.finish()
