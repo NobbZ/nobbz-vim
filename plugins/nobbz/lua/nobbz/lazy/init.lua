@@ -16,8 +16,6 @@ M.load_once = function(name)
   require("lz.n").trigger_load(name)
 
   for k, v in ipairs(state) do
-    vim.notify(k)
-
     if v == name then
       table.remove(state, name)
       break
