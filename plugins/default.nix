@@ -20,7 +20,7 @@
     };
     makeOptional = name: plugin: {
       inherit plugin;
-      optional = optionalPlugins.${name} or (lib.warn "${name} has no explicit optionality, assuming mandatoryness" false);
+      optional = optionalPlugins.${name} or (lib.warn "${name} has no explicit optionality, assuming mandatory status" false);
     };
     plugins = lib.pipe npins [
       (lib.filterAttrs (name: _: lib.hasPrefix "nvim-" name))
