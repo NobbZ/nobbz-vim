@@ -22,8 +22,9 @@
       telescope-ui-select = false;
       # optional plugins (aka opt)
       augment = true;
-      trouble = true;
       startuptime = true;
+      surround = true;
+      trouble = true;
     };
     applyOptional = name: plugin: {
       inherit plugin;
