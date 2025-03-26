@@ -15,8 +15,8 @@
       };
     optionalPlugins = {
       augment = true;
-      startuptime = true;
       lz-n = false;
+      startuptime = true;
     };
     makeOptional = name: plugin: {
       inherit plugin;
