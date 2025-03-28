@@ -1,13 +1,11 @@
 local augment_workspace = vim.env.AUGMENT_WORKSPACE
 local augment_node = vim.env.AUGMENT_NODE
 
----return a function to accept the augment completion
----@param fallback string? the fallback if there is no completion available
 ---Returns a closure that accepts the current augmentation completion.
 ---
 ---The returned function invokes Vim's "augment#Accept". If a fallback string is provided,
 ---it passes the fallback value to "augment#Accept"; otherwise, it calls the function without arguments.
----@param fallback string|nil Optional fallback text used when accepting completion.
+---@param fallback string? Optional fallback text used when accepting completion.
 ---@return function A closure that triggers the augment accept command.
 local function accept_completion(fallback)
   if fallback then
