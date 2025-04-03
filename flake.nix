@@ -26,7 +26,7 @@
         '';
 
         packages.md-oxide = pkgs.callPackage ./pkgs/oxide.nix {inherit npins;};
-        packages.neovim = pkgs.callPackage ./nvim.nix {inherit npins self';};
+        packages.neovim = pkgs.callPackage ./nvim.nix {inherit self';};
         packages.default = self'.packages.neovim;
 
         devShells.default = let
