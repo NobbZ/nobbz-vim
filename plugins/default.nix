@@ -15,6 +15,7 @@
       };
     optionalPlugins = {
       augment = true;
+      lspsaga = true;
       startuptime = true;
       lz-n = false;
     };

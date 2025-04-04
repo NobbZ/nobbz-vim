@@ -159,6 +159,19 @@
       "url": "https://github.com/onsails/lspkind.nvim/archive/d79a1c3299ad0ef94e255d045bed9fa26025dab6.tar.gz",
       "hash": "1wdavqmwadby9lyw415jw79kxynxv4fxg2v376y0rkxf258clarq"
     },
+    "nvim-lspsaga": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvimdev",
+        "repo": "lspsaga.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "778d56ff9b387dacd14ae648ed5604394b486f51",
+      "url": "https://github.com/nvimdev/lspsaga.nvim/archive/778d56ff9b387dacd14ae648ed5604394b486f51.tar.gz",
+      "hash": "1rm8ww8krxliwli9m2j6j37xgwgjsrgapvgrcdr6nd4mi6hgmczm"
+    },
     "nvim-luasnip": {
       "type": "Git",
       "repository": {
