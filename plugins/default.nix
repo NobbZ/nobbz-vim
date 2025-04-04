@@ -6,7 +6,7 @@
     lib,
     ...
   }: let
-    overrideCheck = _: plugin: plugin.overrideAttrs {doCheck = false; };
+    overrideCheck = _: plugin: plugin.overrideAttrs {doCheck = false;};
     makePluginFromPin = name: pin:
       pkgs.vimUtils.buildVimPlugin {
         pname = name;
@@ -15,6 +15,7 @@
       };
     optionalPlugins = {
       augment = true;
+      lspsaga = true;
       startuptime = true;
       lz-n = false;
     };
