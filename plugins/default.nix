@@ -16,8 +16,10 @@
     optionalPlugins = {
       augment = true;
       lspsaga = true;
+      nvim-ufo = true;
       startuptime = true;
       lz-n = false;
+      promis-async = false;
     };
     makeOptional = name: plugin: {
       inherit plugin;
