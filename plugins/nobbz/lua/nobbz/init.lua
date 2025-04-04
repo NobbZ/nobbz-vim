@@ -24,11 +24,12 @@ local function rs(submodule)
   return require(this_module .. "." .. submodule)
 end
 
-rs("blink")        -- foundations for completions
 rs("augment")      -- Some AI thingy
+rs("blink")        -- foundations for completions
 rs("git")          -- set up neogit (kind of magit)
 rs("leap")         -- some easier motions
 rs("lsp")          -- LSP and related setup
+rs("lspsaga")      -- set up lspsaga
 rs("lualine")      -- Set up the status bar at the bottom
 rs("luasnip")      -- Snippet tool
 rs("markdown")     -- Set up markdown editing
