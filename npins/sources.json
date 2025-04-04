@@ -334,6 +334,22 @@
       "url": "https://api.github.com/repos/MunifTanjim/nui.nvim/tarball/0.3.0",
       "hash": "0fjrnhfhq7sn3am7283adar0jlf6gcyq303kxkwqvxzvvdg9nirg"
     },
+    "nvim-nvim-ufo": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kevinhwang91",
+        "repo": "nvim-ufo"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.4.0",
+      "revision": "a5390706f510d39951dd581f6d2a972741b3fa26",
+      "url": "https://api.github.com/repos/kevinhwang91/nvim-ufo/tarball/v1.4.0",
+      "hash": "0fyc504ay04402gk1vly0lz8fa5yyfmix16zsvl29grw6rpjacvp"
+    },
     "nvim-plenary": {
       "type": "Git",
       "repository": {
@@ -359,6 +375,22 @@
       "revision": "4223fb903cbafc3bd8a87a314dac375bbd1c01ce",
       "url": "https://github.com/tris203/precognition.nvim/archive/4223fb903cbafc3bd8a87a314dac375bbd1c01ce.tar.gz",
       "hash": "11ng6p0xmrjky5xr9jdkrrav7is9r090qhs2fsnbg16124bgb0g5"
+    },
+    "nvim-promis-async": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kevinhwang91",
+        "repo": "promise-async"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.0.0",
+      "revision": "38a4575da9497326badd3995e768b4ccf0bb153e",
+      "url": "https://api.github.com/repos/kevinhwang91/promise-async/tarball/v1.0.0",
+      "hash": "19kyjzjvlj0c5w3d7r7pfrd5w5w2jv10y4xahiy4iyxa1qz50vsp"
     },
     "nvim-rainbow": {
       "type": "Git",
