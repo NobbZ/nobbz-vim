@@ -2,7 +2,6 @@ require("nobbz.lazy").add_specs({ {
   "lspsaga",
   event = "DeferredUIEnter",
   after = function()
-    vim.print("loading lspsaga")
     require("lspsaga").setup({
       symbol_in_winbar = {
         enable = true,
