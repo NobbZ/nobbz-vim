@@ -41,7 +41,6 @@ rs("lualine")      -- Set up the status bar at the bottom
 rs("luasnip")      -- Snippet tool
 rs("markdown")     -- Set up markdown editing
 rs("misc")         -- miscelanous editor settings
-rs("nabla")        -- set up and load nabla (nice maths)
 rs("noice")        -- setup noice for nicer notifications and messages
 rs("oil")          -- manage files as if it was a text buffer
 rs("precognition") -- set up precognition, which helps with motions

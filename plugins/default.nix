@@ -34,6 +34,8 @@
       crates = true;
       leap = true;
       lspsaga = true;
+      markdown = true;
+      nabla = true;
       nvim-ufo = true;
       startuptime = true;
       surround = true;
