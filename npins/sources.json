@@ -224,45 +224,6 @@
       "url": "https://github.com/jbyuki/nabla.nvim/archive/27a6ea9ed7452bb9e0b19eb0942b5bcf7d051b2f.tar.gz",
       "hash": "1dnd6s6abwxihliqqyl1vrds14w502m0x7aadlxrrfh970bqikg0"
     },
-    "nvim-neotest": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-neotest",
-        "repo": "neotest"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "dddbe8fe358b05b2b7e54fe4faab50563171a76d",
-      "url": "https://github.com/nvim-neotest/neotest/archive/dddbe8fe358b05b2b7e54fe4faab50563171a76d.tar.gz",
-      "hash": "0ji65yyfisr1fpfsx8kflb9fl17dmf168wwvqgvp7z24m9v9b3bb"
-    },
-    "nvim-neotest-elixir": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "jfpedroza",
-        "repo": "neotest-elixir"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "a242aebeaa6997c1c149138ff77f6cacbe33b6fc",
-      "url": "https://github.com/jfpedroza/neotest-elixir/archive/a242aebeaa6997c1c149138ff77f6cacbe33b6fc.tar.gz",
-      "hash": "0dfz6x0yc9pd8z2irc3dwbvd64zs35rwnllbdp88c6k4fnkyjjr1"
-    },
-    "nvim-neotest-rust": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "rouge8",
-        "repo": "neotest-rust"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "e1cb22ecf0341fb894ef2ebde344389fe6e6fc8e",
-      "url": "https://github.com/rouge8/neotest-rust/archive/e1cb22ecf0341fb894ef2ebde344389fe6e6fc8e.tar.gz",
-      "hash": "1l5rpl63dnsl1ys6h5fv4an6qndyk2bd55r1n6xhlgfns3amabk5"
-    },
     "nvim-nio": {
       "type": "Git",
       "repository": {

@@ -14,14 +14,41 @@
         src = pin;
       };
     optionalPlugins = {
+      # TODO: finish them to be properly sorted in, eager loading them for now.
+      fix-cursor = false;
+      gitsigns = false;
+      indent-blankline = false;
+      lspconfig = false;
+      lspkind = false;
+      luasnip = false;
+      # mandatory plugins (aka start)
+      catppuccin = false;
+      lz-n = false;
+      nio = false;
+      noice = false;
+      none-ls = false;
+      notify = false;
+      nui = false;
+      plenary = false;
+      precognition = false;
+      promis-async = false;
+      rainbow = false;
+      telescope = false;
+      telescope-ui-select = false;
+      which-key = false;
+      # optional plugins (aka opt)
       augment = true;
+      crates = true;
+      leap = true;
       lspsaga = true;
+      markdown = true;
+      nabla = true;
       nvim-ufo = true;
       startuptime = true;
-      lz-n = false;
-      promis-async = false;
+      surround = true;
+      trouble = true;
     };
-    makeOptional = name: plugin: {
+    applyOptional = name: plugin: {
       inherit plugin;
       optional = optionalPlugins.${name} or (lib.warn "${name} has no explicit optionality, assuming mandatory status" false);
     };
@@ -30,7 +57,7 @@
       (lib.mapAttrs' (name: pin: lib.nameValuePair (lib.removePrefix "nvim-" name) pin))
       (lib.mapAttrs makePluginFromPin)
       (lib.mapAttrs overrideCheck)
-      (lib.mapAttrs makeOptional)
+      (lib.mapAttrs applyOptional)
     ];
   in {
     legacyPackages.vimPlugins =
