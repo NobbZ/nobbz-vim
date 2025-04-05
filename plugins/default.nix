@@ -31,6 +31,7 @@
       which-key = false;
       # optional plugins (aka opt)
       augment = true;
+      crates = true;
       lspsaga = true;
       nvim-ufo = true;
       startuptime = true;

@@ -37,12 +37,18 @@ lspconfig.rust_analyzer.setup({
   },
 })
 
-require("crates").setup({
-  lsp = {
-    enabled = true,
-    on_attach = helpers.default,
-    actions = true,
-    completion = true,
-    hover = true,
-  },
-})
+require("nobbz.lazy").add_specs({ {
+  "crates",
+  after = function()
+    require("crates").setup({
+      lsp = {
+        enabled = true,
+        on_attach = helpers.default,
+        actions = true,
+        completion = true,
+        hover = true,
+      },
+    })
+  end,
+  ft = { "toml", },
+}, })
