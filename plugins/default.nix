@@ -32,6 +32,7 @@
       # optional plugins (aka opt)
       augment = true;
       crates = true;
+      leap = true;
       lspsaga = true;
       nvim-ufo = true;
       startuptime = true;
