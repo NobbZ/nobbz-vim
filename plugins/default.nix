@@ -14,6 +14,13 @@
         src = pin;
       };
     optionalPlugins = {
+      # TODO: finish them to be properly sorted in, eager loading them for now.
+      fix-cursor = false;
+      gitsigns = false;
+      indent-blankline = false;
+      lspconfig = false;
+      lspkind = false;
+      luasnip = false;
       # mandatory plugins (aka start)
       catppuccin = false;
       lz-n = false;
