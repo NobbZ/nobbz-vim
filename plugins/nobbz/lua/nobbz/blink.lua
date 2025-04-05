@@ -2,6 +2,9 @@ local winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Pmen
 
 require("blink.cmp").setup({
   snippets = { preset = "luasnip", },
+  -- I'd like to keep it enabled for search, while disabling for command line.
+  -- see https://github.com/Saghen/blink.cmp/discussions/1580
+  cmdline = { enabled = false, },
   signature = {
     enabled = true,
     window = { border = "single", },
