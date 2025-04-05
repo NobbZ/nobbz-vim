@@ -48,7 +48,6 @@ rs("precognition") -- set up precognition, which helps with motions
 rs("rainbow")      -- set up rainbow parenthesis
 rs("surround")     -- gelps with surrounding in parens or quotes
 rs("telescope")    -- some fuzzy finders
-rs("testing")      -- set up a test runner
 rs("theme")        -- how shall everything look like
 rs("treesitter")   -- set up treesitter
 rs("trouble")      -- load trouble
