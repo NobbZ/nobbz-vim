@@ -23,11 +23,13 @@ def main():
     for p in plugins:
         print(f"updating {p}")
         subprocess.run(["npins", "update", p])
-        changed_files = subprocess \
-            .run(["git", "diff", "--name-only"]) \
-            .stdout.decode("utf-8") \
+        changed_files = str(subprocess.check_output(["git",
+                                                     "diff",
+                                                     "--name-only"],
+                                                    encoding="utf-8")) \
             .strip() \
             .splitlines()
+
         if LOCAL_PINS in changed_files:
             subprocess.run(["git", "add", PINS])
             subprocess.run(["git", "commit", "-m", f"{p}: update"])
