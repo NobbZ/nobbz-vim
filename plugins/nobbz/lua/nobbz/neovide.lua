@@ -17,6 +17,8 @@ local function scale_down()
 end
 
 WK.add({
-  { "<C-+>", scale_up,   desc = "increase font scale", },
-  { "<C-->", scale_down, desc = "decrease font scale", },
+  { "<C-+>",      scale_up,   desc = "increase font scale", },
+  { "<C-->",      scale_down, desc = "decrease font scale", },
+  { "<C-kPlus>",  scale_up,   desc = "increase font scale", },
+  { "<C-kMinus>", scale_down, desc = "decrease font scale", },
 })
