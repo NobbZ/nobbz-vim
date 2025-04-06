@@ -38,7 +38,7 @@
           pkgs.mkShell {
             packages = builtins.attrValues {
               inherit (pkgs) nil stylua npins alejandra;
-              inherit (self'.packages) neovim;
+              inherit (self'.packages) neovim neovide;
               inherit emmy-lua-code-style;
             };
 
