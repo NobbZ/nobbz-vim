@@ -211,6 +211,19 @@
       "url": "https://github.com/tadmccorkle/markdown.nvim/archive/dfa0d2def6dbf77e9206b16dc90cad4dd23d55d2.tar.gz",
       "hash": "0p454caxkd8chg0v1m085vlmrmhkvhfwq625wgy9s8bzinja5rb0"
     },
+    "nvim-mini": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "echasnovski",
+        "repo": "mini.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "e744b5dbb3158242af77124bd6763a8647ea82ed",
+      "url": "https://github.com/echasnovski/mini.nvim/archive/e744b5dbb3158242af77124bd6763a8647ea82ed.tar.gz",
+      "hash": "1008as72a19v0jwlwjnchj7hgf73rb77p8yww90xk3n02f0bi87z"
+    },
     "nvim-nabla": {
       "type": "Git",
       "repository": {
