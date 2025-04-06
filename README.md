@@ -15,7 +15,7 @@ Update process
 3. *optional* fix build errors
 4. update plugins: `nix run .#update-plugins`
 5. *optional* fix build errors
-6. *optional* update this instructions 😀
+6. *optional* update these instructions 😀
 
 Inspiration
 -----------
