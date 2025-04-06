@@ -346,9 +346,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4223fb903cbafc3bd8a87a314dac375bbd1c01ce",
-      "url": "https://github.com/tris203/precognition.nvim/archive/4223fb903cbafc3bd8a87a314dac375bbd1c01ce.tar.gz",
-      "hash": "11ng6p0xmrjky5xr9jdkrrav7is9r090qhs2fsnbg16124bgb0g5"
+      "revision": "80ac0a99064eba71894dd164e891cc5d7e05827e",
+      "url": "https://github.com/tris203/precognition.nvim/archive/80ac0a99064eba71894dd164e891cc5d7e05827e.tar.gz",
+      "hash": "1v1knpvd3wxvixmfyzrjwg9r7xbixg53n4dvvk7r8d05y5cgbzmc"
     },
     "nvim-promis-async": {
       "type": "GitRelease",
