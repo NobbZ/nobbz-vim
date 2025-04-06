@@ -53,6 +53,8 @@ rs("trouble")      -- load trouble
 rs("ufo")          -- set up ufo
 rs("whichkey")     -- set up whichkey, which provides help as you type
 
+if vim.g.neovide then rs("neovide") end
+
 lazy.add_specs({
   { "startuptime", command = "StartUptime", after = rf("nobbz.startuptime"), },
 })
