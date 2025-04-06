@@ -13,9 +13,9 @@ Update process
 1. Create a branch: `git switch -c update $(date -Idate)`
 2. update the flake lock: `nix flake update --commit-lock-file`
 3. *optional* fix build errors
-6. update plugins: `nix run .#update-plugins`
-7. *optional* fix build errors
-8. *optional* update this instructions 😀
+4. update plugins: `nix run .#update-plugins`
+5. *optional* fix build errors
+6. *optional* update this instructions 😀
 
 Inspiration
 -----------
