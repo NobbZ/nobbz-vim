@@ -40,6 +40,7 @@ rs("lspsaga")      -- set up lspsaga
 rs("lualine")      -- Set up the status bar at the bottom
 rs("luasnip")      -- Snippet tool
 rs("markdown")     -- Set up markdown editing
+rs("mini")         -- set up mini.nvim
 rs("misc")         -- miscelanous editor settings
 rs("noice")        -- setup noice for nicer notifications and messages
 rs("oil")          -- manage files as if it was a text buffer

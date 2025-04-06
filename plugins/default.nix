@@ -42,6 +42,7 @@
       leap = true;
       lspsaga = true;
       markdown = true;
+      mini = true;
       nabla = true;
       nvim-ufo = true;
       startuptime = true;
