@@ -13,11 +13,9 @@ Update process
 1. Create a branch: `git switch -c update $(date -Idate)`
 2. update the flake lock: `nix flake update --commit-lock-file`
 3. *optional* fix build errors
-4. update neovim lock: `nix run .#updateNvim`
+4. update plugins: `nix run .#update-plugins`
 5. *optional* fix build errors
-6. update plugins: `nix run .#updatePlugins`
-7. *optional* fix build errors
-8. *optional* update this instructions 😀
+6. *optional* update these instructions 😀
 
 Inspiration
 -----------
