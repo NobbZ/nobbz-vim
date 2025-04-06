@@ -1,15 +1,14 @@
 {
-  writeShellApplication,
+  lib,
+  writers,
   self,
   npins,
   git,
 }: let
   version = self.rev or self.dirtyRev or "dirty";
+
+  path = lib.makeBinPath [npins git];
 in
-  writeShellApplication {
-    name = "update-plugin-${version}";
-
-    runtimeInputs = [npins git];
-
-    text = builtins.readFile ./update-plugins.sh;
-  }
+  writers.writePython3Bin "update-plugins-${version}" {
+    makeWrapperArgs = ["--prefix" "PATH" ":" path];
+  } (builtins.readFile ./update-plugins.py)
