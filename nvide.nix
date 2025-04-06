@@ -10,7 +10,7 @@
   modules = [
     {
       wrappers.neovide.basePackage = neovide;
-      wrappers.neovide.flags = ["--neovim-bin" (lib.getExe self'.packages.neovim)];
+      wrappers.neovide.flags = ["--neovim-bin" (lib.getExe self'.packages.neovim) "--fork"];
     }
   ];
 })
