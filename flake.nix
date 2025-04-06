@@ -28,7 +28,11 @@
         packages.md-oxide = pkgs.callPackage ./pkgs/oxide.nix {inherit npins;};
         packages.neovim = pkgs.callPackage ./nvim.nix {inherit self';};
         packages.neovide = pkgs.callPackage ./nvide.nix {inherit self' inputs;};
-        packages.default = self'.packages.neovim;
+        packages.default = pkgs.symlinkJoin {
+          name = self'.packages.neovim.name;
+          paths = [self'.packages.neovim self'.packages.neovide];
+          meta.mainProgram = self'.packages.neovim.meta.mainProgram;
+        };
 
         devShells.default = let
           emmy-lua-code-style = inputs'.nixpkgs-emmy.legacyPackages.emmy-lua-code-style.overrideAttrs (_: {
