@@ -6,7 +6,7 @@ require("lspconfig").basedpyright.setup({
   settings = {
     basedpyright = {
       analysis = {
-        dignosticsMode = "workspace",
+        diagnosticsMode = "workspace",
         inlayHints = {
           genericTypes = true,
         },

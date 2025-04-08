@@ -22,7 +22,7 @@ _ = parser.add_argument("source",
 
 
 def main():
-    # types: ignore
+    # type: ignore
     args = parser.parse_args()
     owner: str
     repo: str
