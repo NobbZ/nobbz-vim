@@ -1,7 +1,8 @@
 import argparse
-import subprocess
-import os
 import json
+import os
+import subprocess
+from typing import TypedDict
 
 parser = argparse.ArgumentParser(
     prog="update-plugins",
@@ -12,17 +13,22 @@ LOCAL_PINS = "npins/sources.json"
 PINS = os.path.join(os.getcwd(), LOCAL_PINS)
 
 
+class NpinsLock(TypedDict):
+    pins: dict[str, dict[str, object]]
+    version: int
+
+
 def main():
-    parser.parse_args()
+    _ = parser.parse_args()
     plugins = []
 
     with open(PINS, "r") as f:
-        sources = json.load(f)
+        sources: NpinsLock = json.load(f)
         plugins = [p for p in sources["pins"] if p.startswith("nvim-")]
 
     for p in plugins:
         print(f"updating {p}")
-        subprocess.run(["npins", "update", p])
+        _ = subprocess.run(["npins", "update", p])
         changed_files = str(subprocess.check_output(["git",
                                                      "diff",
                                                      "--name-only"],
@@ -31,8 +37,8 @@ def main():
             .splitlines()
 
         if LOCAL_PINS in changed_files:
-            subprocess.run(["git", "add", PINS])
-            subprocess.run(["git", "commit", "-m", f"{p}: update"])
+            _ = subprocess.run(["git", "add", PINS])
+            _ = subprocess.run(["git", "commit", "-m", f"{p}: update"])
         else:
             print(f"No updates for {p}, skipping")
 
