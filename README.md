@@ -20,5 +20,11 @@ Update process
 Inspiration
 -----------
 
-* [@Gerg](https://github.com/Gerg-L) [nvim config](https://github.com/Gerg-L/nvim-flake)
+* [@Gerg] [nvim config][gerg-config] (before he switched to [`mnw`])
+* [@ViperML] [nvim config][viper-config] (lazy loading implementation)
 
+[@Gerg]: https://github.com/Gerg-L
+[@ViperML]: https://github.com/viperML
+[gerg-config]: https://github.com/Gerg-L/nvim-flake
+[viper-config]: https://github.com/viperML/dotfiles/tree/e43c072f8bc229a45e41978e751b47e1d3d81893/packages/neovim/viper-init-plugin
+[`mnw`]: https://github.com/Gerg-L/mnw
