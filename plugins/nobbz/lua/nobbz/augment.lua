@@ -26,17 +26,20 @@ require("nobbz.lazy").add_specs({ {
 
     vim.g.augment_disable_tab_mapping = true
   end,
+  after = function()
+    WK.add({
+      { "<leader>a",  group = "augment", },
+      { "<leader>ac", "<cmd>Augment chat<cr>",        desc = "Send chat message", },
+      { "<leader>an", "<cmd>Augment chat-new<cr>",    desc = "Start new conversation", },
+      { "<leader>at", "<cmd>Augment chat-toggle<cr>", desc = "Toggle chat panel", },
+      { "<leader>as", "<cmd>Augment status<cr>",      desc = "Check Augment status", },
+      { "<C-y>",      accept_completion(),            desc = "Accept Augment completion",              mode = { "i", "s", }, },
+      { "<C-cr>",     accept_completion("\n"),        desc = "Accept Augment completion (or newline)", mode = { "i", "s", }, },
+    })
+  end,
   cmd = "Augment",
   event = "DeferredUIEnter",
+  keys = {
+    { "<leader>a", desc = "augment", },
+  },
 }, })
-
-WK.add({
-  { "<leader>a",  group = "augment", },
-  { "<leader>ac", "<cmd>Augment chat<cr>",        desc = "Send chat message", },
-  { "<leader>an", "<cmd>Augment chat-new<cr>",    desc = "Start new conversation", },
-  { "<leader>at", "<cmd>Augment chat-toggle<cr>", desc = "Toggle chat panel", },
-  { "<leader>as", "<cmd>Augment status<cr>",      desc = "Check Augment status", },
-  { "<C-y>",      accept_completion(),            desc = "Accept Augment completion",              mode = { "i", "s", }, },
-  { "<C-cr>",     accept_completion("\n"),        desc = "Accept Augment completion (or newline)", mode = { "i", "s", }, },
-
-})
