@@ -3,6 +3,14 @@ local neogit = require("neogit")
 
 neogit.setup({})
 
+-- disable line breaks in gitcommit mode (it is annoying!)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gitcommit",
+  callback = function()
+    vim.opt_local.textwidth = 0
+  end,
+})
+
 -- register keys for neogit
 WK.add({
   { "<leader>g",   group = "git", },
