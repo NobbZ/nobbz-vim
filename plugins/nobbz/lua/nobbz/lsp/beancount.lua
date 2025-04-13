@@ -15,4 +15,6 @@ if root_dir ~= nil and journal_file ~= nil then
     root_dir = root_dir,
     init_options = { journal_file = journal_file, },
   })
+
+  require("nobbz.health").register_lsp("beancount")
 end

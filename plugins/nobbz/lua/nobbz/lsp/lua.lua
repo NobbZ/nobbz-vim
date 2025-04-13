@@ -48,3 +48,5 @@ require("lspconfig").lua_ls.setup({
   },
   capabilities = LSP_CAPAS,
 })
+
+require("nobbz.health").register_lsp("lua_ls")

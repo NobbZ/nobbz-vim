@@ -11,3 +11,5 @@ require("lspconfig").markdown_oxide.setup({
   on_attach = helpers.default,
   capabilities = capabilities,
 })
+
+require("nobbz.health").register_lsp("markdown_oxide")

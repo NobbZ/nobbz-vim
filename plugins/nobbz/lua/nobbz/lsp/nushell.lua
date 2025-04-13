@@ -6,3 +6,5 @@ require("lspconfig").nushell.setup({
   filetypes = { "nu", },
   cmd = { "nu", "--lsp", },
 })
+
+require("nobbz.health").register_lsp("nushell")

@@ -52,3 +52,5 @@ require("nobbz.lazy").add_specs({ {
   end,
   ft = { "toml", },
 }, })
+
+require("nobbz.health").register_lsp("rust_analyzer")
