@@ -21,7 +21,8 @@ Inspiration
 -----------
 
 * [@Gerg] [nvim config][gerg-config] (before he switched to [`mnw`])
-* [@ViperML] [nvim config][viper-config] (lazy loading implementation)
+* [@ViperML] [nvim config][viper-config] (lazy loading implementation, also the
+  idea of having health checks)
 
 [@Gerg]: https://github.com/Gerg-L
 [@ViperML]: https://github.com/viperML
