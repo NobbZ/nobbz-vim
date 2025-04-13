@@ -3,12 +3,15 @@ local M = {}
 local programs = {}
 local done = false
 
+---Checks if a program is available in the system `PATH`
 ---@param program string the program to check
 ---@return boolean whether the program is in the `PATH`
 local function in_path(program)
   return vim.fn.executable(program) == 1
 end
 
+---Performs health checks for all registered programs
+---Displays results sorted by criticality and then alphabetically
 local function check_programs()
   local binaries = {}
 
@@ -48,12 +51,17 @@ M.register_program = function(program, required)
   programs[program] = required
 end
 
+---Unregisters a program from the healthcheck
 ---@param program string the program to unregister, it will not be checked by
 ---  the healthcheck anymore
 M.unregister_program = function(program)
   programs[program] = nil
 end
 
+---Registers an LSP server for healthcheck
+---Automatically registers the LSP binary as optional by default,
+---but makes it required when a relevant filetype is opened
+---@param lsp string the name of the LSP server as defined in lspconfig
 M.register_lsp = function(lsp)
   local config = require("lspconfig")[lsp]
   local program = config.cmd[1]
@@ -69,10 +77,14 @@ M.register_lsp = function(lsp)
   })
 end
 
+---Marks the configuration as completely loaded
+---This affects the health check status message
 M.done = function()
   done = true
 end
 
+---Runs all registered health checks, usually called by `:checkhealth`.
+---Displays overall configuration status and checks all registered programs
 M.check = function()
   vim.health.start("nobbz")
   if done then
