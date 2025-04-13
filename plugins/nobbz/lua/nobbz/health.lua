@@ -1,6 +1,7 @@
 local M = {}
 
 local programs = {}
+local done = false
 
 ---@param program string the program to check
 ---@return boolean whether the program is in the `PATH`
@@ -68,7 +69,18 @@ M.register_lsp = function(lsp)
   })
 end
 
+M.done = function()
+  done = true
+end
+
 M.check = function()
+  vim.health.start("nobbz")
+  if done then
+    vim.health.ok("Config loaded completely")
+  else
+    vim.health.warn("Config *not* loaded completely")
+  end
+
   check_programs()
 end
 
