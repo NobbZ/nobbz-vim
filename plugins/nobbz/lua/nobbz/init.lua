@@ -61,3 +61,5 @@ lazy.add_specs({
 })
 
 lazy.finish()
+
+require("nobbz.health").done()

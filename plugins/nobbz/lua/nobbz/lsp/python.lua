@@ -14,3 +14,5 @@ require("lspconfig").basedpyright.setup({
     },
   },
 })
+
+require("nobbz.health").register_lsp("basedpyright")

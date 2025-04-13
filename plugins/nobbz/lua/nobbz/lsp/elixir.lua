@@ -5,3 +5,5 @@ require("lspconfig").elixirls.setup({
   capabilities = LSP_CAPAS,
   cmd = { "elixir-ls", },
 })
+
+require("nobbz.health").register_lsp("elixirls")

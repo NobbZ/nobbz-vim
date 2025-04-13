@@ -21,3 +21,5 @@ require("lspconfig").nil_ls.setup({
     },
   },
 })
+
+require("nobbz.health").register_lsp("nil_ls")

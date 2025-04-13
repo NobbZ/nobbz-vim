@@ -23,3 +23,5 @@ WK.add({
 })
 
 gitsigns.setup()
+
+require("nobbz.health").register_program("git", true)
