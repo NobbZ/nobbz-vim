@@ -3,6 +3,8 @@ local M = {}
 local programs = {}
 local done = false
 
+local CRITICALITY = { OK = 1, ERROR = 2, WARN = 3, NOTICE = 4, }
+
 ---Checks if a program is available in the system `PATH`
 ---@param program string the program to check
 ---@return boolean whether the program is in the `PATH`
@@ -18,11 +20,11 @@ local function check_programs()
   vim.health.start("Programs in `PATH`:")
   for program, required in pairs(programs) do
     if in_path(program) then
-      table.insert(binaries, { program, vim.health.ok, "is installed", 1, })
+      table.insert(binaries, { program, vim.health.ok, "is installed", CRITICALITY.OK, })
     elseif required then
-      table.insert(binaries, { program, vim.health.error, "is not installed", 3, })
+      table.insert(binaries, { program, vim.health.error, "is not installed", CRITICALITY.ERROR, })
     else
-      table.insert(binaries, { program, vim.health.warn, "is not installed", 2, })
+      table.insert(binaries, { program, vim.health.info, "is not installed", CRITICALITY.NOTICE, })
     end
   end
 
