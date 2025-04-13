@@ -37,7 +37,11 @@ local function check_programs()
   end)
 
   for _, info in ipairs(binaries) do
-    info[2]("`" .. info[1] .. "` " .. info[3])
+    local report_func = info[2]
+    local program = vim.fs.basename(info[1])
+    local msg = info[3]
+
+    report_func("`" .. program .. "` " .. msg)
   end
 end
 
