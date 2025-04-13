@@ -77,9 +77,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "a63681f36d06cf733ccbd296481957fb1efa6d09",
-      "url": "https://github.com/Saecki/crates.nvim/archive/a63681f36d06cf733ccbd296481957fb1efa6d09.tar.gz",
-      "hash": "03c93y30wcdwy8hhjmldbam7kd8mmccy3m5j55b84p82r8kl86ry"
+      "revision": "73d2c590c74a0c582144987a4decb4a642755859",
+      "url": "https://github.com/Saecki/crates.nvim/archive/73d2c590c74a0c582144987a4decb4a642755859.tar.gz",
+      "hash": "08dyl4blgi0lb3s0jbl4jcpr4j1ncyrdvxjkrqmhqcg6bmwl7iqy"
     },
     "nvim-fix-cursor": {
       "type": "Git",
@@ -103,9 +103,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "17ab794b6fce6fce768430ebc925347e349e1d60",
-      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/17ab794b6fce6fce768430ebc925347e349e1d60.tar.gz",
-      "hash": "0mfmqxwad35q6n57dhk91fnrpah26gl2l6x1a4lnmb5m67i2wllp"
+      "revision": "fcfa7a989cd6fed10abf02d9880dc76d7a38167d",
+      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/fcfa7a989cd6fed10abf02d9880dc76d7a38167d.tar.gz",
+      "hash": "1grkw8x1fycw1hbppy0zakwwkk7h2f8x5qy4wh34yj5f5g9jn3vj"
     },
     "nvim-indent-blankline": {
       "type": "Git",
@@ -129,9 +129,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "346a16ef942635a8ca5ff92e603d07e7e8be6cbe",
-      "url": "https://github.com/ggandor/leap.nvim/archive/346a16ef942635a8ca5ff92e603d07e7e8be6cbe.tar.gz",
-      "hash": "0rq73f7sw1sf8dn6angwgns8jd811aiixmvrndgqz2939dlqaw2l"
+      "revision": "03eaa2e0c0ec9436dea0e954bc47564ff3ca9196",
+      "url": "https://github.com/ggandor/leap.nvim/archive/03eaa2e0c0ec9436dea0e954bc47564ff3ca9196.tar.gz",
+      "hash": "1lskih4hvf1c57d0f6gibc36c926lqky0y2h6ypmkgh8gmcdazdw"
     },
     "nvim-lspconfig": {
       "type": "Git",
@@ -142,9 +142,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "d3ad666b7895f958d088cceb6f6c199672c404fe",
-      "url": "https://github.com/neovim/nvim-lspconfig/archive/d3ad666b7895f958d088cceb6f6c199672c404fe.tar.gz",
-      "hash": "04acgl4swdcmb99rmd2aa8yy1h27cva0q0h6gywi2yv0fq76x2q9"
+      "revision": "f9b6a702b7430aff0770c04771f2dba78163d2c6",
+      "url": "https://github.com/neovim/nvim-lspconfig/archive/f9b6a702b7430aff0770c04771f2dba78163d2c6.tar.gz",
+      "hash": "06aq5w1mr3rwwddyqzbl8cmddxzfy6vnsdv3dkypc1lkz0klg95x"
     },
     "nvim-lspkind": {
       "type": "Git",
@@ -194,9 +194,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "2ef8dfbef6f8f97873da4c5820067343690d114c",
-      "url": "https://github.com/nvim-neorocks/lz.n/archive/2ef8dfbef6f8f97873da4c5820067343690d114c.tar.gz",
-      "hash": "11i6ayqvyamh8i2scq7qbf6rrxrq9v0hax9gxmdxhdxd18djyq8n"
+      "revision": "6cbcc65c5b1301082706b24f30cb20d8c5e76709",
+      "url": "https://github.com/nvim-neorocks/lz.n/archive/6cbcc65c5b1301082706b24f30cb20d8c5e76709.tar.gz",
+      "hash": "07gws01nakd19w4n3asks9ziv52db42k2h9d2mmqmaxh76k76gvw"
     },
     "nvim-markdown": {
       "type": "Git",
@@ -220,9 +220,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e744b5dbb3158242af77124bd6763a8647ea82ed",
-      "url": "https://github.com/echasnovski/mini.nvim/archive/e744b5dbb3158242af77124bd6763a8647ea82ed.tar.gz",
-      "hash": "1008as72a19v0jwlwjnchj7hgf73rb77p8yww90xk3n02f0bi87z"
+      "revision": "b418d585d99bd1c1a4b04dc8b2c585471665173a",
+      "url": "https://github.com/echasnovski/mini.nvim/archive/b418d585d99bd1c1a4b04dc8b2c585471665173a.tar.gz",
+      "hash": "0fvr4f847jp3fyskpn16w995ijzl98bzmjbhfjqm4h37viqib06b"
     },
     "nvim-nabla": {
       "type": "Git",
@@ -275,9 +275,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6377e77dae38015d0a8c24852530098f1d8a24f6",
-      "url": "https://github.com/nvimtools/none-ls.nvim/archive/6377e77dae38015d0a8c24852530098f1d8a24f6.tar.gz",
-      "hash": "1l6ml9bgvmi2974ai2wmyyhia1qgybjz5q1nlgrjicacp2iw2kkp"
+      "revision": "1280b7965b6ed17787ffab1d4e3d9795ecdd0f51",
+      "url": "https://github.com/nvimtools/none-ls.nvim/archive/1280b7965b6ed17787ffab1d4e3d9795ecdd0f51.tar.gz",
+      "hash": "01r495800dm1b1n25skv081hb701i3npvwxb5dabg2iy5b6nzyms"
     },
     "nvim-notify": {
       "type": "Git",
@@ -288,9 +288,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "22f29093eae7785773ee9d543f8750348b1a195c",
-      "url": "https://github.com/rcarriga/nvim-notify/archive/22f29093eae7785773ee9d543f8750348b1a195c.tar.gz",
-      "hash": "0nnxmi65ppmn8dzwh38vx2w7w6piq0i28mw0s32wa31xn5rmzwza"
+      "revision": "b5825cf9ee881dd8e43309c93374ed5b87b7a896",
+      "url": "https://github.com/rcarriga/nvim-notify/archive/b5825cf9ee881dd8e43309c93374ed5b87b7a896.tar.gz",
+      "hash": "13qlkncpmjvmkpcx5sv366i7scsh90wjvcqy8qlv31ccmgq511wv"
     },
     "nvim-nui": {
       "type": "GitRelease",
@@ -319,10 +319,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.4.0",
-      "revision": "a5390706f510d39951dd581f6d2a972741b3fa26",
-      "url": "https://api.github.com/repos/kevinhwang91/nvim-ufo/tarball/v1.4.0",
-      "hash": "0fyc504ay04402gk1vly0lz8fa5yyfmix16zsvl29grw6rpjacvp"
+      "version": "v1.5.0",
+      "revision": "61463090a4f55f5d080236ea62f09d1cd8976ff3",
+      "url": "https://api.github.com/repos/kevinhwang91/nvim-ufo/tarball/v1.5.0",
+      "hash": "0ri5nwv9zzwzar0k78avirr8dnsqz7bc8lnspdd5m3gvafj20r48"
     },
     "nvim-plenary": {
       "type": "Git",
@@ -375,9 +375,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "de39919a57e1a40a4c7dc5bae0de276f9c616ef3",
-      "url": "https://gitlab.com/api/v4/projects/HiPhish%2Frainbow-delimiters.nvim/repository/archive.tar.gz?sha=de39919a57e1a40a4c7dc5bae0de276f9c616ef3",
-      "hash": "04a3y7kyszgjgi1nmjb41vwwpz4svkxh61zkbxrn4ajvxz1ia05i"
+      "revision": "351e449683070a2bb946bbd603555faf5a195e9a",
+      "url": "https://gitlab.com/api/v4/projects/HiPhish%2Frainbow-delimiters.nvim/repository/archive.tar.gz?sha=351e449683070a2bb946bbd603555faf5a195e9a",
+      "hash": "12qj32zfyjbxs3qjp283fnc8sfa8w4blfx3skgvhkifv0vi7r3bf"
     },
     "nvim-startuptime": {
       "type": "Git",
