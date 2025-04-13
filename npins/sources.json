@@ -319,10 +319,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v1.4.0",
-      "revision": "a5390706f510d39951dd581f6d2a972741b3fa26",
-      "url": "https://api.github.com/repos/kevinhwang91/nvim-ufo/tarball/v1.4.0",
-      "hash": "0fyc504ay04402gk1vly0lz8fa5yyfmix16zsvl29grw6rpjacvp"
+      "version": "v1.5.0",
+      "revision": "61463090a4f55f5d080236ea62f09d1cd8976ff3",
+      "url": "https://api.github.com/repos/kevinhwang91/nvim-ufo/tarball/v1.5.0",
+      "hash": "0ri5nwv9zzwzar0k78avirr8dnsqz7bc8lnspdd5m3gvafj20r48"
     },
     "nvim-plenary": {
       "type": "Git",
