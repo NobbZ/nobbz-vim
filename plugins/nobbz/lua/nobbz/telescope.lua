@@ -42,3 +42,5 @@ WK.add({
   { "<leader>fh", builtin.help_tags, desc = "open help", },
   { "<leader>fx", builtin.commands,  desc = "run command (M-x)", },
 })
+
+require("nobbz.health").register_program("rg", true)
