@@ -5,7 +5,7 @@ local root_dir = vim.fs.dirname(vim.fs.find({ ".git", }, { upward = true, })[1])
 -- the main journal always is "main.beancount" at the repo root
 local journal_file = nil
 if root_dir ~= nil then
-  vim.fs.joinpath(root_dir, "main.beancount")
+  journal_file = vim.fs.joinpath(root_dir, "main.beancount")
 end
 
 if root_dir ~= nil and journal_file ~= nil then
