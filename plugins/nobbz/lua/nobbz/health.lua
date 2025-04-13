@@ -41,7 +41,9 @@ local function check_programs()
     local program = vim.fs.basename(info[1])
     local msg = info[3]
 
-    report_func("`" .. program .. "` " .. msg)
+    local message = string.format("`%s` %s", program, msg)
+
+    report_func(message)
   end
 end
 
