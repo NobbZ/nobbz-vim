@@ -13,7 +13,9 @@ if root_dir ~= nil then
   journal_file = vim.fs.joinpath(root_dir, "main.beancount")
 end
 
-if root_dir ~= nil and journal_file ~= nil then
+if root_dir ~= nil
+    and journal_file ~= nil
+    and vim.uv.fs_stat(journal_file) ~= nil then
   require("lspconfig").beancount.setup({
     on_attach = helpers.keymap,
     capabilities = LSP_CAPAS,
