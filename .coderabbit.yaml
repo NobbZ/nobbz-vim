@@ -1,0 +1,8 @@
+reviews:
+  path_instructions:
+    - path: "plugins/**/*.lua"
+      instructions: |
+        Please ensure all of the following:
+        - Plugins are lazyloaded if possible through `nobbz.lazy`
+        - `local` has to be used
+        - coding follows the [luarocks styleguide](https://github.com/luarocks/lua-style-guide), but with 2 spaces indentation
