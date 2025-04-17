@@ -6,3 +6,12 @@ reviews:
         - Plugins are lazyloaded if possible through `nobbz.lazy`
         - `local` has to be used
         - coding follows the [luarocks styleguide](https://github.com/luarocks/lua-style-guide), but with 2 spaces indentation
+    - path: "./{**/,}*.nix"
+      instructions: |
+        Please ensure all of the following:
+        - There remains a clear distinction between flake-part modules and package definitions
+    - path: "plugins/default.nix"
+      instructions: |
+        Please ensure all of the following:
+        - Plugins are sorted alphabetically
+        - there will be no further plugins added to the first section in the `optionalPlugins` set
