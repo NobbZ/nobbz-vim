@@ -6,12 +6,12 @@
     lib,
     ...
   }: let
-    overrideCheck = _: plugin: plugin.overrideAttrs {doCheck = false;};
     makePluginFromPin = name: pin:
       pkgs.vimUtils.buildVimPlugin {
         pname = name;
         version = pin.version or pin.revision;
         src = pin;
+        doCheck = false;
       };
     optionalPlugins = {
       # TODO: finish them to be properly sorted in, eager loading them for now.
@@ -57,7 +57,6 @@
       (lib.filterAttrs (name: _: lib.hasPrefix "nvim-" name))
       (lib.mapAttrs' (name: pin: lib.nameValuePair (lib.removePrefix "nvim-" name) pin))
       (lib.mapAttrs makePluginFromPin)
-      (lib.mapAttrs overrideCheck)
       (lib.mapAttrs applyOptional)
     ];
   in {
