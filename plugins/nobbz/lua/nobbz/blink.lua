@@ -5,6 +5,9 @@ require("blink.cmp").setup({
   -- I'd like to keep it enabled for search, while disabling for command line.
   -- see https://github.com/Saghen/blink.cmp/discussions/1580
   cmdline = { enabled = false, },
+  sources = {
+    default = { "lsp", "path", "snippets", "buffer", "omni", },
+  },
   signature = {
     enabled = true,
     window = { border = "single", },

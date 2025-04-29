@@ -133,6 +133,19 @@
       "url": "https://github.com/ggandor/leap.nvim/archive/03eaa2e0c0ec9436dea0e954bc47564ff3ca9196.tar.gz",
       "hash": "1lskih4hvf1c57d0f6gibc36c926lqky0y2h6ypmkgh8gmcdazdw"
     },
+    "nvim-ledger": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ledger",
+        "repo": "vim-ledger"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "aabf1976dfefe5665233c600421aea2798ff7ea0",
+      "url": "https://github.com/ledger/vim-ledger/archive/aabf1976dfefe5665233c600421aea2798ff7ea0.tar.gz",
+      "hash": "1ls2cy0a45sllybmm46swl1bwc4ph8k6m3i7fapnnpkd483lwl13"
+    },
     "nvim-lspconfig": {
       "type": "Git",
       "repository": {
