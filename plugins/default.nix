@@ -40,6 +40,7 @@
       augment = true;
       crates = true;
       leap = true;
+      ledger = true;
       lspsaga = true;
       markdown = true;
       mini = true;
