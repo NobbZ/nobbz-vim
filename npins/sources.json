@@ -129,9 +129,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "03eaa2e0c0ec9436dea0e954bc47564ff3ca9196",
-      "url": "https://github.com/ggandor/leap.nvim/archive/03eaa2e0c0ec9436dea0e954bc47564ff3ca9196.tar.gz",
-      "hash": "1lskih4hvf1c57d0f6gibc36c926lqky0y2h6ypmkgh8gmcdazdw"
+      "revision": "2b68ddc0802bd295e64c9e2e75f18f755e50dbcc",
+      "url": "https://github.com/ggandor/leap.nvim/archive/2b68ddc0802bd295e64c9e2e75f18f755e50dbcc.tar.gz",
+      "hash": "07bdhfsig70qblvk2x0n35i5apz3mjdr05ba3082mh438ikgfmvx"
     },
     "nvim-lspconfig": {
       "type": "Git",
