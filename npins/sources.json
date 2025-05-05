@@ -233,9 +233,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "27a6ea9ed7452bb9e0b19eb0942b5bcf7d051b2f",
-      "url": "https://github.com/jbyuki/nabla.nvim/archive/27a6ea9ed7452bb9e0b19eb0942b5bcf7d051b2f.tar.gz",
-      "hash": "1dnd6s6abwxihliqqyl1vrds14w502m0x7aadlxrrfh970bqikg0"
+      "revision": "9b69b709063ccf40ac36fabb4fff7d90b3736475",
+      "url": "https://github.com/jbyuki/nabla.nvim/archive/9b69b709063ccf40ac36fabb4fff7d90b3736475.tar.gz",
+      "hash": "1x2lnr7h3609vj3lfylfppza4rrspsnbj1bsmdk9za30pmn4mrj3"
     },
     "nvim-nio": {
       "type": "Git",
