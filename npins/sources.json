@@ -303,10 +303,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "0.3.0",
-      "revision": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733",
-      "url": "https://api.github.com/repos/MunifTanjim/nui.nvim/tarball/0.3.0",
-      "hash": "0fjrnhfhq7sn3am7283adar0jlf6gcyq303kxkwqvxzvvdg9nirg"
+      "version": "0.4.0",
+      "revision": "f535005e6ad1016383f24e39559833759453564e",
+      "url": "https://api.github.com/repos/MunifTanjim/nui.nvim/tarball/0.4.0",
+      "hash": "1px6zqkj1plsydav6zpw8in92bqz4byv4mh4cd570wksynfkv5s8"
     },
     "nvim-nvim-ufo": {
       "type": "GitRelease",
