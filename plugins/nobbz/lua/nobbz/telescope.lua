@@ -41,7 +41,7 @@ WK.add({
   { "<leader>fb", builtin.buffers,         desc = "find buffer by name", },
   { "<leader>fh", builtin.help_tags,       desc = "open help", },
   { "<leader>fx", builtin.commands,        desc = "run command (M-x)", },
-  { "<leader>fs", builtin.lsp_definitions, desc = "defitions", },
+  { "<leader>fs", builtin.lsp_definitions, desc = "definitions", },
   { "<leader>fr", builtin.lsp_references,  desc = "references", },
 })
 
