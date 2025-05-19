@@ -36,11 +36,13 @@ telescope.load_extension("ui-select")
 
 WK.add({
   { "<leader>f",  group = "find", },
-  { "<leader>ff", find_files,        desc = "find file by name", },
-  { "<leader>fg", builtin.live_grep, desc = "find file by content (rg)", },
-  { "<leader>fb", builtin.buffers,   desc = "find buffer by name", },
-  { "<leader>fh", builtin.help_tags, desc = "open help", },
-  { "<leader>fx", builtin.commands,  desc = "run command (M-x)", },
+  { "<leader>ff", find_files,              desc = "find file by name", },
+  { "<leader>fg", builtin.live_grep,       desc = "find file by content (rg)", },
+  { "<leader>fb", builtin.buffers,         desc = "find buffer by name", },
+  { "<leader>fh", builtin.help_tags,       desc = "open help", },
+  { "<leader>fx", builtin.commands,        desc = "run command (M-x)", },
+  { "<leader>fs", builtin.lsp_definitions, desc = "defitions", },
+  { "<leader>fr", builtin.lsp_references,  desc = "references", },
 })
 
 require("nobbz.health").register_program("rg", true)
