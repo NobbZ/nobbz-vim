@@ -64,9 +64,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "1bf070129c0b6f77cc23f6a2212dcdc868308c52",
-      "url": "https://github.com/catppuccin/nvim/archive/1bf070129c0b6f77cc23f6a2212dcdc868308c52.tar.gz",
-      "hash": "1wk26ax9k9dyxknw2b0iymh817z7r7j9lfn6kaj1h3s8inm4asp0"
+      "revision": "8162a4bd9afb42837a655e404d1f937a87ba95e6",
+      "url": "https://github.com/catppuccin/nvim/archive/8162a4bd9afb42837a655e404d1f937a87ba95e6.tar.gz",
+      "hash": "0kgcjxvc56362pdxv0nfw2skgibhxkv7v12iyzw31qx252zkywdv"
     },
     "nvim-crates": {
       "type": "Git",
