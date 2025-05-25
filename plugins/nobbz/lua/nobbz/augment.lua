@@ -34,7 +34,7 @@ require("nobbz.lazy").add_specs({ {
       { "<leader>at", "<cmd>Augment chat-toggle<cr>", desc = "Toggle chat panel", },
       { "<leader>as", "<cmd>Augment status<cr>",      desc = "Check Augment status", },
       { "<C-y>",      accept_completion(),            desc = "Accept Augment completion",              mode = { "i", "s", }, },
-      { "<C-cr>",     accept_completion("\n"),        desc = "Accept Augment completion (or newline)", mode = { "i", "s", }, },
+      { "<C-CR>",     accept_completion("\n"),        desc = "Accept Augment completion (or newline)", mode = { "i", "s", }, },
     })
   end,
   cmd = "Augment",
