@@ -120,19 +120,6 @@
       "url": "https://github.com/lukas-reineke/indent-blankline.nvim/archive/005b56001b2cb30bfa61b7986bc50657816ba4ba.tar.gz",
       "hash": "1rmpi866bg7hyw620hbgmmmksxgll9ilbpigd1kk9b0lpvwxbbyj"
     },
-    "nvim-leap": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "ggandor",
-        "repo": "leap.nvim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "189102b07cdd24de3bd7132e57da8c9614c385fc",
-      "url": "https://github.com/ggandor/leap.nvim/archive/189102b07cdd24de3bd7132e57da8c9614c385fc.tar.gz",
-      "hash": "0rdvrxdq43szm360rrnmxzmrm5wp6l91xkysnkl4d9p6rlyx01nz"
-    },
     "nvim-ledger": {
       "type": "Git",
       "repository": {

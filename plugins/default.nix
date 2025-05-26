@@ -39,7 +39,6 @@
       # optional plugins (aka opt)
       augment = true;
       crates = true;
-      leap = true;
       ledger = true;
       lspsaga = true;
       markdown = true;
