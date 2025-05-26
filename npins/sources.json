@@ -350,19 +350,6 @@
       "url": "https://github.com/nvim-lua/plenary.nvim/archive/857c5ac632080dba10aae49dba902ce3abf91b35.tar.gz",
       "hash": "0jxx9nfga7z87v78cifglqs8w4mrpf99wcp483kb0hbv6537jmgh"
     },
-    "nvim-precognition": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "tris203",
-        "repo": "precognition.nvim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "80ac0a99064eba71894dd164e891cc5d7e05827e",
-      "url": "https://github.com/tris203/precognition.nvim/archive/80ac0a99064eba71894dd164e891cc5d7e05827e.tar.gz",
-      "hash": "1v1knpvd3wxvixmfyzrjwg9r7xbixg53n4dvvk7r8d05y5cgbzmc"
-    },
     "nvim-promis-async": {
       "type": "GitRelease",
       "repository": {
