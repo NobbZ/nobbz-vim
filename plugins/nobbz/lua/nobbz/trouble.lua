@@ -1,6 +1,13 @@
+---Flag to track whether virtual diagnostic lines are enabled
+---@type boolean
 local virtual_lines = false
 
-function toggle_virtual_lines()
+---Toggles the display of virtual diagnostic lines in the editor
+---
+---This function switches between showing diagnostics inline (as virtual text)
+---or not showing them at all. It updates the vim.diagnostic configuration
+---accordingly.
+local function toggle_virtual_lines()
   virtual_lines = not virtual_lines
   vim.diagnostic.config({ virtual_lines = virtual_lines, })
 end
