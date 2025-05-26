@@ -50,10 +50,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.30.0",
-      "revision": "0ab7cd809d7da8e2e797902955f0da6a21ab253e",
-      "url": "https://api.github.com/repos/augmentcode/augment.vim/tarball/v0.30.0",
-      "hash": "0in4aab1ynhjr659f5gwmh2yih41gifdg8rnxzw5cl5zmwkqrhba"
+      "version": "v0.31.0",
+      "revision": "df56563fe534eb7d0daeaa8c8de3b54700fbbaf8",
+      "url": "https://api.github.com/repos/augmentcode/augment.vim/tarball/v0.31.0",
+      "hash": "0j0kyrmcw8py931islm65zjz68nh83hphz9w3dyzwd09dbaddbka"
     },
     "nvim-catppuccin": {
       "type": "Git",
@@ -94,6 +94,19 @@
       "url": "https://github.com/antoinemadec/FixCursorHold.nvim/archive/1900f89dc17c603eec29960f57c00bd9ae696495.tar.gz",
       "hash": "0p7xh31qp836xvxbm1y3r4djv3r7ivxhx7jxwzgd380d029ql1hz"
     },
+    "nvim-flash": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "flash.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3c942666f115e2811e959eabbdd361a025db8b63",
+      "url": "https://github.com/folke/flash.nvim/archive/3c942666f115e2811e959eabbdd361a025db8b63.tar.gz",
+      "hash": "1xil2lkyr404zni1qmkwrl9hvbwjjk52fmncg59vqmvdybwsnqni"
+    },
     "nvim-gitsigns": {
       "type": "Git",
       "repository": {
@@ -119,19 +132,6 @@
       "revision": "005b56001b2cb30bfa61b7986bc50657816ba4ba",
       "url": "https://github.com/lukas-reineke/indent-blankline.nvim/archive/005b56001b2cb30bfa61b7986bc50657816ba4ba.tar.gz",
       "hash": "1rmpi866bg7hyw620hbgmmmksxgll9ilbpigd1kk9b0lpvwxbbyj"
-    },
-    "nvim-leap": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "ggandor",
-        "repo": "leap.nvim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "189102b07cdd24de3bd7132e57da8c9614c385fc",
-      "url": "https://github.com/ggandor/leap.nvim/archive/189102b07cdd24de3bd7132e57da8c9614c385fc.tar.gz",
-      "hash": "0rdvrxdq43szm360rrnmxzmrm5wp6l91xkysnkl4d9p6rlyx01nz"
     },
     "nvim-ledger": {
       "type": "Git",
@@ -349,19 +349,6 @@
       "revision": "857c5ac632080dba10aae49dba902ce3abf91b35",
       "url": "https://github.com/nvim-lua/plenary.nvim/archive/857c5ac632080dba10aae49dba902ce3abf91b35.tar.gz",
       "hash": "0jxx9nfga7z87v78cifglqs8w4mrpf99wcp483kb0hbv6537jmgh"
-    },
-    "nvim-precognition": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "tris203",
-        "repo": "precognition.nvim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "80ac0a99064eba71894dd164e891cc5d7e05827e",
-      "url": "https://github.com/tris203/precognition.nvim/archive/80ac0a99064eba71894dd164e891cc5d7e05827e.tar.gz",
-      "hash": "1v1knpvd3wxvixmfyzrjwg9r7xbixg53n4dvvk7r8d05y5cgbzmc"
     },
     "nvim-promis-async": {
       "type": "GitRelease",

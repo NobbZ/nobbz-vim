@@ -30,7 +30,6 @@
       notify = false;
       nui = false;
       plenary = false;
-      precognition = false;
       promis-async = false;
       rainbow = false;
       telescope = false;
@@ -39,7 +38,7 @@
       # optional plugins (aka opt)
       augment = true;
       crates = true;
-      leap = true;
+      flash = true;
       ledger = true;
       lspsaga = true;
       markdown = true;
