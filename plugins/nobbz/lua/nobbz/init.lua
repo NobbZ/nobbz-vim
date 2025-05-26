@@ -33,6 +33,7 @@ end
 
 rs("augment")      -- Some AI thingy
 rs("blink")        -- foundations for completions
+rs("flash")        -- some easier motions
 rs("git")          -- set up neogit (kind of magit)
 rs("ledger")       -- set up ledger/hledger PTA
 rs("lsp")          -- LSP and related setup

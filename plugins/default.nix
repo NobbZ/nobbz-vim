@@ -39,6 +39,7 @@
       # optional plugins (aka opt)
       augment = true;
       crates = true;
+      flash = true;
       ledger = true;
       lspsaga = true;
       markdown = true;

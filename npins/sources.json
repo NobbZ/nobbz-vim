@@ -94,6 +94,19 @@
       "url": "https://github.com/antoinemadec/FixCursorHold.nvim/archive/1900f89dc17c603eec29960f57c00bd9ae696495.tar.gz",
       "hash": "0p7xh31qp836xvxbm1y3r4djv3r7ivxhx7jxwzgd380d029ql1hz"
     },
+    "nvim-flash": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "flash.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3c942666f115e2811e959eabbdd361a025db8b63",
+      "url": "https://github.com/folke/flash.nvim/archive/3c942666f115e2811e959eabbdd361a025db8b63.tar.gz",
+      "hash": "1xil2lkyr404zni1qmkwrl9hvbwjjk52fmncg59vqmvdybwsnqni"
+    },
     "nvim-gitsigns": {
       "type": "Git",
       "repository": {
