@@ -50,10 +50,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.30.0",
-      "revision": "0ab7cd809d7da8e2e797902955f0da6a21ab253e",
-      "url": "https://api.github.com/repos/augmentcode/augment.vim/tarball/v0.30.0",
-      "hash": "0in4aab1ynhjr659f5gwmh2yih41gifdg8rnxzw5cl5zmwkqrhba"
+      "version": "v0.31.0",
+      "revision": "df56563fe534eb7d0daeaa8c8de3b54700fbbaf8",
+      "url": "https://api.github.com/repos/augmentcode/augment.vim/tarball/v0.31.0",
+      "hash": "0j0kyrmcw8py931islm65zjz68nh83hphz9w3dyzwd09dbaddbka"
     },
     "nvim-catppuccin": {
       "type": "Git",
