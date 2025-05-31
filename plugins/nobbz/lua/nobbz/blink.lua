@@ -1,7 +1,20 @@
+local blink = require("blink.cmp")
+local luasnip = require("luasnip")
+
 local winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel"
 
-require("blink.cmp").setup({
-  snippets = { preset = "luasnip", },
+blink.setup({
+  snippets = {
+    -- preset = "luasnip",
+    active = function()
+      if luasnip.in_snippet() and not blink.is_visible() then
+        return true
+      else
+        if not luasnip.in_snippet() and vim.fn.mode() == "n" then luasnip.unlink_current() end
+        return false
+      end
+    end,
+  },
   -- I'd like to keep it enabled for search, while disabling for command line.
   -- see https://github.com/Saghen/blink.cmp/discussions/1580
   cmdline = { enabled = false, },
