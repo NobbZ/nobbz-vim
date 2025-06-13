@@ -1,31 +1,29 @@
 local luasnip = require("luasnip")
+local lualoader = require("luasnip.loaders.from_lua")
 
----returns a function that steps a choice if available by `step`
----@param step integer
----@return function
-local function choice(step)
-  return function()
-    if luasnip.choice_active() then luasnip.change_choice(step) end
-  end
-end
-
----returns a function that steps through template gaps by `step_size`
----@param step_size integer
----@return function
-local function stepper(step_size)
-  return function()
-    if luasnip.jumpable(step_size) then
-      luasnip.jump(step_size)
-    else
-      return step_size > 0 and "<Tab>" or "<S-Tab>"
-    end
-  end
-end
+luasnip.config.setup({
+  enable_autosnippets = true,
+})
 
 WK.add({
-  { "<Tab>",   stepper(1),     desc = "next snippet gap",     mode = { "s", "i", }, expr = true, },
-  { "<S-Tab>", stepper(-1),    desc = "previous snippet gap", mode = { "s", "i", }, expr = true, },
-  { "<C-a>",   choice(1),      desc = "next choice",          mode = { "s", "i", }, },
-  { "<C-s>",   choice(-1),     desc = "previous choice",      mode = { "s", "i", }, },
-  { "<C-e>",   luasnip.expand, desc = "expand snippet",       mode = "s", },
+  { "<C-k>", luasnip.expand, desc = "expand snippet", },
 })
+
+local function script_path(suffix)
+  local path = debug.getinfo(2, "S").source:sub(2):match("(.*/)")
+  if suffix then return path .. suffix end
+  return path
+end
+
+local function list_snips()
+  local ft_list = luasnip.available()[vim.o.filetype]
+  local ft_snips = {}
+  for _, item in pairs(ft_list) do
+    ft_snips[item.trigger] = item.desc
+  end
+  vim.print(ft_snips)
+end
+
+vim.api.nvim_create_user_command("SnipList", list_snips, {})
+
+lualoader.load({ paths = script_path("luasnip"), })
