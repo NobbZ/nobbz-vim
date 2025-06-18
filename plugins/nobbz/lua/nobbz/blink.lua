@@ -3,6 +3,11 @@ local luasnip = require("luasnip")
 
 local winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel"
 
+local function is_hidden_snippet()
+  local ls = require("luasnip")
+  return not require("blink.cmp").is_visible() and not ls.in_snippet() and ls.expandable()
+end
+
 blink.setup({
   snippets = {
     -- preset = "luasnip",
@@ -13,6 +18,11 @@ blink.setup({
         if not luasnip.in_snippet() and vim.fn.mode() == "n" then luasnip.unlink_current() end
         return false
       end
+    end,
+    expand = function(snippet) luasnip.lsp_expand(snippet) end,
+    jump = function(direction)
+      if is_hidden_snippet() then return luasnip.expand_or_jump() end
+      return luasnip.jumpable(direction) and luasnip.jump(direction)
     end,
   },
   -- I'd like to keep it enabled for search, while disabling for command line.
