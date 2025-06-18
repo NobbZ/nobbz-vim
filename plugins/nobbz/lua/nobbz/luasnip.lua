@@ -6,7 +6,7 @@ luasnip.config.setup({
 })
 
 WK.add({
-  { "<C-k>", luasnip.expand, desc = "expand snippet", },
+  { "<C-e>", luasnip.expand, desc = "expand snippet", mode = { "i", "s", }, },
 })
 
 local function script_path(suffix)
