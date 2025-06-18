@@ -1,18 +1,15 @@
 return {
-  s({ trig = "external", desc = "external reference", },
-    { t("@external("),
+  s({ trig = "external", name = "external definition", desc = "external reference", },
+    fmt([[
+      @external({}, "{}", "{}")
+      pub fn {}({}) -> {}
+    ]], {
       c(1, { t("erlang"), t("javascript"), }),
-      t(", \""),
       i(2, "module"),
-      t("\", \""),
       i(3, "function"),
-      t("\")\npub fn "),
       i(4, "name"),
-      t("("),
       i(5, "args"),
-      t(")"),
-      t(" -> "),
-      i(6, "return"),
-      t("\n"),
-    }),
+      i(0, "return"),
+    })
+  ),
 }
