@@ -10,7 +10,7 @@ end
 
 blink.setup({
   snippets = {
-    -- preset = "luasnip",
+    preset = "luasnip",
     active = function()
       if luasnip.in_snippet() and not blink.is_visible() then
         return true
