@@ -19,5 +19,5 @@ return {
   s({ trig = "fnM", name = "module function", desc = "function definition in module", },
     fmt(module_fun_string, { i(1, "name"), i(2), i(0), })),
   s({ trig = "mod", name = "module", desc = "module definition", },
-    fmt(module_string, { i(1, "name"), i(2, "func"), i(3), i(0), })),
+    fmt(module_string, { i(1, "name"), i(2, "func"), i(0), })),
 }

@@ -4,5 +4,5 @@ return {
   s({ trig = "defp:", name = "defp oneliner", desc = "one line private function definition", },
     fmt("defp {}({}), do: {}", { i(1, "name"), i(2, "args"), i(0, "body"), })),
   s({ trig = ">d", name = "pipe debug", desc = "pipe into debug", },
-    fmt("|> dbg()")),
+    t("|> dbg()")),
 }
