@@ -1,12 +1,21 @@
-local luasnip = require("luasnip")
 local lualoader = require("luasnip.loaders.from_lua")
+local luasnip = require("luasnip")
+local select = require("luasnip.extras.select_choice")
 
 luasnip.config.setup({
   enable_autosnippets = true,
 })
 
+local function cycle()
+  if luasnip.choice_active() then
+    return luasnip.change_choice(1)
+  end
+end
+
 WK.add({
-  { "<C-k>", luasnip.expand, desc = "expand snippet", },
+  { "<C-e>",   luasnip.expand, desc = "expand snippet",            mode = { "i", "s", }, },
+  { "<C-j>",   cycle,          desc = "Cycle choices in node",     mode = { "i", "s", }, },
+  { "<C-S-j>", select,         desc = "UI select choices in node", mode = { "i", "s", }, },
 })
 
 local function script_path(suffix)
