@@ -1,4 +1,8 @@
 local null_ls = require("null-ls")
+local lspconfig = require("lspconfig")
+local helpers = require("nobbz.lsp.helpers")
+local register_lsp = require("nobbz.health").register_lsp
+
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
@@ -24,7 +28,6 @@ null_ls.setup({
 -- capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Load individual languages configuration
-require("nobbz.lsp.astro")
 require("nobbz.lsp.beancount")
 require("nobbz.lsp.c-cpp")
 require("nobbz.lsp.digestif")
@@ -42,3 +45,22 @@ require("nobbz.lsp.rust")
 require("nobbz.lsp.tailwind")
 require("nobbz.lsp.typescript")
 require("nobbz.lsp.zig")
+
+local clients = {
+  require("nobbz.lsp.astro"),
+}
+
+for _, client_config in ipairs(clients) do
+  local name = client_config.name
+  local capabilities = client_config.capabilities or LSP_CAPAS
+  local on_attach = client_config.on_attach or { helpers.default, }
+
+  local setup = {
+    on_attach = helpers.combine(on_attach),
+    capabilities = capabilities,
+  }
+
+  lspconfig[name].setup(setup)
+
+  register_lsp(client_config.name)
+end
