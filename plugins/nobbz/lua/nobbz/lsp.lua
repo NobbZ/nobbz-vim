@@ -1,5 +1,4 @@
 local null_ls = require("null-ls")
-local lspconfig = require("lspconfig")
 local helpers = require("nobbz.lsp.helpers")
 local register_lsp = require("nobbz.health").register_lsp
 
@@ -72,7 +71,8 @@ for _, client_module in ipairs(clients) do
     filetypes = client_config.filetypes,
   }
 
-  lspconfig[name].setup(setup)
+  vim.lsp.config(name, setup)
+  vim.lsp.enable(name)
 
   register_lsp(client_config.name)
 
