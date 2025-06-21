@@ -28,7 +28,6 @@ null_ls.setup({
 -- capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Load individual languages configuration
-require("nobbz.lsp.lua")
 require("nobbz.lsp.mdx")
 require("nobbz.lsp.meson")
 require("nobbz.lsp.nil")
@@ -48,6 +47,7 @@ local clients = {
   require("nobbz.lsp.elixir"),
   require("nobbz.lsp.gleam"),
   require("nobbz.lsp.html"),
+  require("nobbz.lsp.lua"),
 }
 
 for _, client_config in ipairs(clients) do
@@ -58,6 +58,8 @@ for _, client_config in ipairs(clients) do
   local init_options = client_config.init_options
   local root_dir = client_config.root_dir
   local cmd = client_config.cmd
+  local settings = client_config.settings
+  local on_init = client_config.on_init
 
   local setup = {
     on_attach = helpers.combine(on_attach),
@@ -65,6 +67,8 @@ for _, client_config in ipairs(clients) do
     init_options = init_options,
     root_dir = root_dir,
     cmd = cmd,
+    settings = settings,
+    on_init = on_init,
   }
 
   if activate() then
