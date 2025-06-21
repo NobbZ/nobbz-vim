@@ -1,10 +1,8 @@
 local helpers = require("nobbz.lsp.helpers")
 
-require("lspconfig").nushell.setup({
-  on_attach = helpers.default,
-  capabilities = LSP_CAPAS,
+return {
+  name = "nushell",
+  on_attach = { helpers.default, },
   filetypes = { "nu", },
   cmd = { "nu", "--lsp", },
-})
-
-require("nobbz.health").register_lsp("nushell")
+}

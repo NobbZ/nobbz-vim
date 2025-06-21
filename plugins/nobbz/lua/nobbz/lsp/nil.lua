@@ -1,8 +1,8 @@
 local helpers = require("nobbz.lsp.helpers")
 
-require("lspconfig").nil_ls.setup({
-  on_attach = helpers.keymap,
-  capabilities = LSP_CAPAS,
+return {
+  name = "nil_ls",
+  on_attach = { helpers.keymap, },
   cmd = { "nil", },
   settings = {
     ["nil"] = {
@@ -20,6 +20,4 @@ require("lspconfig").nil_ls.setup({
       },
     },
   },
-})
-
-require("nobbz.health").register_lsp("nil_ls")
+}

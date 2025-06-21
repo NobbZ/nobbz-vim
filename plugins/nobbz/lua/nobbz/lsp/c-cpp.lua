@@ -1,9 +1,7 @@
 local helpers = require("nobbz.lsp.helpers")
 
-require("lspconfig").clangd.setup({
-  on_attach = helpers.keymap,
-  capabilities = LSP_CAPAS,
+return {
+  name = "clangd",
+  on_attach = { helpers.keymap, },
   cmd = { "clangd", "--background-index", },
-})
-
-require("nobbz.health").register_lsp("clangd")
+}
