@@ -13,15 +13,12 @@ if root_dir ~= nil then
   journal_file = vim.fs.joinpath(root_dir, "main.beancount")
 end
 
-if root_dir ~= nil
-    and journal_file ~= nil
-    and vim.uv.fs_stat(journal_file) ~= nil then
-  require("lspconfig").beancount.setup({
-    on_attach = helpers.keymap,
-    capabilities = LSP_CAPAS,
-    root_dir = root_dir,
-    init_options = { journal_file = journal_file, },
-  })
-
-  require("nobbz.health").register_lsp("beancount")
-end
+return {
+  name = "beancount",
+  activate = function()
+    return root_dir ~= nil and journal_file ~= nil and vim.uv.fs_stat(journal_file) ~= nil
+  end,
+  on_attach = { helpers.keymap, },
+  init_options = { journal_file = journal_file, },
+  root_dir = root_dir,
+}

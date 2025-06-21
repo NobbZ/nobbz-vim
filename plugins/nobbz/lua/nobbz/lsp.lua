@@ -28,7 +28,6 @@ null_ls.setup({
 -- capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Load individual languages configuration
-require("nobbz.lsp.beancount")
 require("nobbz.lsp.c-cpp")
 require("nobbz.lsp.digestif")
 require("nobbz.lsp.elixir")
@@ -48,19 +47,27 @@ require("nobbz.lsp.zig")
 
 local clients = {
   require("nobbz.lsp.astro"),
+  require("nobbz.lsp.beancount"),
 }
 
 for _, client_config in ipairs(clients) do
   local name = client_config.name
+  local activate = client_config.activate or function() return true end
   local capabilities = client_config.capabilities or LSP_CAPAS
   local on_attach = client_config.on_attach or { helpers.default, }
+  local init_options = client_config.init_options
+  local root_dir = client_config.root_dir
 
   local setup = {
     on_attach = helpers.combine(on_attach),
     capabilities = capabilities,
+    init_options = init_options,
+    root_dir = root_dir,
   }
 
-  lspconfig[name].setup(setup)
+  if activate() then
+    lspconfig[name].setup(setup)
 
-  register_lsp(client_config.name)
+    register_lsp(client_config.name)
+  end
 end
