@@ -28,8 +28,6 @@ null_ls.setup({
 -- capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Load individual languages configuration
-require("nobbz.lsp.zig")
-
 local clients = {
   require("nobbz.lsp.astro"),
   require("nobbz.lsp.beancount"),
@@ -48,6 +46,7 @@ local clients = {
   require("nobbz.lsp.rust"),
   require("nobbz.lsp.tailwind"),
   require("nobbz.lsp.typescript"),
+  require("nobbz.lsp.zig"),
 }
 
 for _, client_config in ipairs(clients) do
