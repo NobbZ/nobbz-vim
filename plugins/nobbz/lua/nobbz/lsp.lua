@@ -28,7 +28,6 @@ null_ls.setup({
 -- capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Load individual languages configuration
-require("nobbz.lsp.nil")
 require("nobbz.lsp.nushell")
 require("nobbz.lsp.oxide")
 require("nobbz.lsp.python")
@@ -48,10 +47,11 @@ local clients = {
   require("nobbz.lsp.lua"),
   require("nobbz.lsp.mdx"),
   require("nobbz.lsp.meson"),
+  require("nobbz.lsp.nil"),
 }
 
 for _, client_config in ipairs(clients) do
-  local name = client_config.name
+  local name = client_config.name or error("client name is required")
   local activate = client_config.activate or function() return true end
   local capabilities = client_config.capabilities or LSP_CAPAS
   local on_attach = client_config.on_attach or { helpers.default, }
