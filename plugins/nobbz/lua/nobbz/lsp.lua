@@ -28,7 +28,6 @@ null_ls.setup({
 -- capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Load individual languages configuration
-require("nobbz.lsp.gleam")
 require("nobbz.lsp.html")
 require("nobbz.lsp.lua")
 require("nobbz.lsp.mdx")
@@ -48,6 +47,7 @@ local clients = {
   require("nobbz.lsp.c-cpp"),
   require("nobbz.lsp.digestif"),
   require("nobbz.lsp.elixir"),
+  require("nobbz.lsp.gleam"),
 }
 
 for _, client_config in ipairs(clients) do
