@@ -7,9 +7,8 @@ capabilities.workspace = {
   },
 }
 
-require("lspconfig").markdown_oxide.setup({
+return {
+  name = "markdown_oxide",
   on_attach = helpers.default,
   capabilities = capabilities,
-})
-
-require("nobbz.health").register_lsp("markdown_oxide")
+}
