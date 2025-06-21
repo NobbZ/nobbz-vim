@@ -1,8 +1,8 @@
 local helpers = require("nobbz.lsp.helpers")
 
-require("lspconfig").basedpyright.setup({
-  on_attach = helpers.keymap,
-  capabilities = LSP_CAPAS,
+return {
+  name = "basedpyright",
+  on_attach = { helpers.keymap, },
   settings = {
     basedpyright = {
       analysis = {
@@ -13,6 +13,4 @@ require("lspconfig").basedpyright.setup({
       },
     },
   },
-})
-
-require("nobbz.health").register_lsp("basedpyright")
+}
