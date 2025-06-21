@@ -29,52 +29,52 @@ null_ls.setup({
 
 -- Load individual languages configuration
 local clients = {
-  require("nobbz.lsp.astro"),
-  require("nobbz.lsp.beancount"),
-  require("nobbz.lsp.c-cpp"),
-  require("nobbz.lsp.digestif"),
-  require("nobbz.lsp.elixir"),
-  require("nobbz.lsp.gleam"),
-  require("nobbz.lsp.html"),
-  require("nobbz.lsp.lua"),
-  require("nobbz.lsp.mdx"),
-  require("nobbz.lsp.meson"),
-  require("nobbz.lsp.nil"),
-  require("nobbz.lsp.nushell"),
-  require("nobbz.lsp.oxide"),
-  require("nobbz.lsp.python"),
-  require("nobbz.lsp.rust"),
-  require("nobbz.lsp.tailwind"),
-  require("nobbz.lsp.typescript"),
-  require("nobbz.lsp.zig"),
+  "nobbz.lsp.astro",
+  "nobbz.lsp.beancount",
+  "nobbz.lsp.c-cpp",
+  "nobbz.lsp.digestif",
+  "nobbz.lsp.elixir",
+  "nobbz.lsp.gleam",
+  "nobbz.lsp.html",
+  "nobbz.lsp.lua",
+  "nobbz.lsp.mdx",
+  "nobbz.lsp.meson",
+  "nobbz.lsp.nil",
+  "nobbz.lsp.nushell",
+  "nobbz.lsp.oxide",
+  "nobbz.lsp.python",
+  "nobbz.lsp.rust",
+  "nobbz.lsp.tailwind",
+  "nobbz.lsp.typescript",
+  "nobbz.lsp.zig",
 }
 
-for _, client_config in ipairs(clients) do
-  local name = client_config.name or error("client name is required")
-  local activate = client_config.activate or function() return true end
-  local capabilities = client_config.capabilities or LSP_CAPAS
-  local on_attach = client_config.on_attach or { helpers.default, }
-  local init_options = client_config.init_options
-  local root_dir = client_config.root_dir
-  local cmd = client_config.cmd
-  local settings = client_config.settings
-  local on_init = client_config.on_init
-  local filetypes = client_config.filetypes
+for _, client_module in ipairs(clients) do
+  local client_config = require(client_module)
 
+  -- Extract required fields with validation
+  local name = client_config.name or error("client name is required in " .. client_module)
+
+  -- Shortcircuit if LS should not be loaded
+  if client_config.activate and not client_config.activate() then
+    goto continue
+  end
+
+  -- Create setup table with defaults applied
   local setup = {
-    on_attach = helpers.combine(on_attach),
-    capabilities = capabilities,
-    init_options = init_options,
-    root_dir = root_dir,
-    cmd = cmd,
-    settings = settings,
-    on_init = on_init,
-    filetypes = filetypes,
+    on_attach = helpers.combine(client_config.on_attach or { helpers.default, }),
+    capabilities = client_config.capabilities or LSP_CAPAS,
+    init_options = client_config.init_options,
+    root_dir = client_config.root_dir,
+    cmd = client_config.cmd,
+    settings = client_config.settings,
+    on_init = client_config.on_init,
+    filetypes = client_config.filetypes,
   }
 
-  if activate() then
-    lspconfig[name].setup(setup)
+  lspconfig[name].setup(setup)
 
-    register_lsp(client_config.name)
-  end
+  register_lsp(client_config.name)
+
+  ::continue::
 end
