@@ -71,7 +71,7 @@ end
 ---but makes it required when a relevant filetype is opened
 ---@param lsp string the name of the LSP server as defined in lspconfig
 M.register_lsp = function(lsp)
-  local config = require("lspconfig")[lsp]
+  local config = vim.lsp.config[lsp]
   local program = config.cmd[1]
   local pattern = config.filetypes[1]
 
