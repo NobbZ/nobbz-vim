@@ -28,7 +28,6 @@ null_ls.setup({
 -- capabilities = require("blink.cmp").get_lsp_capabilities()
 
 -- Load individual languages configuration
-require("nobbz.lsp.nushell")
 require("nobbz.lsp.oxide")
 require("nobbz.lsp.python")
 require("nobbz.lsp.rust")
@@ -48,6 +47,7 @@ local clients = {
   require("nobbz.lsp.mdx"),
   require("nobbz.lsp.meson"),
   require("nobbz.lsp.nil"),
+  require("nobbz.lsp.nushell"),
 }
 
 for _, client_config in ipairs(clients) do
@@ -60,6 +60,7 @@ for _, client_config in ipairs(clients) do
   local cmd = client_config.cmd
   local settings = client_config.settings
   local on_init = client_config.on_init
+  local filetypes = client_config.filetypes
 
   local setup = {
     on_attach = helpers.combine(on_attach),
@@ -69,6 +70,7 @@ for _, client_config in ipairs(clients) do
     cmd = cmd,
     settings = settings,
     on_init = on_init,
+    filetypes = filetypes,
   }
 
   if activate() then
