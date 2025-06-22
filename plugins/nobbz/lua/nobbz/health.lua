@@ -83,10 +83,21 @@ end
 ---If a program is registered for a second time, the `required` will be overwritten.
 ---
 ---@param program string the name of the program
----@param required boolean whether the program is required (missing programs
+---@param required_or_filetypes (boolean | string[]) whether the program is required (missing programs
 ---  will issue an error when required, a warning otherwise)
-M.register_program = function(program, required)
-  programs[program] = required
+M.register_program = function(program, required_or_filetypes)
+  if type(required_or_filetypes) == "table" then
+    M.register_program(program, false)
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = required_or_filetypes,
+      callback = function()
+        M.register_program(program, true)
+      end,
+    })
+    return
+  end
+
+  programs[program] = required_or_filetypes
 end
 
 ---Unregisters a program from the healthcheck
