@@ -1,6 +1,7 @@
 local M = {}
 
 local programs = {}
+local lsp_configs = {}
 local done = false
 
 local CRITICALITY = { OK = 1, ERROR = 2, WARN = 3, NOTICE = 4, }
@@ -11,6 +12,40 @@ local CRITICALITY = { OK = 1, ERROR = 2, WARN = 3, NOTICE = 4, }
 local function in_path(program)
   return vim.fn.executable(program) == 1
 end
+
+---Performs health checks for all registered LSP configs
+---Displays results sorted by criticality and then alphabetically
+local function check_lspconfigs()
+  local configs = {}
+
+  vim.health.start("LSP Configurations:")
+  for lsp, available in pairs(lsp_configs) do
+    if available then
+      table.insert(configs, { lsp, vim.health.ok, "is configured", CRITICALITY.OK, })
+    else
+      table.insert(configs, { lsp, vim.health.error, "is not configured", CRITICALITY.ERROR, })
+    end
+  end
+
+  table.sort(configs, function(a, b)
+    -- Sort by program name, if same criticality
+    if a[4] == b[4] then return a[1] < b[1] end
+
+    -- Sort by criticality otherwise
+    return a[4] < b[4]
+  end)
+
+  for _, info in ipairs(configs) do
+    local report_func = info[2]
+    local lsp = info[1]
+    local msg = info[3]
+
+    local message = string.format("`%s` %s", lsp, msg)
+
+    report_func(message)
+  end
+end
+
 
 ---Performs health checks for all registered programs
 ---Displays results sorted by criticality and then alphabetically
@@ -72,6 +107,10 @@ end
 ---@param lsp string the name of the LSP server as defined in lspconfig
 M.register_lsp = function(lsp)
   local config = vim.lsp.config[lsp]
+
+  lsp_configs[lsp] = not not config
+  if not config then return end
+
   local program = config.cmd[1]
   local pattern = config.filetypes[1]
 
@@ -101,6 +140,7 @@ M.check = function()
     vim.health.warn("Config *not* loaded completely")
   end
 
+  check_lspconfigs()
   check_programs()
 end
 
