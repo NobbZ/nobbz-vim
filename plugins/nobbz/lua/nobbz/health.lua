@@ -25,6 +25,19 @@ local function healt_sort(tbl)
   table.sort(tbl, health_cmp)
 end
 
+local function report_table(tbl)
+  for _, info in ipairs(tbl) do
+    local report_func = info[2]
+    local label = info[1]
+    local msg = info[3]
+
+    local message = string.format("`%s` %s", label, msg)
+
+    report_func(message)
+  end
+end
+
+
 ---Performs health checks for all registered LSP configs
 ---Displays results sorted by criticality and then alphabetically
 local function check_lspconfigs()
@@ -40,16 +53,7 @@ local function check_lspconfigs()
   end
 
   healt_sort(configs)
-
-  for _, info in ipairs(configs) do
-    local report_func = info[2]
-    local lsp = info[1]
-    local msg = info[3]
-
-    local message = string.format("`%s` %s", lsp, msg)
-
-    report_func(message)
-  end
+  report_table(configs)
 end
 
 
@@ -70,16 +74,7 @@ local function check_programs()
   end
 
   healt_sort(binaries)
-
-  for _, info in ipairs(binaries) do
-    local report_func = info[2]
-    local program = vim.fs.basename(info[1])
-    local msg = info[3]
-
-    local message = string.format("`%s` %s", program, msg)
-
-    report_func(message)
-  end
+  report_table(binaries)
 end
 
 ---Registers a program for the healthcheck, the program will be searched in the
