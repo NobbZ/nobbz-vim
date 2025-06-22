@@ -21,7 +21,7 @@ local function health_cmp(a, b)
   return a[4] < b[4]
 end
 
-local function healt_sort(tbl)
+local function health_sort(tbl)
   table.sort(tbl, health_cmp)
 end
 
@@ -52,7 +52,7 @@ local function check_lspconfigs()
     end
   end
 
-  healt_sort(configs)
+  health_sort(configs)
   report_table(configs)
 end
 
@@ -73,7 +73,7 @@ local function check_programs()
     end
   end
 
-  healt_sort(binaries)
+  health_sort(binaries)
   report_table(binaries)
 end
 
