@@ -118,16 +118,9 @@ M.register_lsp = function(lsp)
   if not config then return end
 
   local program = config.cmd[1]
-  local pattern = config.filetypes[1]
+  local patterns = config.filetypes
 
-  M.register_program(program, false)
-
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = pattern,
-    callback = function()
-      M.register_program(program, true)
-    end,
-  })
+  M.register_program(program, patterns)
 end
 
 ---Marks the configuration as completely loaded
