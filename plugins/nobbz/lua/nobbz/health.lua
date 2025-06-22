@@ -13,6 +13,18 @@ local function in_path(program)
   return vim.fn.executable(program) == 1
 end
 
+local function health_cmp(a, b)
+  -- Sort by program name, if same criticality
+  if a[4] == b[4] then return a[1] < b[1] end
+
+  -- Sort by criticality otherwise
+  return a[4] < b[4]
+end
+
+local function healt_sort(tbl)
+  table.sort(tbl, health_cmp)
+end
+
 ---Performs health checks for all registered LSP configs
 ---Displays results sorted by criticality and then alphabetically
 local function check_lspconfigs()
@@ -27,13 +39,7 @@ local function check_lspconfigs()
     end
   end
 
-  table.sort(configs, function(a, b)
-    -- Sort by program name, if same criticality
-    if a[4] == b[4] then return a[1] < b[1] end
-
-    -- Sort by criticality otherwise
-    return a[4] < b[4]
-  end)
+  healt_sort(configs)
 
   for _, info in ipairs(configs) do
     local report_func = info[2]
@@ -63,13 +69,7 @@ local function check_programs()
     end
   end
 
-  table.sort(binaries, function(a, b)
-    -- Sort by program name, if same criticality
-    if a[4] == b[4] then return a[1] < b[1] end
-
-    -- Sort by criticality otherwise
-    return a[4] < b[4]
-  end)
+  healt_sort(binaries)
 
   for _, info in ipairs(binaries) do
     local report_func = info[2]
