@@ -12,12 +12,6 @@ local function cycle()
   end
 end
 
-WK.add({
-  { "<C-e>",   luasnip.expand, desc = "expand snippet",            mode = { "i", "s", }, },
-  { "<C-j>",   cycle,          desc = "Cycle choices in node",     mode = { "i", "s", }, },
-  { "<C-S-j>", select,         desc = "UI select choices in node", mode = { "i", "s", }, },
-})
-
 local function script_path(suffix)
   local path = debug.getinfo(2, "S").source:sub(2):match("(.*/)")
   if suffix then return path .. suffix end
@@ -32,6 +26,12 @@ local function list_snips()
   end
   vim.print(ft_snips)
 end
+
+WK.add({
+  { "<C-e>",   luasnip.expand, desc = "expand snippet",            mode = { "i", "s", }, },
+  { "<C-j>",   cycle,          desc = "Cycle choices in node",     mode = { "i", "s", }, },
+  { "<C-S-j>", select,         desc = "UI select choices in node", mode = { "i", "s", }, },
+})
 
 vim.api.nvim_create_user_command("SnipList", list_snips, {})
 
