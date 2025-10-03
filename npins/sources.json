@@ -453,9 +453,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "370ec46f710e058c9c1646273e6b225acf47cbed",
-      "url": "https://github.com/folke/which-key.nvim/archive/370ec46f710e058c9c1646273e6b225acf47cbed.tar.gz",
-      "hash": "0am4yw7lnibgc949qvbsi4a7hqdx6gk209l5vafv5bwcvd4irwxs"
+      "revision": "904308e6885bbb7b60714c80ab3daf0c071c1492",
+      "url": "https://github.com/folke/which-key.nvim/archive/904308e6885bbb7b60714c80ab3daf0c071c1492.tar.gz",
+      "hash": "1dfavp3dwqpnbw2c93zkaayimcjpwc9p0190c2d7p9lhzsb27n94"
     }
   },
   "version": 5
