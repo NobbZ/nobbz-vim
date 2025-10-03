@@ -142,9 +142,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "aabf1976dfefe5665233c600421aea2798ff7ea0",
-      "url": "https://github.com/ledger/vim-ledger/archive/aabf1976dfefe5665233c600421aea2798ff7ea0.tar.gz",
-      "hash": "1ls2cy0a45sllybmm46swl1bwc4ph8k6m3i7fapnnpkd483lwl13"
+      "revision": "a0670d0c60c4933a70767033c89467631643a4c1",
+      "url": "https://github.com/ledger/vim-ledger/archive/a0670d0c60c4933a70767033c89467631643a4c1.tar.gz",
+      "hash": "11yl61fcbga0n1gmjw7sx61k3l81gs4s5m2pc4ry5nccf9sa2cvz"
     },
     "nvim-lspconfig": {
       "type": "Git",
