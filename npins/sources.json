@@ -220,9 +220,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "dfa0d2def6dbf77e9206b16dc90cad4dd23d55d2",
-      "url": "https://github.com/tadmccorkle/markdown.nvim/archive/dfa0d2def6dbf77e9206b16dc90cad4dd23d55d2.tar.gz",
-      "hash": "0p454caxkd8chg0v1m085vlmrmhkvhfwq625wgy9s8bzinja5rb0"
+      "revision": "34bb88989ace6c678abd947662668994219996e0",
+      "url": "https://github.com/tadmccorkle/markdown.nvim/archive/34bb88989ace6c678abd947662668994219996e0.tar.gz",
+      "hash": "0r7vlcbr76slmcrri6v805dgmxrsj7h2m89xq1i0z0jzbinmksph"
     },
     "nvim-mini": {
       "type": "Git",
