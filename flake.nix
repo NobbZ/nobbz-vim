@@ -71,7 +71,6 @@
     parts.inputs.nixpkgs-lib.follows = "nixpkgs";
 
     wrapper-manager.url = "github:viperml/wrapper-manager";
-    wrapper-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
     gen-luarc.inputs.nixpkgs.follows = "nixpkgs";
