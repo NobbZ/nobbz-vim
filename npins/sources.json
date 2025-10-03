@@ -233,9 +233,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "18889a4993a2c6de64eb07f91e7ad8666793441a",
-      "url": "https://github.com/echasnovski/mini.nvim/archive/18889a4993a2c6de64eb07f91e7ad8666793441a.tar.gz",
-      "hash": "0a2lkw7qqix0x8bqhdcn8vyhc585vf3gzdryirqy4lpgxj84af64"
+      "revision": "126ce3328c78399dcff58272f6f540a373b62a75",
+      "url": "https://github.com/echasnovski/mini.nvim/archive/126ce3328c78399dcff58272f6f540a373b62a75.tar.gz",
+      "hash": "0fpxwi392y56d0avzs1lxnangahbjj7x1fhs49ix25p846p232sv"
     },
     "nvim-nabla": {
       "type": "Git",
