@@ -322,20 +322,17 @@
       "hash": "1px6zqkj1plsydav6zpw8in92bqz4byv4mh4cd570wksynfkv5s8"
     },
     "nvim-nvim-ufo": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "kevinhwang91",
         "repo": "nvim-ufo"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
+      "branch": "main",
       "submodules": false,
-      "version": "v1.5.0",
-      "revision": "61463090a4f55f5d080236ea62f09d1cd8976ff3",
-      "url": "https://api.github.com/repos/kevinhwang91/nvim-ufo/tarball/v1.5.0",
-      "hash": "0ri5nwv9zzwzar0k78avirr8dnsqz7bc8lnspdd5m3gvafj20r48"
+      "revision": "72d54c31079d38d8dfc5456131b1d0fb5c0264b0",
+      "url": "https://github.com/kevinhwang91/nvim-ufo/archive/72d54c31079d38d8dfc5456131b1d0fb5c0264b0.tar.gz",
+      "hash": "1vnxfbzrhhkqcga3fwvy6lfrrnisccq48kiyh28si9a3nzvb9ijl"
     },
     "nvim-plenary": {
       "type": "Git",
