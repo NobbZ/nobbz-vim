@@ -36,7 +36,6 @@
       telescope-ui-select = false;
       which-key = false;
       # optional plugins (aka opt)
-      augment = true;
       crates = true;
       flash = true;
       ledger = true;

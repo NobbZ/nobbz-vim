@@ -29,10 +29,6 @@ in
         "--set"
         "NOBBZ_NVIM_PATH"
         "${placeholder "out"}/bin/nvim"
-        # This tells augment which node binary to use.
-        "--set"
-        "AUGMENT_NODE"
-        "${lib.getExe nodejs}"
         "--prefix"
         "PATH"
         ":"

@@ -39,22 +39,6 @@
       "url": "https://github.com/neovim/neovim/archive/2b83237b0f31d83e3f781fe592d5455e0af53c6a.tar.gz",
       "hash": "0x7b65l96af2ksi654cv8ngw285fbnsqkny21j0ifb1b1527g3nd"
     },
-    "nvim-augment": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "augmentcode",
-        "repo": "augment.vim"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "v0.42.0",
-      "revision": "96e8d6d16268e9fc2b0b1cc98ec754effa24690e",
-      "url": "https://api.github.com/repos/augmentcode/augment.vim/tarball/v0.42.0",
-      "hash": "0fkdyr8ak3j7jkccgcndzjkfxgx8mwjhb082lxw12sdaq9amgi6m"
-    },
     "nvim-catppuccin": {
       "type": "Git",
       "repository": {
