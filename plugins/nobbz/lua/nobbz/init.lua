@@ -31,7 +31,6 @@ local function rs(submodule)
   return require(this_module .. "." .. submodule)
 end
 
-rs("augment")    -- Some AI thingy
 rs("blink")      -- foundations for completions
 rs("flash")      -- some easier motions
 rs("git")        -- set up neogit (kind of magit)
