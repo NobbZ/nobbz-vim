@@ -31,6 +31,7 @@ local function rs(submodule)
   return require(this_module .. "." .. submodule)
 end
 
+rs("bigfile")    -- disable some features for huge files
 rs("blink")      -- foundations for completions
 rs("flash")      -- some easier motions
 rs("git")        -- set up neogit (kind of magit)
