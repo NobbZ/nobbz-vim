@@ -18,8 +18,6 @@ vim.o.listchars = "tab:⇢⇥,trail:⎵,eol:↩"
 vim.o.wrap = false
 -- stylua: ignore end
 
-vim.g.mapleader = " " -- set `<leader>` to the space key
-
 -- Set up indent markers
 require("ibl").setup({
   indent = { char = "┊", },

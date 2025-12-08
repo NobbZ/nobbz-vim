@@ -1,3 +1,6 @@
+-- Set leader key BEFORE loading any plugins that use it
+vim.g.mapleader = " " -- set `<leader>` to the space key
+
 local lazy = require("nobbz.lazy")
 
 WK = require("which-key")
