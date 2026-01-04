@@ -37,6 +37,7 @@ require("nobbz.lazy").add_specs({
         end,
       })
     end,
+    ft = { "rust", "elixir" },
     keys = {
       { "ys", mode = { "n", }, },
       { "ds", mode = { "n", }, },
