@@ -13,9 +13,9 @@ require("nobbz.lazy").add_specs({
           require("nvim-surround").buffer_setup({
             surrounds = {
               ["r"] = {
-                add = { "r#\"", "\"#" },
-                find = "r#\".-\"#",
-                delete = "^(r#\")().-(\"#)()$",
+                add = { 'r#"', '"#' },
+                find = 'r%#".-"%#',
+                delete = '^(r%#")().-("%#)()$',
               },
             },
           })
@@ -28,9 +28,9 @@ require("nobbz.lazy").add_specs({
           require("nvim-surround").buffer_setup({
             surrounds = {
               ["r"] = {
-                add = { "~S\"\"\"", "\"\"\"" },
-                find = "~S\"\"\".-\"\"\"",
-                delete = "^(~S\"\"\")().-(\"\"\")()$",
+                add = { '~S"""', '"""' },
+                find = '~S""".-"""',
+                delete = '^(~S""")().-(""\")()$',
               },
             },
           })
