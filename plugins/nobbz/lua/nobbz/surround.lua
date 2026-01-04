@@ -12,7 +12,7 @@ require("nobbz.lazy").add_specs({
         callback = function()
           require("nvim-surround").buffer_setup({
             surrounds = {
-              ["r"] = {
+              ["R"] = {
                 add = { 'r#"', '"#' },
                 find = 'r%#".-"%#',
                 delete = '^(r%#")().-("%#)()$',
@@ -27,7 +27,7 @@ require("nobbz.lazy").add_specs({
         callback = function()
           require("nvim-surround").buffer_setup({
             surrounds = {
-              ["r"] = {
+              ["R"] = {
                 add = { '~S"""', '"""' },
                 find = '~S""".-"""',
                 delete = '^(~S""")().-("")")()$',
