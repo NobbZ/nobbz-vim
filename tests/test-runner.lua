@@ -3,7 +3,6 @@
 
 local M = {}
 
-local test_results = {}
 local test_count = 0
 local pass_count = 0
 
@@ -16,12 +15,10 @@ local function test(name, test_fn)
 
   if success and result ~= false then
     pass_count = pass_count + 1
-    table.insert(test_results, {name = name, passed = true})
     print(string.format("✓ %s", name))
   else
     local error_msg = result
     if type(result) == "boolean" then error_msg = "Test returned false" end
-    table.insert(test_results, {name = name, passed = false, error = error_msg})
     print(string.format("✗ %s: %s", name, error_msg))
   end
 end
@@ -83,10 +80,10 @@ M.run = function()
 
   if pass_count == test_count then
     print("ALL TESTS PASSED")
-    vim.cmd("quitall!")
+    vim.cmd.quitall()
   else
     print("TESTS FAILED")
-    vim.cmd("cquit!")
+    vim.cmd.cquit()
   end
 end
 

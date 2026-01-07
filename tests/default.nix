@@ -14,9 +14,6 @@
   testInit = pkgs.writeTextFile {
     name = "test.lua";
     text = ''
-      -- Add test runner to package path
-      vim.opt.runtimepath:prepend("${testRunner}")
-      
       -- Load the main configuration
       require("nobbz")
       
