@@ -7,6 +7,49 @@ If you want to try it and are using `nix` already and have flakes enabled, you
 can just run `nix run github:nobbz/nobbz-vim`, you might have to move/rename
 existing configuration in `~/.config/nvim` temporarily.
 
+Testing
+-------
+
+This configuration includes automated tests:
+
+* **Lua unit tests** - Test individual Lua modules
+* **Integration tests** - Test nvim behavior in realistic scenarios
+
+Run tests with:
+
+```bash
+# Run all checks (includes tests, builds, etc.)
+nix flake check
+
+# Run only Lua unit tests
+nix build .#checks.x86_64-linux.lua-tests
+
+# Run only integration tests
+nix build .#checks.x86_64-linux.integration-tests
+```
+
+Tests are automatically run on pull requests via GitHub Actions workflows.
+See `tests/README.md` for more information.
+
+Workflow Generation
+-------------------
+
+GitHub Actions workflows are generated from CUE definitions in the `cicd/` directory.
+This ensures type safety and consistency across workflows.
+
+```bash
+# Generate workflows from CUE definitions
+make workflows
+
+# Verify workflows match their definitions
+make check
+
+# Format CUE files
+make fmt
+```
+
+See `cicd/README.md` for more information.
+
 Update process
 --------------
 
