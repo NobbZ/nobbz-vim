@@ -9,15 +9,18 @@ This project includes unit tests for the Lua configuration modules using [busted
 The recommended way to run tests is using Nix:
 
 ```bash
-# Run all tests
-nix build .#checks.x86_64-linux.lua-tests
+# Run all tests (builds and executes tests)
+nix build .#lua-tests
 
 # Run tests manually via the test package
-nix build .#lua-tests
+nix build .#checks.x86_64-linux.lua-tests
 
 # Run tests in development
 nix develop
 busted tests/
+
+# Or use the convenience script
+./run-tests.sh
 ```
 
 ### Test Structure
