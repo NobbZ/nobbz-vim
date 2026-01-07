@@ -119,7 +119,6 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 **`tests/`** - Integration tests
 - `default.nix` - Flake-parts module, defines test checks
 - `test-runner.lua` - Lua test framework for headless Neovim tests
-- `test.lua` - Test initialization script (not used directly, embedded in Nix)
 
 **`.github/`** - GitHub configuration
 - `copilot-instructions.md` - This file
