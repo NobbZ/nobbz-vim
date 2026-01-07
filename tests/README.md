@@ -27,10 +27,11 @@ Tests are located in the `tests/` directory and follow the naming convention `*_
 - `helpers_spec.lua` - Tests for utility helper functions
 - `health_spec.lua` - Tests for the health check system
 - `lazy_spec.lua` - Tests for the lazy loading system
+- `example_spec.lua` - Example test patterns and templates
 
 ### Writing Tests
 
-Tests use the busted framework with BDD-style assertions:
+Tests use the busted framework with BDD-style assertions. See `example_spec.lua` for common patterns:
 
 ```lua
 describe("module name", function()
