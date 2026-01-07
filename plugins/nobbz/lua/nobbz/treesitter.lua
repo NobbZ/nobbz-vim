@@ -18,7 +18,10 @@ local M = {}
 ---
 --- @param filetype string
 function M.register(filetype)
+  local group = vim.api.nvim_create_augroup("NobbZTreesitter_" .. filetype, { clear = true, })
+
   vim.api.nvim_create_autocmd("FileType", {
+    group = group,
     pattern = filetype,
     callback = function() vim.treesitter.start() end,
   })
