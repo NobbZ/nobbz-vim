@@ -147,7 +147,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 4. **Plugin not loading:**
    - Check `optionalPlugins` in `plugins/default.nix` - `false` = mandatory (start), `true` = optional (opt)
    - If optional, must have lazy loading spec in Lua config
-   - Verify in Neovim with `:checkhealth nobbz` and `:Lazy`
+   - Verify in Neovim with `:checkhealth nobbz`
 
 5. **LSP not working:**
    - LSP binaries added to PATH in `nvim.nix` (see `generatedWrapperArgs`)
@@ -163,6 +163,7 @@ Before submitting changes:
 3. **Test run:** `nix run` (launches Neovim to verify it works)
 4. **Check health:** In Neovim, run `:checkhealth nobbz` (verifies programs and LSP configs)
 5. **Flake check:** `nix flake check` (validates flake structure)
+6. **Update instructions:** After major refactors, verify `.github/copilot-instructions.md` is still accurate
 
 **No automated CI/CD** - all validation is manual. The maintainer runs these commands before merging.
 
