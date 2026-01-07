@@ -17,12 +17,12 @@
       -- Load the main configuration
       require("nobbz")
       
-      -- Wait for config to fully load
+      -- Wait for config to fully load (250ms should be sufficient for most environments)
       vim.defer_fn(function()
         -- Run the test suite
         local test_runner = dofile("${testRunner}")
         test_runner.run()
-      end, 100)
+      end, 250)
     '';
   };
 in {

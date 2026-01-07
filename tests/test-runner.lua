@@ -80,10 +80,10 @@ M.run = function()
 
   if pass_count == test_count then
     print("ALL TESTS PASSED")
-    vim.cmd.quitall()
+    os.exit(0)
   else
     print("TESTS FAILED")
-    vim.cmd.cquit()
+    os.exit(1)
   end
 end
 
