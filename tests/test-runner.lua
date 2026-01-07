@@ -42,8 +42,17 @@ M.run = function()
 
   -- Test 3: LSP configurations are registered
   test("LSP configurations are registered", function()
-    local lsp_config = vim.lsp.config
-    return lsp_config ~= nil and next(lsp_config) ~= nil
+    -- Check if vim.lsp.config table has entries
+    -- This validates that LSP servers were configured via the health system
+    local has_lsp_config = vim.lsp.config ~= nil
+    if not has_lsp_config then return false end
+
+    -- Verify at least one LSP is configured
+    local count = 0
+    for _ in pairs(vim.lsp.config) do
+      count = count + 1
+    end
+    return count > 0
   end)
 
   -- Test 4: Lazy loading system is available
