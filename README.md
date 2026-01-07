@@ -7,6 +7,31 @@ If you want to try it and are using `nix` already and have flakes enabled, you
 can just run `nix run github:nobbz/nobbz-vim`, you might have to move/rename
 existing configuration in `~/.config/nvim` temporarily.
 
+Testing
+-------
+
+The configuration includes automated integration tests that can be run via:
+
+```bash
+nix flake check
+```
+
+This runs three test suites:
+
+1. **nvim-config-loads**: Verifies the configuration loads without errors
+2. **nvim-health-check**: Runs `:checkhealth nobbz` to verify all systems
+3. **nvim-lua-tests**: Runs Lua-based integration tests for core functionality
+
+Individual tests can be run with:
+
+```bash
+# Run specific test
+nix build .#checks.x86_64-linux.nvim-config-loads
+
+# View test output
+cat result
+```
+
 Update process
 --------------
 
@@ -15,7 +40,8 @@ Update process
 3. *optional* fix build errors
 4. update plugins: `nix run .#update-plugins`
 5. *optional* fix build errors
-6. *optional* update these instructions 😀
+6. run tests: `nix flake check`
+7. *optional* update these instructions 😀
 
 Inspiration
 -----------
