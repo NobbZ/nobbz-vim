@@ -19,6 +19,12 @@ _installCue: githubactions.#Step & {
 	with: version: "v0.14.2"
 }
 
+_installJust: githubactions.#Step & {
+	name: "Install Just"
+	uses: "extractions/setup-just@v2"
+	with: just_version: "1.36.0"
+}
+
 _installNix: githubactions.#Step & {
 	name: "Install nix"
 	uses: "cachix/install-nix-action@v31"

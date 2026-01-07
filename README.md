@@ -19,7 +19,7 @@ Run tests with:
 
 ```bash
 # Quick test runner (runs all tests)
-./scripts/run-tests.sh
+nix run .#run-tests
 
 # Run all checks (includes tests, builds, etc.)
 nix flake check
@@ -42,13 +42,13 @@ This ensures type safety and consistency across workflows.
 
 ```bash
 # Generate workflows from CUE definitions
-make workflows
+just workflows
 
 # Verify workflows match their definitions
-make check
+just check
 
 # Format CUE files
-make fmt
+just fmt
 ```
 
 See `cicd/README.md` for more information.

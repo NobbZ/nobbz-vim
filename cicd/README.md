@@ -15,13 +15,13 @@ Workflows are generated using the CUE language. To regenerate workflows:
 
 ```bash
 # Generate all workflows
-make workflows
+just workflows
 
 # Verify generated workflows match CUE definitions
-make check
+just check
 
 # Format CUE files
-make fmt
+just fmt
 ```
 
 ## Generated Files
@@ -53,8 +53,8 @@ This ensures developers don't forget to regenerate workflows after editing CUE f
 1. Create a new `.cue` file in this directory
 2. Define the workflow using the `githubactions.#Workflow` schema
 3. Add the workflow to the `workflows` map with a unique key
-4. Update the Makefile to generate and check the new workflow
-5. Run `make workflows` to generate the YAML file
+4. Update the justfile to generate and check the new workflow
+5. Run `just workflows` to generate the YAML file
 6. Commit both the CUE and generated YAML files
 
 ## CUE Language

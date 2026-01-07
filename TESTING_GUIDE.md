@@ -6,7 +6,7 @@ This guide explains how to work with the testing infrastructure in this reposito
 
 ```bash
 # Run all tests (recommended before committing)
-./scripts/run-tests.sh
+nix run .#run-tests
 
 # Or run specific test suites
 nix build .#checks.x86_64-linux.lua-tests
@@ -95,7 +95,7 @@ nix flake check --print-build-logs
 The test runner script provides colored output and runs all tests:
 
 ```bash
-./scripts/run-tests.sh
+nix run .#run-tests
 ```
 
 This will:
@@ -154,7 +154,7 @@ If CI fails but local tests pass:
 1. Check the GitHub Actions logs
 2. Look for environment differences
 3. Ensure you've committed all necessary files
-4. Check that workflows are up-to-date: `make check`
+4. Check that workflows are up-to-date: `just check`
 
 ## Best Practices
 
@@ -179,7 +179,7 @@ Always run tests before committing:
 
 ```bash
 # Quick check
-./scripts/run-tests.sh
+nix run .#run-tests
 
 # Full check (recommended)
 nix flake check

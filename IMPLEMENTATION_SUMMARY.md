@@ -56,10 +56,10 @@ We've successfully implemented:
 
 **Modified Files:**
 - `flake.nix` - Added tests import, added `cue` to devShell
-- `Makefile` - New targets for workflow generation:
-  - `make workflows` - Generate workflows from CUE
-  - `make check` - Verify workflows match definitions
-  - `make fmt` - Format CUE and Nix files
+- `justfile` - New targets for workflow generation:
+  - `just workflows` - Generate workflows from CUE
+  - `just check` - Verify workflows match definitions
+  - `just fmt` - Format CUE and Nix files
 
 ### Documentation
 
@@ -74,7 +74,7 @@ We've successfully implemented:
 ### Developer Tools
 
 **New Files:**
-- `scripts/run-tests.sh` - Convenient test runner script with colored output
+- `nix run .#run-tests` - Convenient test runner script with colored output
 
 ## How It Works
 
@@ -82,7 +82,7 @@ We've successfully implemented:
 
 1. **Local Development:**
    ```bash
-   ./scripts/run-tests.sh  # Run all tests
+   nix run .#run-tests  # Run all tests
    nix flake check         # Run all checks including tests
    ```
 
@@ -104,8 +104,8 @@ We've successfully implemented:
 
 2. **Generate workflows:**
    ```bash
-   make workflows  # Generates .github/workflows/*.yml
-   make check      # Verifies generated files match CUE
+   just workflows  # Generates .github/workflows/*.yml
+   just check      # Verifies generated files match CUE
    ```
 
 3. **Commit both CUE and YAML files:**
@@ -141,7 +141,7 @@ nix build .#neovim
 nix flake check
 
 # Verify workflows
-cd cicd && make check
+cd cicd && just check
 ```
 
 All checks should pass successfully.

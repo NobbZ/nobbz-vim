@@ -9,7 +9,8 @@ workflows: checker: githubactions.#Workflow & {
 		steps: [
 			_cloneRepo,
 			_installCue,
-			{run: "make check"},
+			_installJust,
+			{run: "just check"},
 		]
 	}
 }

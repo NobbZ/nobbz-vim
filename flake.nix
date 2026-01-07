@@ -41,7 +41,7 @@
         in
           pkgs.mkShell {
             packages = builtins.attrValues {
-              inherit (pkgs) nil stylua npins alejandra basedpyright cue;
+              inherit (pkgs) nil stylua npins alejandra basedpyright cue just;
               inherit (self'.packages) neovim neovide;
               inherit emmy-lua-code-style;
             };

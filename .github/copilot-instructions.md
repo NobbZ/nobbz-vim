@@ -27,7 +27,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
    - Useful for quick testing
 
 3. **Enter dev shell:** `nix develop`
-   - Provides: `nil`, `stylua`, `npins`, `alejandra`, `basedpyright`, `emmy-lua-code-style`, `cue`
+   - Provides: `nil`, `stylua`, `npins`, `alejandra`, `basedpyright`, `emmy-lua-code-style`, `cue`, `just`
    - Creates `.luarc.json` symlink for LSP support
    - Use this for making changes to Lua code or generating workflows
 
@@ -56,14 +56,14 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
    - Runs all test suites (Lua unit tests, integration tests)
    - Checks `add-plugin` and `update-plugins` packages build successfully
 
-9. **Run tests:** `./scripts/run-tests.sh` or individual test suites:
+9. **Run tests:** `nix run .#run-tests` or individual test suites:
    - `nix build .#checks.x86_64-linux.lua-tests` - Run Lua unit tests
    - `nix build .#checks.x86_64-linux.integration-tests` - Run integration tests
 
-10. **Generate workflows:** `make workflows`
+10. **Generate workflows:** `just workflows`
     - Generates GitHub Actions workflows from CUE definitions in `cicd/`
-    - Run `make check` to verify workflows match their definitions
-    - Run `make fmt` to format CUE files
+    - Run `just check` to verify workflows match their definitions
+    - Run `just fmt` to format CUE files
 
 ### Common Workflows
 
@@ -88,7 +88,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 - `flake.lock` - Lock file for flake inputs (auto-generated, commit changes)
 - `nvim.nix` - Neovim package definition, wraps with runtime dependencies
 - `nvide.nix` - Neovide (GUI) wrapper using wrapper-manager
-- `Makefile` - Workflow generation targets (workflows, check, fmt)
+- `justfile` - Workflow generation targets (workflows, check, fmt)
 - `.editorconfig` - Lua formatting rules (2 spaces, double quotes, comma separators)
 - `.stylua.toml` - Stylua configuration (mostly defaults explicitly set)
 - `.envrc` - direnv configuration for automatic dev shell loading
@@ -189,10 +189,10 @@ Before submitting changes:
 
 1. **Format:** `nix fmt` (REQUIRED - catches style issues)
 2. **Build:** `nix build` (verifies Nix evaluation and package builds)
-3. **Run tests:** `./scripts/run-tests.sh` or `nix flake check` (runs all tests)
+3. **Run tests:** `nix run .#run-tests` or `nix flake check` (runs all tests)
 4. **Test run:** `nix run` (launches Neovim to verify it works)
 5. **Check health:** In Neovim, run `:checkhealth nobbz` (verifies programs and LSP configs)
-6. **Verify workflows:** If you modified CUE files, run `make workflows && make check`
+6. **Verify workflows:** If you modified CUE files, run `just workflows && just check`
 7. **Update instructions:** After major refactors, verify `.github/copilot-instructions.md` is still accurate
 
 **Automated CI/CD** - Pull requests automatically run workflows that build, test, and validate:
