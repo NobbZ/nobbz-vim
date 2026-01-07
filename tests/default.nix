@@ -14,9 +14,6 @@
           pkgs.luajitPackages.busted
         ];
         buildPhase = ''
-          # Copy test files
-          mkdir -p $out
-          
           # For now, just verify the test files exist and are valid Lua
           echo "Checking Lua test files..."
           for test in tests/lua/*_spec.lua; do
