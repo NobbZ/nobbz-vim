@@ -27,9 +27,9 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
    - Useful for quick testing
 
 3. **Enter dev shell:** `nix develop`
-   - Provides: `nil`, `stylua`, `npins`, `alejandra`, `basedpyright`, `emmy-lua-code-style`
+   - Provides: `nil`, `stylua`, `npins`, `alejandra`, `basedpyright`, `emmy-lua-code-style`, `cue`
    - Creates `.luarc.json` symlink for LSP support
-   - Use this for making changes to Lua code
+   - Use this for making changes to Lua code or generating workflows
 
 4. **Format code:** `nix fmt`
    - Formats all Nix files with `alejandra`
@@ -53,7 +53,17 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 
 8. **Run checks:** `nix flake check`
    - Validates flake structure
+   - Runs all test suites (Lua unit tests, integration tests)
    - Checks `add-plugin` and `update-plugins` packages build successfully
+
+9. **Run tests:** `./scripts/run-tests.sh` or individual test suites:
+   - `nix build .#checks.x86_64-linux.lua-tests` - Run Lua unit tests
+   - `nix build .#checks.x86_64-linux.integration-tests` - Run integration tests
+
+10. **Generate workflows:** `make workflows`
+    - Generates GitHub Actions workflows from CUE definitions in `cicd/`
+    - Run `make check` to verify workflows match their definitions
+    - Run `make fmt` to format CUE files
 
 ### Common Workflows
 
@@ -78,6 +88,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 - `flake.lock` - Lock file for flake inputs (auto-generated, commit changes)
 - `nvim.nix` - Neovim package definition, wraps with runtime dependencies
 - `nvide.nix` - Neovide (GUI) wrapper using wrapper-manager
+- `Makefile` - Workflow generation targets (workflows, check, fmt)
 - `.editorconfig` - Lua formatting rules (2 spaces, double quotes, comma separators)
 - `.stylua.toml` - Stylua configuration (mostly defaults explicitly set)
 - `.envrc` - direnv configuration for automatic dev shell loading
@@ -111,9 +122,27 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 **`pkgs/`** - Custom packages
 - `oxide.nix` - Builds markdown-oxide LSP from pinned source
 
+**`tests/`** - Test infrastructure
+- `default.nix` - Flake-parts module defining test checks
+- `lua/` - Lua unit tests using busted framework (files ending in `_spec.lua`)
+- `integration/` - Integration tests (bash scripts testing nvim behavior)
+- `README.md` - Testing documentation
+
+**`cicd/`** - Workflow generation
+- `workflows.cue` - Base workflow definitions with common steps
+- `pull-check.cue` - Pull request check workflow definition
+- `check-generated.cue` - Workflow to verify generated files
+- `README.md` - Workflow generation documentation
+
+**`scripts/`** - Development scripts
+- `run-tests.sh` - Convenient test runner for local development
+
+**`cue.mod/`** - CUE module configuration
+- `module.cue` - CUE module definition with dependencies
+
 **`.github/`** - GitHub configuration
 - `copilot-instructions.md` - This file
-- No CI workflows defined (validation is manual via `nix build`)
+- `workflows/` - Generated GitHub Actions workflows (DO NOT edit directly)
 
 ### Key Configuration Files
 
@@ -160,16 +189,23 @@ Before submitting changes:
 
 1. **Format:** `nix fmt` (REQUIRED - catches style issues)
 2. **Build:** `nix build` (verifies Nix evaluation and package builds)
-3. **Test run:** `nix run` (launches Neovim to verify it works)
-4. **Check health:** In Neovim, run `:checkhealth nobbz` (verifies programs and LSP configs)
-5. **Flake check:** `nix flake check` (validates flake structure)
-6. **Update instructions:** After major refactors, verify `.github/copilot-instructions.md` is still accurate
+3. **Run tests:** `./scripts/run-tests.sh` or `nix flake check` (runs all tests)
+4. **Test run:** `nix run` (launches Neovim to verify it works)
+5. **Check health:** In Neovim, run `:checkhealth nobbz` (verifies programs and LSP configs)
+6. **Verify workflows:** If you modified CUE files, run `make workflows && make check`
+7. **Update instructions:** After major refactors, verify `.github/copilot-instructions.md` is still accurate
 
-**No automated CI/CD** - all validation is manual. The maintainer runs these commands before merging.
+**Automated CI/CD** - Pull requests automatically run workflows that build, test, and validate:
+- `pull-check.yml` - Builds package, runs all tests, validates flake
+- `check-generated.yml` - Verifies generated workflows match CUE definitions
+
+All workflows are generated from CUE definitions in `cicd/`. See `cicd/README.md` for details.
 
 ## Important Notes
 
-- **No GitHub Actions workflows** - validation is entirely manual
+- **GitHub Actions workflows** - Automated CI/CD runs on all PRs (build, test, validate)
+- **Workflows generated from CUE** - Edit `.cue` files in `cicd/`, not YAML files directly
+- **Test infrastructure** - Lua unit tests and integration tests in `tests/`
 - **Plugin updates are semi-automated** - `update-plugins` commits individually
 - **Flake inputs pinned** - `flake.lock` must be committed when updated
 - **Custom health check system** - use `:checkhealth nobbz` not `:checkhealth`

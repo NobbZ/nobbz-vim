@@ -18,6 +18,9 @@ This configuration includes automated tests:
 Run tests with:
 
 ```bash
+# Quick test runner (runs all tests)
+./scripts/run-tests.sh
+
 # Run all checks (includes tests, builds, etc.)
 nix flake check
 
