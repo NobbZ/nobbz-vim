@@ -179,5 +179,3 @@ Before submitting changes:
 ## Trust These Instructions
 
 These instructions are comprehensive. Only search the codebase if information is incomplete or appears incorrect. The structure is simple and well-organized - most changes involve editing files in `plugins/nobbz/lua/nobbz/` and running `nix fmt` then `nix build`.
-
-These instructions are comprehensive. Only search the codebase if information is incomplete or appears incorrect. The structure is simple and well-organized - most changes involve editing files in `plugins/nobbz/lua/nobbz/` and running `nix fmt` then `nix build`.
