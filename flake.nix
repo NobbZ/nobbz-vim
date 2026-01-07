@@ -7,7 +7,7 @@
     parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
 
-      imports = [./plugins ./bin];
+      imports = [./plugins ./bin ./tests];
 
       perSystem = {
         self',
@@ -42,6 +42,7 @@
           pkgs.mkShell {
             packages = builtins.attrValues {
               inherit (pkgs) nil stylua npins alejandra basedpyright;
+              inherit (pkgs.luajitPackages) busted;
               inherit (self'.packages) neovim neovide;
               inherit emmy-lua-code-style;
             };

@@ -1,0 +1,13 @@
+# Test configuration for busted
+return {
+  _all = {
+    coverage = false,
+    verbose = true,
+  },
+  default = {
+    ROOT = { "tests/", },
+    pattern = "_spec.lua",
+    exclude = { "example_spec.lua", },
+    output = "TAP",
+  },
+}
