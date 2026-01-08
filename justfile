@@ -10,22 +10,23 @@
 #   just fmt          - Format all CUE and Nix files
 
 # Generate all workflows
-workflows: pull-check-workflow check-generated-workflow
+workflows:
+    @echo "Generating workflows from CUE definitions..."
+    CUE_DEBUG=sortfields cue export ./cicd/ -f -e workflows.pull_request -o .github/workflows/pull-check.yml
+    CUE_DEBUG=sortfields cue export ./cicd/ -f -e workflows.checker -o .github/workflows/check-generated.yml
+    @echo "✓ Workflows generated successfully"
 
 # Verify generated workflows match CUE definitions
 check:
+    @echo "Verifying generated workflows..."
     cue vet -c ./cicd/ .github/workflows/pull-check.yml -d 'workflows.pull_request'
     cue vet -c ./cicd/ .github/workflows/check-generated.yml -d 'workflows.checker'
-
-# Generate pull-check workflow
-pull-check-workflow: cicd/*.cue cue.mod/module.cue
-    CUE_DEBUG=sortfields cue export ./cicd/ -f -e workflows.pull_request -o .github/workflows/pull-check.yml
-
-# Generate check-generated workflow
-check-generated-workflow: cicd/*.cue cue.mod/module.cue
-    CUE_DEBUG=sortfields cue export ./cicd/ -f -e workflows.checker -o .github/workflows/check-generated.yml
+    @echo "✓ Workflows verified successfully"
 
 # Format all CUE and Nix files
 fmt:
+    @echo "Formatting CUE files..."
     cue fmt cicd/*.cue
+    @echo "Formatting Nix files..."
     alejandra .
+    @echo "✓ Formatting complete"
