@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Test runner script for local development."""
 
+import platform
 import subprocess
 import sys
 from pathlib import Path
@@ -30,6 +31,37 @@ def print_error(text: str) -> None:
     print(f"{Colors.RED}✗ {text}{Colors.NC}")
 
 
+def find_flake_root() -> Path | None:
+    """Find the flake root by searching parent directories."""
+    current = Path.cwd()
+    while current != current.parent:
+        if (current / "flake.nix").exists():
+            return current
+        current = current.parent
+    return None
+
+
+def detect_system() -> str:
+    """Detect the current system architecture."""
+    machine = platform.machine()
+    system = platform.system().lower()
+    
+    # Map Python's machine names to Nix system names
+    if system == "linux":
+        if machine in ("x86_64", "AMD64"):
+            return "x86_64-linux"
+        elif machine in ("aarch64", "arm64"):
+            return "aarch64-linux"
+    elif system == "darwin":
+        if machine in ("x86_64", "AMD64"):
+            return "x86_64-darwin"
+        elif machine in ("aarch64", "arm64"):
+            return "aarch64-darwin"
+    
+    # Default to x86_64-linux if we can't detect
+    return "x86_64-linux"
+
+
 def run_command(cmd: list[str], description: str) -> bool:
     """Run a command and return success status."""
     try:
@@ -41,10 +73,15 @@ def run_command(cmd: list[str], description: str) -> bool:
 
 def main() -> int:
     """Run all tests."""
-    # Check if we're in a Nix flake directory
-    if not Path("flake.nix").exists():
-        print_error("Not in a Nix flake directory")
+    # Find flake root
+    flake_root = find_flake_root()
+    if flake_root is None:
+        print_error("Not in a Nix flake directory (searched parent directories)")
         return 1
+    
+    # Detect system
+    system = detect_system()
+    print(f"Detected system: {system}")
 
     # Build neovim package
     print_section("Building neovim package")
@@ -60,7 +97,7 @@ def main() -> int:
     # Run Lua tests
     print_section("Running Lua tests")
     if run_command(
-        ["nix", "build", ".#checks.x86_64-linux.lua-tests", "--print-build-logs"],
+        ["nix", "build", f".#checks.{system}.lua-tests", "--print-build-logs"],
         "Running Lua tests",
     ):
         print_success("Lua tests passed")
@@ -74,7 +111,7 @@ def main() -> int:
         [
             "nix",
             "build",
-            ".#checks.x86_64-linux.integration-tests",
+            f".#checks.{system}.integration-tests",
             "--print-build-logs",
         ],
         "Running integration tests",

@@ -15,7 +15,7 @@ jobs:
       - name: Install Just
         uses: extractions/setup-just@v2
         with:
-          just_version: "1.36.0"
+          just-version: "1.36.0"
       - run: just check
 name: Check generated files
 "on":

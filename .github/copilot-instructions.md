@@ -134,9 +134,6 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 - `check-generated.cue` - Workflow to verify generated files
 - `README.md` - Workflow generation documentation
 
-**`scripts/`** - Development scripts
-- `run-tests.sh` - Convenient test runner for local development
-
 **`cue.mod/`** - CUE module configuration
 - `module.cue` - CUE module definition with dependencies
 

@@ -3,6 +3,8 @@ package cicd
 import "cue.dev/x/githubactions"
 
 _nixVersion: "2.32.1"
+_cueVersion: "v0.14.2"
+_justVersion: "1.36.0"
 
 workflows: [_]: githubactions.#Workflow & {
 	jobs: [_]: "runs-on": *"ubuntu-24.04" | _
@@ -16,13 +18,13 @@ _cloneRepo: githubactions.#Step & {
 _installCue: githubactions.#Step & {
 	name: "Install Cue"
 	uses: "cue-lang/setup-cue@v1.0.1"
-	with: version: "v0.14.2"
+	with: version: _cueVersion
 }
 
 _installJust: githubactions.#Step & {
 	name: "Install Just"
 	uses: "extractions/setup-just@v2"
-	with: just_version: "1.36.0"
+	with: "just-version": _justVersion
 }
 
 _installNix: githubactions.#Step & {
@@ -32,21 +34,13 @@ _installNix: githubactions.#Step & {
 		extra_nix_config: """
 			auto-optimise-store = true
 			experimental-features = nix-command flakes
-			substituters = https://cache.nixos.org/ https://nix-community.cachix.org
-			trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
 			"""
 		install_url: "https://releases.nixos.org/nix/nix-\(_nixVersion)/install"
 	}
 }
 
-_freeSpace: githubactions.#Step & {
-	name: "Free diskspace"
-	uses: "wimpysworld/nothing-but-nix@main"
-}
-
 _buildFlake: githubactions.#Job & {
 	steps: [
-		_freeSpace,
 		_cloneRepo,
 		_installNix,
 		{
