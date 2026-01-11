@@ -15,4 +15,6 @@ require("oil").setup({
 WK.add({
   { "<leader>o",  group = "oil file explorer", },
   { "<leader>o.", "<cmd>Oil<cr>",              desc = "open current folder", },
+  { "<leader>o-", "<cmd>Oil --float<cr>",      desc = "open current folder (floating)", },
+  { "-",          "<cmd>Oil --float<cr>",      desc = "open current folder (floating)", },
 })
