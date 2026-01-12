@@ -1,7 +1,5 @@
 local helpers = require("nobbz.lsp.helpers")
 
-require("nobbz.treesitter").register("beancount")
-
 -- find the root dir of the project by finding a .git folder
 local git_dirs = vim.fs.find({ ".git", }, { upward = true, })
 local root_dir = nil
@@ -17,6 +15,7 @@ end
 
 return {
   name = "beancount",
+  ft = "beancount",
   activate = function()
     return root_dir ~= nil and journal_file ~= nil and vim.uv.fs_stat(journal_file) ~= nil
   end,
