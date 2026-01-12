@@ -1,7 +1,7 @@
 local null_ls = require("null-ls")
 local helpers = require("nobbz.lsp.helpers")
 local register_lsp = require("nobbz.health").register_lsp
-local register_treesitter = require("nobbz.treesitter").register
+local register_treesitter = require("nobbz.plugins.treesitter").register
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
@@ -48,6 +48,10 @@ local function discover_clients()
       end
     end
   end
+
+  -- sorting *should* not matter, though if it becomes an issue, deterministically
+  -- ordered modules will be easier to debug than non-deterministically ordered.
+  table.sort(clients)
 
   return clients
 end
