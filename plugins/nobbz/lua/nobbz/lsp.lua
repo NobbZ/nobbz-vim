@@ -37,15 +37,18 @@ local function discover_clients()
 
   -- Scan the clients directory for Lua files
   local scan = vim.uv.fs_scandir(client_dir)
-  if scan then
-    while true do
-      local name, type = vim.uv.fs_scandir_next(scan)
-      if not name then break end
-      if type == "file" and name:match("%.lua$") then
-        -- Convert filename to module path (remove .lua extension)
-        local module_name = name:gsub("%.lua$", "")
-        table.insert(clients, "nobbz.lsp.clients." .. module_name)
-      end
+  if not scan then
+    vim.notify("unable to scan '" .. client_dir .. "' for LSP clients")
+    return clients
+  end
+
+  while true do
+    local name, type = vim.uv.fs_scandir_next(scan)
+    if not name then break end
+    if type == "file" and name:match("%.lua$") then
+      -- Convert filename to module path (remove .lua extension)
+      local module_name = name:gsub("%.lua$", "")
+      table.insert(clients, "nobbz.lsp.clients." .. module_name)
     end
   end
 
