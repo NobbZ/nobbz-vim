@@ -31,28 +31,38 @@ local function rs(submodule)
   return require(this_module .. "." .. submodule)
 end
 
-rs("bigfile")    -- disable some features for huge files
-rs("blink")      -- foundations for completions
-rs("flash")      -- some easier motions
-rs("git")        -- set up neogit (kind of magit)
-rs("ledger")     -- set up ledger/hledger PTA
-rs("lsp")        -- LSP and related setup
-rs("lspsaga")    -- set up lspsaga
-rs("lualine")    -- Set up the status bar at the bottom
-rs("luasnip")    -- Snippet tool
-rs("markdown")   -- Set up markdown editing
-rs("mini")       -- set up mini.nvim
-rs("misc")       -- miscelanous editor settings
-rs("noice")      -- setup noice for nicer notifications and messages
-rs("oil")        -- manage files as if it was a text buffer
-rs("rainbow")    -- set up rainbow parenthesis
-rs("surround")   -- gelps with surrounding in parens or quotes
-rs("telescope")  -- some fuzzy finders
-rs("theme")      -- how shall everything look like
-rs("treesitter") -- set up treesitter
-rs("trouble")    -- load trouble
-rs("ufo")        -- set up ufo
-rs("whichkey")   -- set up whichkey, which provides help as you type
+--- Load individual plugin specifications by scanning the `plugins` directory.
+local function discover_plugins()
+  ---@type string[]
+  local plugins = {}
+
+  -- Get the directory of the current file
+  local current_file = debug.getinfo(1, "S").source:sub(2) -- remove `@` prefix
+  local base_dir = vim.fs.dirname(current_file)
+
+  -- plugin folder
+  local plugins_dir = vim.fs.joinpath(base_dir, "plugins")
+
+  local candidates = vim.fs.dir(plugins_dir)
+  for name, type in candidates do
+    if type == "file" and name:match("%.lua$") then
+      local module_name = name:gsub("%.lua$", "")
+      table.insert(plugins, "nobbz.plugins." .. module_name)
+    end
+  end
+
+  -- sorting *should* not matter, though if it becomes an issue, deterministically
+  -- ordered modules will be easier to debug than non-deterministically ordered.
+  table.sort(plugins)
+
+  return plugins
+end
+
+for _, module in ipairs(discover_plugins()) do
+  require(module)
+end
+
+rs("lsp") -- LSP and related setup
 
 if vim.g.neovide then rs("neovide") end
 

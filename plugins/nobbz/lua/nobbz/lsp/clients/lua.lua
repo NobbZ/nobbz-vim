@@ -40,6 +40,7 @@ end
 
 return {
   name = "lua_ls",
+  ft = "lua",
   on_attach = { helpers.default, on_attach, },
   on_init = on_init,
   settings = {
