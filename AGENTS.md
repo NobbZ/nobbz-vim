@@ -158,6 +158,7 @@ Before submitting changes:
 3. **Lua formatting fails:** Run `nix develop` first, check `.editorconfig` compliance
 4. **Plugin not loading:** Check `optionalPlugins` set - `false` = mandatory, `true` = optional
 5. **LSP not working:** LSP binaries added to PATH in `nvim.nix`, register with health system
+6. **Schema support for JSON/YAML/TOML:** LSPs for jsonls, yamlls, taplo are configured with SchemaStore for schema validation via `$schema` keys. Ensure files have proper schemas for completions and diagnostics.
 
 ## Additional Notes
 
