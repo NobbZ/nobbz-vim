@@ -39,6 +39,19 @@
       "url": "https://github.com/neovim/neovim/archive/75b30b091fed5885bff2e0fcdbb6f021927cfb03.tar.gz",
       "hash": "sha256-YzROoapFugBCvhggJ7rLQxG9QbkCuXDRV7b6fg7ytHY="
     },
+    "nvim-SchemaStore": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "b0o",
+        "repo": "SchemaStore.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "2a8afcddb67a14dc80001f074f1eecedac2f27a7",
+      "url": "https://github.com/b0o/SchemaStore.nvim/archive/2a8afcddb67a14dc80001f074f1eecedac2f27a7.tar.gz",
+      "hash": "sha256-IDfZ17epQoug4wonyMvemc7IMEpJe2EVxlHxRi4n0QU="
+    },
     "nvim-catppuccin": {
       "type": "Git",
       "repository": {

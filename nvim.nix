@@ -10,6 +10,9 @@
   stylua,
   markdown-oxide,
   xclip,
+  vscode-json-languageserver,
+  yaml-language-server,
+  taplo,
 }: let
   config = neovimUtils.makeNeovimConfig {
     plugins = builtins.attrValues ({
@@ -37,7 +40,7 @@ in
             #
             # Runtime dependencies
             #
-            inherit lua-language-server stylua markdown-oxide xclip;
+            inherit lua-language-server stylua markdown-oxide xclip vscode-json-languageserver yaml-language-server taplo;
           }
         ))
       ];
