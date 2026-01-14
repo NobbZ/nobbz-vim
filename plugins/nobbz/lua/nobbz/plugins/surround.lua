@@ -1,24 +1,44 @@
 -- Configuration for raw string surrounds per filetype
 local raw_string_configs = {
   rust = {
-    add = { 'r#"', '"#' },
+    add = { 'r#"', '"#', },
     find = 'r%#".-"%#',
     delete = '^(r%#")().-("%#)()$',
   },
   elixir = {
-    add = { '~S"""', '"""' },
+    add = { '~S"""', '"""', },
     find = '~S""".-"""',
     delete = '^(~S""")().-(""")()$',
   },
   python = {
-    add = { 'r"""', '"""' },
+    add = { 'r"""', '"""', },
     find = 'r""".-"""',
     delete = '^(r""")().-(""")()$',
   },
   cpp = {
-    add = { 'R"(', ')"' },
+    add = { 'R"(', ')"', },
     find = 'R"%(.-%)"',
     delete = '^(R"%()().-(%)%")()$',
+  },
+  gleam = {
+    add = { 'r#"', '"#', },
+    find = 'r%#".-"%#',
+    delete = '^(r%#")().-("%#)()$',
+  },
+  zig = {
+    add = { "\\\\", "\\\\", },
+    find = "\\\\.-\\\\",
+    delete = "^(\\\\\\)().-(\\\\\\)()$",
+  },
+  nushell = {
+    add = { "r\'", "\'", },
+    find = "r\'.-\'",
+    delete = "^(r\')().-(\')()$",
+  },
+  lua = {
+    add = { "[[", "]]", },
+    find = "%[%[.-%]%]",
+    delete = "^(%[%[)().-(%]%])()$",
   },
 }
 
