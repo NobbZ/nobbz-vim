@@ -20,6 +20,26 @@ local raw_string_configs = {
     find = 'R"%(.-%)"',
     delete = '^(R"%()().-(%)%")()$',
   },
+  gleam = {
+    add = { 'r#"', '"#', },
+    find = 'r%#".-"%#',
+    delete = '^(r%#")().-("%#)()$',
+  },
+  zig = {
+    add = { "\\\\", "\\\\", },
+    find = "\\\\.-\\\\",
+    delete = "^(\\\\\\)().-(\\\\\\)()$",
+  },
+  nushell = {
+    add = { "r\'", "\'", },
+    find = "r\'.-\'",
+    delete = "^(r\')().-(\')()$",
+  },
+  lua = {
+    add = { "[[", "]]", },
+    find = "%[%[.-%]%]",
+    delete = "^(%[%[)().-(%]%])()$",
+  },
 }
 
 -- Setup function to register raw string surrounds for a filetype
