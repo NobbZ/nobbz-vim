@@ -32,6 +32,7 @@
       plenary = false;
       promis-async = false;
       rainbow = false;
+      SchemaStore = false;
       telescope = false;
       telescope-ui-select = false;
       which-key = false;
