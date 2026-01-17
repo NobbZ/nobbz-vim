@@ -53,7 +53,12 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 
 8. **Run checks:** `nix flake check`
    - Validates flake structure
+   - Runs integration tests:
+     - `nvim-config-loads`: Verifies configuration loads without errors
+     - `nvim-health-check`: Runs `:checkhealth nobbz` to verify all systems
+     - `nvim-lua-tests`: Runs Lua-based integration tests for core functionality
    - Checks `add-plugin` and `update-plugins` packages build successfully
+   - Run individual tests: `nix build .#checks.x86_64-linux.nvim-config-loads`
 
 ### Common Workflows
 
@@ -111,9 +116,13 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 **`pkgs/`** - Custom packages
 - `oxide.nix` - Builds markdown-oxide LSP from pinned source
 
+**`tests/`** - Integration tests
+- `default.nix` - Flake-parts module, defines test checks
+- `test-runner.lua` - Lua test framework for headless Neovim tests
+
 **`.github/`** - GitHub configuration
 - `copilot-instructions.md` - This file
-- No CI workflows defined (validation is manual via `nix build`)
+- No CI workflows defined (validation is manual via `nix flake check`)
 
 ### Key Configuration Files
 
@@ -160,9 +169,9 @@ Before submitting changes:
 
 1. **Format:** `nix fmt` (REQUIRED - catches style issues)
 2. **Build:** `nix build` (verifies Nix evaluation and package builds)
-3. **Test run:** `nix run` (launches Neovim to verify it works)
-4. **Check health:** In Neovim, run `:checkhealth nobbz` (verifies programs and LSP configs)
-5. **Flake check:** `nix flake check` (validates flake structure)
+3. **Run tests:** `nix flake check` (runs integration tests and validates flake structure)
+4. **Test run:** `nix run` (launches Neovim to verify it works interactively)
+5. **Check health:** In Neovim, run `:checkhealth nobbz` (verifies programs and LSP configs)
 6. **Update instructions:** After major refactors, verify `.github/copilot-instructions.md` is still accurate
 
 **No automated CI/CD** - all validation is manual. The maintainer runs these commands before merging.
