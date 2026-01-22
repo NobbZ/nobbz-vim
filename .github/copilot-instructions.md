@@ -55,13 +55,20 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
    - Validates flake structure
    - Checks `add-plugin` and `update-plugins` packages build successfully
 
+9. **Run tests:** `nix build .#lua-tests` or `nix build .#checks.x86_64-linux.lua-tests`
+   - Runs Lua unit tests using busted
+   - Tests located in `tests/` directory
+   - Can also run `busted tests/` in dev shell for faster iteration
+
 ### Common Workflows
 
 **Making changes to Lua configuration:**
 1. `nix develop` - enter dev shell
 2. Edit files in `plugins/nobbz/lua/nobbz/`
 3. Test with `:checkhealth nobbz` in Neovim
-4. `nix fmt` - format before committing
+4. If adding utility functions, add unit tests in `tests/`
+5. Run `busted tests/` to verify tests pass
+6. `nix fmt` - format before committing
 
 **Adding a new plugin:**
 1. `nix run .#add-plugin <name> <owner/repo>`
@@ -103,6 +110,12 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 - `default.nix` - Flake-parts module, exposes scripts as packages
 - `add-plugin.py` / `add-plugin.nix` - Script to add plugins via npins
 - `update-plugins.py` / `update-plugins.nix` - Script to update all plugins
+
+**`tests/`** - Lua unit tests
+- `default.nix` - Flake-parts module, defines test packages and checks
+- `*_spec.lua` - Test files using busted framework
+- `.busted` - Busted configuration file (at repo root)
+- `README.md` - Testing documentation
 
 **`npins/`** - Dependency pinning
 - `sources.json` - Pinned sources (plugins, neovim, dependencies)
@@ -160,10 +173,11 @@ Before submitting changes:
 
 1. **Format:** `nix fmt` (REQUIRED - catches style issues)
 2. **Build:** `nix build` (verifies Nix evaluation and package builds)
-3. **Test run:** `nix run` (launches Neovim to verify it works)
-4. **Check health:** In Neovim, run `:checkhealth nobbz` (verifies programs and LSP configs)
-5. **Flake check:** `nix flake check` (validates flake structure)
-6. **Update instructions:** After major refactors, verify `.github/copilot-instructions.md` is still accurate
+3. **Test:** `nix build .#lua-tests` (runs Lua unit tests)
+4. **Test run:** `nix run` (launches Neovim to verify it works)
+5. **Check health:** In Neovim, run `:checkhealth nobbz` (verifies programs and LSP configs)
+6. **Flake check:** `nix flake check` (validates flake structure and runs checks)
+7. **Update instructions:** After major refactors, verify `.github/copilot-instructions.md` is still accurate
 
 **No automated CI/CD** - all validation is manual. The maintainer runs these commands before merging.
 
@@ -176,6 +190,7 @@ Before submitting changes:
 - **Lazy loading via lz.n** - not using lazy.nvim, custom system in `lazy/init.lua`
 - **Neovide supported** - GUI wrapper defined in `nvide.nix`
 - **direnv integration** - `.envrc` auto-loads dev shell if direnv installed
+- **Unit tests available** - `busted` framework tests core Lua modules in `tests/`
 
 ## Trust These Instructions
 
