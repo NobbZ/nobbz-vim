@@ -4,7 +4,7 @@
 
 This repository contains a Nix flake-based Neovim configuration. It provides a reproducible, declarative Neovim setup with custom plugins and LSP configurations.
 
-**Key Technologies:** Nix, Lua, Python (build scripts)  
+**Key Technologies:** Nix, Lua, Python (build scripts)\
 **Target:** Personal Neovim configuration using Nix flakes for reproducibility
 
 ## Build/Lint/Test Commands
@@ -64,6 +64,7 @@ Follow the [luarocks style guide](https://github.com/luarocks/lua-style-guide) w
 - **Formatting:** Both `stylua` and `emmy-lua-code-style` must pass
 
 **Example:**
+
 ```lua
 ---@param modname string
 ---@return function
@@ -95,9 +96,11 @@ end
 ## Copilot Structure and Workflows
 
 ### Repository Overview
+
 This is a Neovim configuration managed as a Nix flake. The repository provides a reproducible, declarative Neovim setup with custom plugins and LSP configurations.
 
 **Key Facts:**
+
 - **Purpose:** Personal Neovim configuration using Nix flakes for reproducibility
 - **Size:** Small (~600KB, ~1900 lines of Nix/Lua code)
 - **Languages:** Nix, Lua, Python (for build scripts)
@@ -107,6 +110,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 ### Project Structure
 
 **Root Files:**
+
 - `flake.nix` - Main flake definition, defines packages and dev shell
 - `flake.lock` - Lock file for flake inputs (auto-generated, commit changes)
 - `nvim.nix` - Neovim package definition, wraps with runtime dependencies
@@ -117,6 +121,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 - `.gitignore` - Ignores `.luarc.json` (generated) and `.direnv`
 
 **Directories:**
+
 - `plugins/` - Plugin management (flake-parts module, builds vim plugins from npins)
 - `plugins/nobbz/` - Custom plugin containing all configuration
 - `plugins/nobbz/lua/nobbz/` - Lua configuration modules (one file per feature)
@@ -127,12 +132,14 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 ### Common Workflows
 
 **Making changes to Lua configuration:**
+
 1. `nix develop` - enter dev shell
 2. Edit files in `plugins/nobbz/lua/nobbz/`
 3. Test with `:checkhealth nobbz` in Neovim
 4. `nix fmt` - format before committing
 
 **Adding a new plugin:**
+
 1. `nix run .#add-plugin <name> <owner/repo>`
 2. Edit `plugins/default.nix` - add plugin name to `optionalPlugins` set with `true` (opt) or `false` (start)
 3. Configure in `plugins/nobbz/lua/nobbz/` - create new file or edit existing
@@ -143,6 +150,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 ### Validation Steps
 
 Before submitting changes:
+
 1. **Format:** `nix fmt` (REQUIRED - catches style issues)
 2. **Build:** `nix build` (verifies Nix evaluation and package builds)
 3. **Test run:** `nix run` (launches Neovim to verify it works)

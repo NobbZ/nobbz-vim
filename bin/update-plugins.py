@@ -5,8 +5,8 @@ import subprocess
 from typing import TypedDict
 
 parser = argparse.ArgumentParser(
-    prog="update-plugins",
-    description="Update all plugins in the flake")
+    prog="update-plugins", description="Update all plugins in the flake"
+)
 
 
 LOCAL_PINS = "npins/sources.json"
@@ -29,12 +29,15 @@ def main():
     for p in plugins:
         print(f"updating {p}")
         _ = subprocess.run(["npins", "update", p])
-        changed_files = str(subprocess.check_output(["git",
-                                                     "diff",
-                                                     "--name-only"],
-                                                    encoding="utf-8")) \
-            .strip() \
+        changed_files = (
+            str(
+                subprocess.check_output(
+                    ["git", "diff", "--name-only"], encoding="utf-8"
+                )
+            )
+            .strip()
             .splitlines()
+        )
 
         if LOCAL_PINS in changed_files:
             _ = subprocess.run(["git", "add", PINS])
