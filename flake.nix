@@ -7,7 +7,12 @@
     parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
 
-      imports = [./plugins ./bin];
+      imports = [
+        inputs.treefmt-nix.flakeModule
+        ./bin
+        ./nix
+        ./plugins
+      ];
 
       perSystem = {
         self',
@@ -18,12 +23,6 @@
       }: {
         _module.args.npins = import ./npins;
         _module.args.pkgs = inputs'.nixpkgs.legacyPackages.extend inputs.gen-luarc.overlays.default;
-
-        formatter = pkgs.writeShellScriptBin "formatter" ''
-          export PATH=${pkgs.lib.makeBinPath [pkgs.alejandra inputs'.nixpkgs-emmy.legacyPackages.emmy-lua-code-style]}:$PATH
-          alejandra .
-          CodeFormat format -w . -ig .direnv -c ${self}/.editorconfig
-        '';
 
         packages.md-oxide = pkgs.callPackage ./pkgs/oxide.nix {inherit npins;};
         packages.neovim = pkgs.callPackage ./nvim.nix {inherit self';};
@@ -69,6 +68,9 @@
 
     parts.url = "github:hercules-ci/flake-parts";
     parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     wrapper-manager.url = "github:viperml/wrapper-manager";
 

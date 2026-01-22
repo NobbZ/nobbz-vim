@@ -3,22 +3,26 @@ import subprocess
 from typing import cast
 
 parser = argparse.ArgumentParser(
-    prog="add-plugin",
-    description="Add a new plugin to the flake")
+    prog="add-plugin", description="Add a new plugin to the flake"
+)
 
-_ = parser.add_argument("-b", "--branch",
-                        default=None,
-                        dest='branch',
-                        help="the name of the branch to use (if any)")
-_ = parser.add_argument("-t", "--type",
-                        default="github",
-                        choices=["github", "gitlab"],
-                        dest='type',
-                        help="the type of the repository")
-_ = parser.add_argument("name",
-                        help="the name of the plugin")
-_ = parser.add_argument("source",
-                        help="the name of the repository")
+_ = parser.add_argument(
+    "-b",
+    "--branch",
+    default=None,
+    dest="branch",
+    help="the name of the branch to use (if any)",
+)
+_ = parser.add_argument(
+    "-t",
+    "--type",
+    default="github",
+    choices=["github", "gitlab"],
+    dest="type",
+    help="the type of the repository",
+)
+_ = parser.add_argument("name", help="the name of the plugin")
+_ = parser.add_argument("source", help="the name of the repository")
 
 
 def main():
