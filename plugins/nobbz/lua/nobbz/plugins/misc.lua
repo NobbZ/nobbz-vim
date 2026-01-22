@@ -25,3 +25,24 @@ require("ibl").setup({
   indent = { char = "┊", },
   scope = { enabled = true, },
 })
+
+---Sets linemode to the requested numbering.
+---@param numbering_mode "relative"|"absolute"|"toggle" which mode shall be activated by the keypress
+---@return function
+local function change_linum_mode(numbering_mode)
+  if numbering_mode == "toggle" then
+    return function() vim.o.relativenumber = not vim.o.relativenumber end
+  elseif numbering_mode == "relative" or numbering_mode == "absolute" then
+    local rel = numbering_mode == "relative"
+    return function() vim.o.relativenumber = rel end
+  end
+
+  error("'" .. numbering_mode .. "' is not a valid mode")
+end
+
+WK.add({
+  { "<leader>#",  group = "line numbering modes", },
+  { "<leader>##", change_linum_mode("toggle"),    desc = "toggle relativenumber", },
+  { "<leader>#+", change_linum_mode("relative"),  desc = "enable relativenumber", },
+  { "<leader>#-", change_linum_mode("absolute"),  desc = "disable relativenumber", },
+})
