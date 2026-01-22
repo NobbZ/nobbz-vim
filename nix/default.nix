@@ -16,7 +16,7 @@
       programs.mdformat.enable = true;
       programs.mypy.enable = true;
       programs.oxfmt.enable = true;
-      programs.shellcheck.enable = false;
+      programs.shellcheck.enable = true;
       programs.toml-sort.enable = true;
 
       programs.mdformat.settings.number = true;
