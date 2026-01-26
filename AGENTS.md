@@ -80,9 +80,9 @@ end
 ### Nix Style Requirements
 
 - **Clear distinction:** Maintain separation between flake-parts modules and package definitions
-- **Plugin organization:** In `plugins/default.nix`:
-  - Plugins sorted alphabetically
-  - No new plugins in first section of `optionalPlugins` set (marked with TODO comment for eager loading)
+- **Plugin organization:** In `nix/mnw/default.nix`:
+  - Plugins in `plugins.start` and `plugins.opt` lists organized by purpose
+  - First section of `plugins.start` marked for review (see TODO comment)
 - **Flake inputs:** Keep pinned - commit `flake.lock` changes when updated
 
 ### General Guidelines
@@ -93,7 +93,7 @@ end
   - `.stylua.toml` - Stylua configuration (column width 120, sort requires enabled)
 - **Imports:** Keep organized and sorted where applicable
 - **Error handling:** Register LSPs with `require("nobbz.health").register_lsp("lsp-name")`
-- **Plugin loading:** `false` = mandatory (start), `true` = optional (opt) in `optionalPlugins`
+- **Plugin loading:** Plugins in `plugins.start` are loaded at startup (mandatory), plugins in `plugins.opt` are lazy-loaded (optional)
 - **Schema support for JSON/YAML/TOML:** LSPs for jsonls, yamlls, taplo are configured with SchemaStore for schema validation via `$schema` keys. Ensure files have proper schemas for completions and diagnostics.
 
 ## Copilot Structure and Workflows
@@ -144,7 +144,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 **Adding a new plugin:**
 
 1. `nix run .#add-plugin <name> <owner/repo>`
-2. Edit `plugins/default.nix` - add plugin name to `optionalPlugins` set with `true` (opt) or `false` (start)
+2. Edit `nix/mnw/default.nix` - add plugin to either `plugins.start` (mandatory) or `plugins.opt` (optional) list
 3. Configure in `plugins/nobbz/lua/nobbz/` - create new file or edit existing
 4. Add lazy loading spec if optional plugin
 5. `nix build` - verify it builds
@@ -164,10 +164,10 @@ Before submitting changes:
 
 1. **Nix not available:** This project REQUIRES Nix. All operations fail without it.
 2. **Build failures after adding plugins:**
-   - Check `plugins/default.nix` - plugin must be in `optionalPlugins` set
+   - Check `nix/mnw/default.nix` - plugin must be in either `plugins.start` or `plugins.opt` list
    - Verify plugin exists in `npins/sources.json` with `nvim-` prefix
 3. **Lua formatting fails:** Run `nix develop` first, check `.editorconfig` compliance
-4. **Plugin not loading:** Check `optionalPlugins` set - `false` = mandatory, `true` = optional
+4. **Plugin not loading:** Check `nix/mnw/default.nix` - plugins in `plugins.start` are mandatory (loaded at startup), plugins in `plugins.opt` are optional (lazy-loaded)
 5. **LSP not working:** LSP binaries added to PATH in `nix/mnw/default.nix` via `extraBinPath`, register with health system
 
 ## Additional Notes
