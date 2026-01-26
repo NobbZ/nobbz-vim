@@ -47,6 +47,8 @@ This project REQUIRES Nix with flakes enabled. All operations fail without it.
 - **Integration testing:** `nix build` + `nix run` + `:checkhealth nobbz` in Neovim
 - **No single test command** - build and health check serve as integration tests
 - **Custom health check system:** Use `:checkhealth nobbz` (not `:checkhealth`)
+- **Plugin validation:** Test individual plugins by loading them in Neovim and checking functionality
+- **LSP validation:** Verify LSP servers work by opening files of supported languages and checking `:checkhealth nobbz`
 
 ## Code Style Guidelines
 
@@ -92,6 +94,7 @@ end
 - **Imports:** Keep organized and sorted where applicable
 - **Error handling:** Register LSPs with `require("nobbz.health").register_lsp("lsp-name")`
 - **Plugin loading:** `false` = mandatory (start), `true` = optional (opt) in `optionalPlugins`
+- **Schema support for JSON/YAML/TOML:** LSPs for jsonls, yamlls, taplo are configured with SchemaStore for schema validation via `$schema` keys. Ensure files have proper schemas for completions and diagnostics.
 
 ## Copilot Structure and Workflows
 
@@ -113,8 +116,8 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 
 - `flake.nix` - Main flake definition, defines packages and dev shell
 - `flake.lock` - Lock file for flake inputs (auto-generated, commit changes)
-- `nvim.nix` - Neovim package definition, wraps with runtime dependencies
-- `nvide.nix` - Neovide (GUI) wrapper using wrapper-manager
+- `nix/mnw/default.nix` - MNW (Minimal Neovim Wrapper) configuration for Neovim package
+- `nix/mnw.nix` - MNW integration module, defines `nobbzvim` and `nobbzvide` packages
 - `.editorconfig` - Lua formatting rules (2 spaces, double quotes, comma separators)
 - `.stylua.toml` - Stylua configuration (mostly defaults explicitly set)
 - `.envrc` - direnv configuration for automatic dev shell loading
@@ -165,13 +168,13 @@ Before submitting changes:
    - Verify plugin exists in `npins/sources.json` with `nvim-` prefix
 3. **Lua formatting fails:** Run `nix develop` first, check `.editorconfig` compliance
 4. **Plugin not loading:** Check `optionalPlugins` set - `false` = mandatory, `true` = optional
-5. **LSP not working:** LSP binaries added to PATH in `nvim.nix`, register with health system
-6. **Schema support for JSON/YAML/TOML:** LSPs for jsonls, yamlls, taplo are configured with SchemaStore for schema validation via `$schema` keys. Ensure files have proper schemas for completions and diagnostics.
+5. **LSP not working:** LSP binaries added to PATH in `nix/mnw/default.nix` via `extraBinPath`, register with health system
 
 ## Additional Notes
 
 - **No GitHub Actions workflows** - validation is entirely manual
 - **Custom health check system** - use `:checkhealth nobbz` not `:checkhealth`
 - **Lazy loading via lz.n** - not using lazy.nvim, custom system in `lazy/init.lua`
-- **Neovide supported** - GUI wrapper defined in `nvide.nix`
+- **MNW (Minimal Neovim Wrapper)** - Used for wrapping Neovim with plugins and runtime dependencies, configured in `nix/mnw/default.nix`
+- **Neovide supported** - GUI wrapper defined in `nix/mnw.nix`
 - **direnv integration** - `.envrc` auto-loads dev shell if direnv installed
