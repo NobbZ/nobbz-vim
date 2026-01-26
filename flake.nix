@@ -42,19 +42,18 @@
               inherit emmy-lua-code-style;
             };
 
-            ## TODO: fix once an alternative to `packpathDirs` is known.
-            # shellHook = let
-            #   luarc = pkgs.mk-luarc-json {
-            #     nvim = self'.packages.nobbzvim.unwrapped;
-            #     plugins = self'.packages.nobbzvim.packpathDirs.myNeovimPackages.start;
-            #   };
-            # in
-            #   /*
-            #   bash
-            #   */
-            #   ''
-            #     ln -fs ${luarc} .luarc.json
-            #   '';
+            shellHook = let
+              luarc = pkgs.mk-luarc-json {
+                nvim = self'.packages.nobbzvim.config.neovim;
+                plugins = self'.packages.nobbzvim.config.plugins.start ++ self'.packages.nobbzvim.config.plugins.opt;
+              };
+            in
+              /*
+              bash
+              */
+              ''
+                ln -fs ${luarc} .luarc.json
+              '';
           };
       };
     };
