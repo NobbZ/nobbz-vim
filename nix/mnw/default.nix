@@ -14,8 +14,9 @@
   # `startuptime` needs to be pointed to the *correct* neovim, therefore we provide a full binarypath here
   wrapperArgs = ["--set" "NOBBZ_NVIM_PATH" "${placeholder "out"}/bin/nvim"];
 
-  plugins.startAttrs.nobbz = {
-    src = "${inputs.self}/plugins/nobbz";
+  plugins.dev.nobbz = {
+    pure = "${inputs.self}/plugins/nobbz";
+    impure = ''/' .. os.getenv(\"NOBBZ_VIM_DEV_ROOT\") .. ${"'"}'';
   };
 
   plugins.start = lib.mkMerge [

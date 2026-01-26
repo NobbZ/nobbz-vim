@@ -38,8 +38,9 @@
           pkgs.mkShell {
             packages = builtins.attrValues {
               inherit (pkgs) nil stylua npins alejandra basedpyright;
-              inherit (self'.packages) nobbzvim nobbzvide;
+              inherit (self'.packages) nobbzvide;
               inherit emmy-lua-code-style;
+              neovim = self'.packages.nobbzvim.devMode;
             };
 
             ## TODO: fix once an alternative to `packpathDirs` is known.
