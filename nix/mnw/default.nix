@@ -24,13 +24,12 @@
     (builtins.attrValues {
       inherit
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
-        gitsigns
         indent-blankline
         lspconfig
         lspkind
         luasnip
         ;
-      inherit (pkgs.vimPlugins) lualine-nvim blink-cmp bigfile-nvim neogit oil-nvim nvim-web-devicons vim-wakatime;
+      inherit (pkgs.vimPlugins) lualine-nvim blink-cmp bigfile-nvim oil-nvim nvim-web-devicons vim-wakatime;
       nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
     })
     # Start because needed like that
@@ -58,6 +57,7 @@
       catppuccin
       crates
       flash
+      gitsigns
       ledger
       lspsaga
       markdown
@@ -68,5 +68,6 @@
       surround
       trouble
       ;
+    inherit (pkgs.vimPlugins) neogit;
   };
 }
