@@ -22,7 +22,6 @@
         ...
       }: {
         _module.args.npins = import ./npins;
-        _module.args.pkgs = inputs'.nixpkgs.legacyPackages.extend inputs.gen-luarc.overlays.default;
 
         packages.md-oxide = pkgs.callPackage ./pkgs/oxide.nix {inherit npins;};
         packages.neovim = pkgs.callPackage ./nvim.nix {inherit self';};
@@ -65,6 +64,8 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixpkgs-unstable";
 
     nixpkgs-emmy.url = "github:NixOS/nixpkgs?ref=pull/323401/head";
+
+    mnw.url = "github:gerg-l/mnw";
 
     parts.url = "github:hercules-ci/flake-parts";
     parts.inputs.nixpkgs-lib.follows = "nixpkgs";
