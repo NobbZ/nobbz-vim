@@ -24,7 +24,6 @@
     (builtins.attrValues {
       inherit
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
-        fix-cursor
         gitsigns
         indent-blankline
         lspconfig
@@ -40,12 +39,10 @@
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
         SchemaStore
         lz-n
-        nio
         noice
         none-ls
         notify
         nui
-        plenary
         promis-async
         rainbow
         telescope
