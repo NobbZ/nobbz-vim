@@ -25,7 +25,6 @@
       inherit
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
         lspconfig
-        lspkind
         luasnip
         ;
       inherit (pkgs.vimPlugins) lualine-nvim blink-cmp bigfile-nvim oil-nvim nvim-web-devicons vim-wakatime;
