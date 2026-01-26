@@ -3,6 +3,10 @@
   inputs,
   ...
 }: {
+  imports = [
+    ./mnw.nix
+  ];
+
   perSystem = {
     pkgs,
     inputs',
