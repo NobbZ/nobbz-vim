@@ -24,7 +24,6 @@
     (builtins.attrValues {
       inherit
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
-        indent-blankline
         lspconfig
         lspkind
         luasnip
@@ -58,6 +57,7 @@
       crates
       flash
       gitsigns
+      indent-blankline
       ledger
       lspsaga
       markdown
