@@ -38,7 +38,7 @@
     (builtins.attrValues {
       inherit
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
-        catppuccin
+        SchemaStore
         lz-n
         nio
         noice
@@ -48,7 +48,6 @@
         plenary
         promis-async
         rainbow
-        SchemaStore
         telescope
         telescope-ui-select
         which-key
@@ -59,6 +58,7 @@
   plugins.opt = builtins.attrValues {
     inherit
       (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
+      catppuccin
       crates
       flash
       ledger
