@@ -14,8 +14,9 @@
   # `startuptime` needs to be pointed to the *correct* neovim, therefore we provide a full binarypath here
   wrapperArgs = ["--set" "NOBBZ_NVIM_PATH" "${placeholder "out"}/bin/nvim"];
 
-  plugins.startAttrs.nobbz = {
-    src = "${inputs.self}/plugins/nobbz";
+  plugins.dev.nobbz = {
+    pure = "${inputs.self}/plugins/nobbz";
+    impure = ''/' .. os.getenv(\"NOBBZ_VIM_DEV_ROOT\") .. ${"'"}'';
   };
 
   plugins.start = lib.mkMerge [
@@ -23,31 +24,24 @@
     (builtins.attrValues {
       inherit
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
-        fix-cursor
-        gitsigns
-        indent-blankline
         lspconfig
-        lspkind
         luasnip
         ;
-      inherit (pkgs.vimPlugins) lualine-nvim blink-cmp bigfile-nvim neogit oil-nvim nvim-web-devicons vim-wakatime;
+      inherit (pkgs.vimPlugins) lualine-nvim blink-cmp bigfile-nvim oil-nvim nvim-web-devicons vim-wakatime;
       nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
     })
     # Start because needed like that
     (builtins.attrValues {
       inherit
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
-        catppuccin
+        SchemaStore
         lz-n
-        nio
         noice
         none-ls
         notify
         nui
-        plenary
         promis-async
         rainbow
-        SchemaStore
         telescope
         telescope-ui-select
         which-key
@@ -58,8 +52,11 @@
   plugins.opt = builtins.attrValues {
     inherit
       (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
+      catppuccin
       crates
       flash
+      gitsigns
+      indent-blankline
       ledger
       lspsaga
       markdown
@@ -70,5 +67,6 @@
       surround
       trouble
       ;
+    inherit (pkgs.vimPlugins) neogit;
   };
 }

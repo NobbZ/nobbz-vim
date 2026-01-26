@@ -20,12 +20,6 @@ vim.o.wrap = false
 
 vim.g.mapleader = " " -- set `<leader>` to the space key
 
--- Set up indent markers
-require("ibl").setup({
-  indent = { char = "┊", },
-  scope = { enabled = true, },
-})
-
 ---Sets linemode to the requested numbering.
 ---@param numbering_mode "relative"|"absolute"|"toggle" which mode shall be activated by the keypress
 ---@return function
