@@ -28,7 +28,7 @@ local function list_snips()
   vim.print(ft_snips)
 end
 
-WK.add({
+require("which-key").add({
   { "<C-e>",   luasnip.expand, desc = "expand snippet",            mode = { "i", "s", }, },
   { "<C-j>",   cycle,          desc = "Cycle choices in node",     mode = { "i", "s", }, },
   { "<C-S-j>", select,         desc = "UI select choices in node", mode = { "i", "s", }, },

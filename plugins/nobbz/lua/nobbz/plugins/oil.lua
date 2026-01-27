@@ -12,7 +12,7 @@ require("oil").setup({
   },
 })
 
-WK.add({
+require("which-key").add({
   { "<leader>o",  group = "oil file explorer", },
   { "<leader>o.", "<cmd>Oil<cr>",              desc = "open current folder", },
   { "<leader>o-", "<cmd>Oil --float<cr>",      desc = "open current folder (floating)", },

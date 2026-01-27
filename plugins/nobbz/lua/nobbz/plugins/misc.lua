@@ -34,7 +34,7 @@ local function change_linum_mode(numbering_mode)
   error("'" .. numbering_mode .. "' is not a valid mode")
 end
 
-WK.add({
+require("which-key").add({
   { "<leader>#",  group = "line numbering modes", },
   { "<leader>##", change_linum_mode("toggle"),    desc = "toggle relativenumber", },
   { "<leader>#+", change_linum_mode("relative"),  desc = "enable relativenumber", },

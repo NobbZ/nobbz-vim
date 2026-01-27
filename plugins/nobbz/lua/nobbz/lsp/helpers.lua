@@ -16,7 +16,7 @@ local function format_buffer() vim.lsp.buf.format({ async = true, }) end
 ---@param client vim.lsp.Client
 ---@param buffer integer
 local function keymap(client, buffer) ---@diagnostic disable-line:unused-local
-  WK.add({
+  require("which-key").add({
     { "<leader>l",   group = "language server", },
     { "<leader>lg",  group = "goto", },
     { "<leader>lgD", vim.lsp.buf.declaration,     desc = "jump to declaration", },

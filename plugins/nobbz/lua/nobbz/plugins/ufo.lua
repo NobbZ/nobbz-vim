@@ -17,7 +17,7 @@ require("nobbz.lazy").add_specs({ {
       end,
     })
 
-    WK.add({
+    require("which-key").add({
       { "zR", ufo.openAllFolds,  desc = "open all folds", },
       { "zM", ufo.closeAllFolds, desc = "close all folds", },
     })

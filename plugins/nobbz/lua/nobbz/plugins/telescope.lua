@@ -34,7 +34,7 @@ telescope.setup({
 
 telescope.load_extension("ui-select")
 
-WK.add({
+require("which-key").add({
   { "<leader>f",  group = "find", },
   { "<leader>ff", find_files,              desc = "find file by name", },
   { "<leader>fg", builtin.live_grep,       desc = "find file by content (rg)", },

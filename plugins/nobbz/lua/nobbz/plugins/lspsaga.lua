@@ -13,7 +13,7 @@ require("nobbz.lazy").add_specs({ {
   end,
 }, })
 
-WK.add({
+require("which-key").add({
   { "<leader>lp",    group = "peek", },
   { "<leader>lpd",   "<cmd>Lspsaga peek_definition<cr>",      desc = "peek definition", },
   { "<leader>lpt",   "<cmd>Lspsaga peek_type_definition<cr>", desc = "peek type definition", },
