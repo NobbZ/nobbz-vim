@@ -31,7 +31,8 @@ local function change_linum_mode(numbering_mode)
     return function() vim.o.relativenumber = rel end
   end
 
-  error("'" .. numbering_mode .. "' is not a valid mode")
+  local message = string.format("'%s' is not a valid mode", numbering_mode)
+  error(message)
 end
 
 require("which-key").add({

@@ -14,7 +14,8 @@ function M.git_root()
 
   local result = vim.system({ "git", "rev-parse", "--show-toplevel", }, { text = true, }):wait()
   if result.code ~= 0 and result.code ~= 128 then
-    vim.notify("git errored when searching for project root:\n" .. result.stderr, vim.log.levels.WARN)
+    local message = string.format("git errored when searching for the project root:\n%s", result.stderr)
+    vim.notify(message, vim.log.levels.WARN)
     return nil
   end
 

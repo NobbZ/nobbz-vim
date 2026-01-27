@@ -47,7 +47,8 @@ local function discover_clients()
   -- Scan the clients directory for Lua files
   local scan = vim.uv.fs_scandir(client_dir)
   if not scan then
-    vim.notify("unable to scan '" .. client_dir .. "' for LSP clients")
+    local message = string.format("unable to scan '%s' for LSP clients", client_dir)
+    vim.notify(message)
     return clients
   end
 
@@ -57,7 +58,8 @@ local function discover_clients()
     if type == "file" and name:match("%.lua$") then
       -- Convert filename to module path (remove .lua extension)
       local module_name = name:gsub("%.lua$", "")
-      table.insert(clients, "nobbz.lsp.clients." .. module_name)
+      local full_module_name = string.format("nobbz.lsp.clients.%s", module_name)
+      table.insert(clients, full_module_name)
     end
   end
 
@@ -74,7 +76,7 @@ for _, client_module in ipairs(clients) do
   local client_config = require(client_module)
 
   -- Extract required fields with validation
-  local name = client_config.name or error("client name is required in " .. client_module)
+  local name = client_config.name or error(string.format("client name is required in %s", client_module)
 
   -- Shortcircuit if LS should not be loaded
   if client_config.activate and not client_config.activate() then
