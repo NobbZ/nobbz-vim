@@ -1,15 +1,6 @@
 local lazy = require("nobbz.lazy")
 
 WK = require("which-key")
--- TODO: make this available via lsp-helpers
-LSP_CAPAS = require("blink.cmp").get_lsp_capabilities({
-  textDocument = {
-    foldingRange = {
-      dynamicRegistration = true,
-      lineFoldingOnly = true,
-    },
-  },
-})
 
 ---A small helper function to lazily require.
 ---
