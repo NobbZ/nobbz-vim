@@ -12,7 +12,7 @@ local function toggle_virtual_lines()
   vim.diagnostic.config({ virtual_lines = virtual_lines, })
 end
 
-WK.add({
+require("which-key").add({
   { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>",                        desc = "toggle trouble", },
   { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",           desc = "toggle buffer trouble", },
   { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>",                desc = "Symbols (Trouble)", },

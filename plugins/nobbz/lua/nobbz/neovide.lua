@@ -16,7 +16,7 @@ local function scale_down()
   neovide_scale_factor(1 / base_factor)
 end
 
-WK.add({
+require("which-key").add({
   { "<C-+>",      scale_up,   desc = "increase font scale", },
   { "<C-->",      scale_down, desc = "decrease font scale", },
   { "<C-kPlus>",  scale_up,   desc = "increase font scale", },

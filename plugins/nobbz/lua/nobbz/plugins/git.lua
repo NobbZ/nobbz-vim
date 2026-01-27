@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- register keys for neogit
-WK.add({
+require("which-key").add({
   { "<leader>g",  group = "git", },
   { "<leader>gb", group = "blame", },
 })
@@ -21,7 +21,7 @@ require("nobbz.lazy").add_specs({ {
 
     gitsigns.setup()
 
-    WK.add({
+    require("which-key").add({
       { "<leader>gb",  group = "blame", },
       { "<leader>gbb", gitsigns.blame, },
       { "<leader>gbi", function() gitsigns.blame_line({ full = true, }) end, },

@@ -5,7 +5,7 @@ require("nobbz.lazy").add_specs({ {
 
     flash.setup({})
 
-    WK.add({
+    require("which-key").add({
       { "s",     function() flash.jump({}) end,            desc = "flash jump",          mode = { "n", "x", "o", }, },
       { "S",     function() flash.treesitter({}) end,      desc = "flash treesitter",    mode = { "n", "o", }, },
       { "r",     function() flash.remote() end,            desc = "remote flash",        mode = { "o", }, },
