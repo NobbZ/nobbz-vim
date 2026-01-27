@@ -12,19 +12,16 @@ function M.git_root()
     return vim.fs.root(vim.fn.getcwd(), ".git")
   end
 
-  local handle = io.popen("git rev-parse --show-toplevel 2> /dev/null")
-  if not handle then return nil end
-
-  local result = handle:read("*a")
-  handle:close()
-
-  result = result:gsub("%s+$", "") -- trim trailing whitespace
-
-  if result == "" then
+  local result = vim.system({ "git", "rev-parse", "--show-toplevel", }, { text = true, }):wait()
+  if result.code ~= 0 and result.code ~= 128 then
+    vim.notify("git errored when searching for project root:\n" .. result.stderr, vim.log.levels.WARN)
     return nil
   end
 
-  return result
+  local git_path = vim.trim(result.stdout)
+  if git_path == "" then return nil end
+
+  return git_path
 end
 
 return M
