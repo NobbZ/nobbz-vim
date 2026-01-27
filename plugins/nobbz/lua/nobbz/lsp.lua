@@ -13,6 +13,15 @@ local ls_sources = {
   --diagnostics.deadnix,
 }
 
+local blink_capas = require("blink.cmp").get_lsp_capabilities({
+  textDocument = {
+    foldingRange = {
+      dynamicRegistration = true,
+      lineFoldingOnly = true,
+    },
+  },
+})
+
 -- Enable null-ls
 null_ls.setup({
   diagnostics_format = "[#{m}] #{s} (#{c})",
@@ -72,10 +81,15 @@ for _, client_module in ipairs(clients) do
     goto continue
   end
 
+  local capabilities = client_config.capabilities or blink_capas
+  if type(capabilities) == "function" then
+    capabilities = capabilities(vim.deepcopy(blink_capas))
+  end
+
   -- Create setup table with defaults applied
   local setup = {
     on_attach = helpers.combine(client_config.on_attach or { helpers.default, }),
-    capabilities = client_config.capabilities or LSP_CAPAS,
+    capabilities = capabilities,
     init_options = client_config.init_options,
     root_dir = client_config.root_dir,
     cmd = client_config.cmd,
