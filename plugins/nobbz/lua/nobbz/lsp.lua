@@ -1,7 +1,6 @@
 local null_ls = require("null-ls")
 local helpers = require("nobbz.lsp.helpers")
 local register_lsp = require("nobbz.health").register_lsp
-local register_treesitter = require("nobbz.plugins.treesitter").register
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
@@ -99,16 +98,6 @@ for _, client_module in ipairs(clients) do
     on_init = client_config.on_init,
     filetypes = client_config.filetypes,
   }
-
-  if client_config.ft then
-    if type(client_config.ft) == "table" then
-      for _, ft in ipairs(client_config.ft) do
-        register_treesitter(ft)
-      end
-    else
-      register_treesitter(client_config.ft)
-    end
-  end
 
   vim.lsp.config(name, setup)
   vim.lsp.enable(name)

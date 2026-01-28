@@ -12,20 +12,10 @@ require("nvim-treesitter").setup({
   },
 })
 
-local M = {}
-
---- Register the given `filetype` for treesitter.
----
---- @param filetype string
-function M.register(filetype)
-  local group_name = string.format("NobbZTreesitter_%s", filetype)
-  local group = vim.api.nvim_create_augroup(group_name, { clear = true, })
-
-  vim.api.nvim_create_autocmd("FileType", {
-    group = group,
-    pattern = filetype,
-    callback = function() vim.treesitter.start() end,
-  })
-end
-
-return M
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("NobbZTreesitter_allLangs", { clear = true, }),
+  pattern = require("nvim-treesitter").get_available(),
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
