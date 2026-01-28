@@ -76,7 +76,7 @@ for _, client_module in ipairs(clients) do
   local client_config = require(client_module)
 
   -- Extract required fields with validation
-  local name = client_config.name or error(string.format("client name is required in %s", client_module)
+  local name = client_config.name or error(string.format("client name is required in %s", client_module))
 
   -- Shortcircuit if LS should not be loaded
   if client_config.activate and not client_config.activate() then

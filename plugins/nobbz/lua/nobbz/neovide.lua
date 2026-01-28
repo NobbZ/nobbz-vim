@@ -1,19 +1,22 @@
-vim.o.guifont = "Departure Mono:11"
+local SCALE_FACTOR = 1.1
+local FONT = "Departure Mono"
+local FONT_SIZE = 11
+local DEFAULT_SCALE = 0.6
 
-vim.g.neovide_scale_factor = 0.6
+vim.o.guifont = string.format("%s:%d", FONT, FONT_SIZE)
 
-local base_factor = 1.1
+vim.g.neovide_scale_factor = DEFAULT_SCALE
 
 local function neovide_scale_factor(factor)
   vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * factor
 end
 
 local function scale_up()
-  neovide_scale_factor(base_factor)
+  neovide_scale_factor(SCALE_FACTOR)
 end
 
 local function scale_down()
-  neovide_scale_factor(1 / base_factor)
+  neovide_scale_factor(1 / SCALE_FACTOR)
 end
 
 require("which-key").add({
