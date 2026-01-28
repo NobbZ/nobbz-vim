@@ -15,7 +15,7 @@ end
 
 local function script_path(suffix)
   local path = debug.getinfo(2, "S").source:sub(2):match("(.*/)")
-  if suffix then return path .. suffix end
+  if suffix then return string.format("%s%s", path, suffix) end
   return path
 end
 
@@ -39,8 +39,10 @@ vim.api.nvim_create_user_command("SnipList", list_snips, {})
 local git_root = helpers.git_root()
 local paths = { script_path("luasnip"), }
 if git_root then
-  vim.notify("git root: " .. git_root, vim.log.levels.INFO)
-  table.insert(paths, git_root .. "/snippets")
+  local message = string.format("git root: %s", git_root)
+  local snippet_path = vim.fs.joinpath(git_root, "snippets")
+  vim.notify(message, vim.log.levels.INFO)
+  table.insert(paths, snippet_path)
 end
 table.insert(paths, "~/.config/nvim/snippets")
 

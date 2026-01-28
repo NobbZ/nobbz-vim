@@ -18,12 +18,15 @@ local function on_init(client)
   local path = client.workspace_folders[1].name
 
   -- Search in project for a `.luarc.json` or `.luarc.jsonc`, do nothing if found.
-  local luarc_json_exists = vim.fn.glob(path .. "/.luarc.json") ~= ""
-  local luarc_jsonc_exists = vim.fn.glob(path .. "/.luarc.jsonc") ~= ""
+  local luarc_json_path = vim.fs.joinpath(path, ".luarc.json")
+  local luarc_json_exists = vim.fn.glob(luarc_json_path) ~= ""
+  local luarc_jsonc_path = vim.fs.joinpath(path, ".luarc.jsonc")
+  local luarc_jsonc_exists = vim.fn.glob(luarc_jsonc_path) ~= ""
   if luarc_json_exists or luarc_jsonc_exists then return end
 
   -- if there is a luarc.lua in the workspace root, import and merge.
-  local plugin_paths = vim.split(vim.fn.glob(path .. "/plugins/*/lua"), "\n", { trimempty = true, })
+  local glob_path = vim.fs.joinpath(path, "plugins", "*", "lua")
+  local plugin_paths = vim.split(vim.fn.glob(glob_path), "\n", { trimempty = true, })
   plugin_paths = vim.iter(plugin_paths):map(function(plugin_path) return string.sub(plugin_path, -1, -4) end)
   table.insert(plugin_paths, vim.env.VIMRUNTIME)
 

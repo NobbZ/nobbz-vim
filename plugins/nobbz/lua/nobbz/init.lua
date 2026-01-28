@@ -17,7 +17,8 @@ local this_module = ...
 ---@param submodule string
 ---@return unknown
 local function rs(submodule)
-  return require(this_module .. "." .. submodule)
+  local module_name = string.format("%s.%s", this_module, submodule)
+  return require(module_name)
 end
 
 --- Load individual plugin specifications by scanning the `plugins` directory.
@@ -36,7 +37,8 @@ local function discover_plugins()
   for name, type in candidates do
     if type == "file" and name:match("%.lua$") then
       local module_name = name:gsub("%.lua$", "")
-      table.insert(plugins, "nobbz.plugins." .. module_name)
+      module_name = string.format("nobbz.plugins.%s", module_name)
+      table.insert(plugins, module_name)
     end
   end
 
