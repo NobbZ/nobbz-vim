@@ -67,6 +67,10 @@
       surround
       trouble
       ;
-    inherit (pkgs.vimPlugins) neogit;
+    inherit
+      (pkgs.vimPlugins)
+      neogit
+      cord-nvim
+      ;
   };
 }
