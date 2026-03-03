@@ -8,9 +8,9 @@
   appName = "nobbz-vim";
   desktopEntry = false;
   enable = true;
-  extraBinPath = builtins.attrValues {
-    inherit (pkgs) lua-language-server stylua markdown-oxide vscode-json-languageserver yaml-language-server taplo wl-clipboard xclip;
-  };
+  extraBinPath = (builtins.attrValues {
+      inherit (pkgs) lua-language-server stylua markdown-oxide vscode-json-languageserver yaml-language-server taplo;
+      }) ++ lib.optionals pkgs.stdenv.isLinux [ pkgs.wl-clipboard pkgs.xclip ];
   # `startuptime` needs to be pointed to the *correct* neovim, therefore we provide a full binarypath here
   wrapperArgs = ["--set" "NOBBZ_NVIM_PATH" "${placeholder "out"}/bin/nvim"];
 
