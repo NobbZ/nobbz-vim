@@ -8,6 +8,10 @@ require("nobbz.lazy").add_specs({ {
       },
       outline = {
         close_after_jump = true,
+        layout = "float",
+      },
+      lightbulb = {
+        virtual_text = false,
       },
     })
   end,
@@ -20,4 +24,5 @@ require("which-key").add({
   { "<leader>l<lt>", "<cmd>Lspsaga diagnostic_jump_prev<cr>", desc = "jump to previous diagnostic", },
   { "<leader>l>",    "<cmd>Lspsaga diagnostic_jump_next<cr>", desc = "jump to next diagnostic", },
   { "<leader>lf",    "<cmd>Lspsaga finder<cr>",               desc = "find references and implementations", },
+  { "<leader>lo",    "<cmd>Lspsaga outline<cr>",              desc = "open outline", },
 })
