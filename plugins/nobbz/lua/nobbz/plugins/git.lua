@@ -16,6 +16,7 @@ require("nobbz.health").register_program("git", true)
 
 require("nobbz.lazy").add_specs({ {
   "gitsigns",
+  event = "DeferredUIEnter",
   after = function()
     local gitsigns = require("gitsigns")
 
