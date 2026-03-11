@@ -57,6 +57,7 @@
       flash
       gitsigns
       indent-blankline
+      jj-nvim
       ledger
       lspsaga
       markdown

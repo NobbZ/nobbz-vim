@@ -117,6 +117,22 @@
       "url": "https://github.com/lukas-reineke/indent-blankline.nvim/archive/005b56001b2cb30bfa61b7986bc50657816ba4ba.tar.gz",
       "hash": "sha256-0q/V+b4UrDRnaC/eRWOi9HU9a61vQSAM9/C8ZQyKt+Y="
     },
+    "nvim-jj-nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NicolasGB",
+        "repo": "jj.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.5.0",
+      "revision": "185190909ddfe79b0b03862f680c8474b72c90ed",
+      "url": "https://api.github.com/repos/NicolasGB/jj.nvim/tarball/refs/tags/v0.5.0",
+      "hash": "sha256-E8AvhbYfaLyz18pg89jGCova8r5uf0NlQPnv3qQfQ74="
+    },
     "nvim-ledger": {
       "type": "Git",
       "repository": {
