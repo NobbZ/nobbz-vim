@@ -1,6 +1,5 @@
 require("nobbz.lazy").add_specs({ {
   "lspsaga",
-  event = "DeferredUIEnter",
   after = function()
     require("lspsaga").setup({
       symbol_in_winbar = {
@@ -15,6 +14,7 @@ require("nobbz.lazy").add_specs({ {
       },
     })
   end,
+  lazy = false,
 }, })
 
 require("which-key").add({
