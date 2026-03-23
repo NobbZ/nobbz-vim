@@ -38,6 +38,7 @@
         (inputs.self.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins)
         SchemaStore
         lz-n
+        lspsaga
         noice
         none-ls
         notify
@@ -61,7 +62,6 @@
       indent-blankline
       jj-nvim
       ledger
-      lspsaga
       markdown
       mini
       nabla
