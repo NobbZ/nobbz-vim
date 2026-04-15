@@ -4,6 +4,7 @@ return {
   name = "yamlls",
   ft = "yaml",
   on_attach = { helpers.default, },
+  cmd = { "yaml-language-server", "--stdio", },
   settings = {
     yaml = {
       schemas = require("schemastore").yaml.schemas(),
