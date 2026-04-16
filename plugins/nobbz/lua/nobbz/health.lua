@@ -83,7 +83,7 @@ end
 ---If a program is registered for a second time, the `required` will be overwritten.
 ---
 ---@param program string the name of the program
----@param required_or_filetypes (boolean | string[]) whether the program is required (missing programs
+---@param required_or_filetypes (boolean | string[]?) whether the program is required (missing programs
 ---  will issue an error when required, a warning otherwise)
 M.register_program = function(program, required_or_filetypes)
   if type(required_or_filetypes) == "table" then
@@ -117,10 +117,19 @@ M.register_lsp = function(lsp)
   lsp_configs[lsp] = not not config
   if not config then return end
 
-  local program = config.cmd[1]
+  local program = nil
+  if type(config.cmd) == "function" then
+    local message = string.format("LSP '%s' uses a function for cmd, please manually configure a binary!", lsp)
+    vim.notify(message, vim.log.levels.WARN)
+  else
+    program = config.cmd[1]
+  end
+
   local patterns = config.filetypes
 
-  M.register_program(program, patterns)
+  if program then
+    M.register_program(program, patterns)
+  end
 end
 
 ---Marks the configuration as completely loaded

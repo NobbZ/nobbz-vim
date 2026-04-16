@@ -20,6 +20,10 @@ vim.o.wrap = false
 
 vim.g.mapleader = " " -- set `<leader>` to the space key
 
+-- enables the new v2 UI (less "press enter" it seems)
+local has_ui2, ui2 = pcall(require, "vim._core.ui2")
+if has_ui2 and type(ui2.enable) == "function" then ui2.enable() end
+
 ---Sets linemode to the requested numbering.
 ---@param numbering_mode "relative"|"absolute"|"toggle" which mode shall be activated by the keypress
 ---@return function
