@@ -5,7 +5,7 @@
 ---@return function
 local function refresh_codelens(client, buffer)
   return function(args)
-    if client:supports_method("textDocument/codelens", buffer) then vim.lsp.codelens.refresh(args) end
+    if client:supports_method("textDocument/codelens", buffer) then vim.lsp.codelens.enable(true, args) end
   end
 end
 

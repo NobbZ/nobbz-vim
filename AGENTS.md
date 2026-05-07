@@ -1,36 +1,57 @@
 # AGENTS.md - Development Guidelines for nobbz-vim
 
+## Agent Permissions
+
+**Agents (AI assistants, LLMs, copilots) operating in this repository are restricted to read-only access.**
+
+Agents MAY:
+- Read any file in the repository
+- Discuss, review, and analyse the codebase
+- Suggest changes and explain their rationale
+
+Agents MAY NOT:
+- Modify, create, or delete any project files
+
+The only files agents are permitted to write are agent/LLM-specific instruction files:
+- `AGENTS.md` (this file)
+- `CLAUDE.md` (or any equivalent agent-specific instruction file)
+- `.github/copilot-instructions.md`
+- Anything under `.opencode/`
+
 ## Overview
 
 This repository contains a Nix flake-based Neovim configuration. It provides a reproducible, declarative Neovim setup with custom plugins and LSP configurations.
 
 **Key Technologies:** Nix, Lua, Python (build scripts)\
-**Target:** Personal Neovim configuration using Nix flakes for reproducibility
+**Target:** Personal Neovim configuration using Nix flakes for reproducibility\
+**VCS:** Jujutsu (`jj`) with a backing Git repository
 
 ## Build/Lint/Test Commands
+
+> **Reference only.** Agents must not run these commands or modify project files.
 
 This project REQUIRES Nix with flakes enabled. All operations fail without it.
 
 ### Core Commands
 
-- **Build the configuration:** `nix build` or `nix build .#neovim`
+- **Build the configuration:** `nix build` or `nix build .#nobbzvim`
   - Builds Neovim with all plugins (takes 1-2 minutes on first build)
   - Output in `./result` symlink
 
-- **Run directly:** `nix run` or `nix run .#neovim`
+- **Run directly:** `nix run` or `nix run .#nobbzvim`
   - Launches Neovim with the configuration
   - Useful for quick testing
 
 - **Enter dev shell:** `nix develop`
   - Provides: `nil`, `stylua`, `npins`, `alejandra`, `basedpyright`, `emmy-lua-code-style`
   - Creates `.luarc.json` symlink for LSP support
-  - Use this for making changes to Lua code
 
 - **Format code:** `nix fmt`
   - Formats all Nix files with `alejandra`
   - Formats all Lua files with `emmy-lua-code-style` (CodeFormat)
   - **ALWAYS run before committing** - formatting is strict
-  - Respects `.editorconfig` and `.stylua.toml`
+  - Respects `.editorconfig`
+  - Note: `stylua` is available in the dev shell as a standalone tool but is **not** part of `nix fmt`
 
 - **Add new plugin:** `nix run .#add-plugin <name> <owner/repo>`
   - Example: `nix run .#add-plugin telescope nvim-telescope/telescope.nvim`
@@ -63,7 +84,7 @@ Follow the [luarocks style guide](https://github.com/luarocks/lua-style-guide) w
 - **Variables:** Use `local` for all variables (no globals)
 - **Documentation:** EmmyLua annotations for functions
 - **Lazy loading:** Use `nobbz.lazy` when possible
-- **Formatting:** Both `stylua` and `emmy-lua-code-style` must pass
+- **Formatting:** `emmy-lua-code-style` must pass (run via `nix fmt`); `stylua` available in dev shell
 
 **Example:**
 
@@ -97,7 +118,7 @@ end
 - **Plugin loading:** Add to `plugins.start` list for mandatory plugins, `plugins.opt` list for optional plugins in `nix/mnw/default.nix`
 - **Schema support for JSON/YAML/TOML:** LSPs for jsonls, yamlls, taplo are configured with SchemaStore for schema validation via `$schema` keys. Ensure files have proper schemas for completions and diagnostics.
 
-## Copilot Structure and Workflows
+## Project Structure and Workflows
 
 ### Repository Overview
 
@@ -108,6 +129,7 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 - **Purpose:** Personal Neovim configuration using Nix flakes for reproducibility
 - **Size:** Small (~600KB, ~1900 lines of Nix/Lua code)
 - **Languages:** Nix, Lua, Python (for build scripts)
+- **VCS:** Jujutsu (`jj`) with a backing Git repository
 - **Target Users:** Developers in the Nix ecosystem
 - **Try it:** `nix run github:nobbz/nobbz-vim` (requires Nix with flakes enabled)
 
@@ -129,11 +151,16 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 - `plugins/` - Plugin management (flake-parts module, builds vim plugins from npins)
 - `plugins/nobbz/` - Custom plugin containing all configuration
 - `plugins/nobbz/lua/nobbz/` - Lua configuration modules (one file per feature)
+- `plugins/nobbz/lua/nobbz/lazy/` - Custom lazy-loading system wrapping `lz.n` (`init.lua`, `specs.lua`)
 - `bin/` - Utility scripts (`add-plugin.py`, `update-plugins.py`)
 - `npins/` - Dependency pinning (`sources.json`)
 - `pkgs/` - Custom packages (markdown-oxide LSP)
+- `.github/` - Agent/LLM instruction files (e.g. `copilot-instructions.md`); no CI workflows
+- `.opencode/` - OpenCode agent configuration
 
 ### Common Workflows
+
+> **Reference only.** Agents must not perform these steps.
 
 **Making changes to Lua configuration:**
 
@@ -175,7 +202,8 @@ Before submitting changes:
 
 - **No GitHub Actions workflows** - validation is entirely manual
 - **Custom health check system** - use `:checkhealth nobbz` not `:checkhealth`
-- **Lazy loading via lz.n** - not using lazy.nvim, custom system in `lazy/init.lua`
+- **Lazy loading via lz.n** - not using lazy.nvim, custom wrapper in `plugins/nobbz/lua/nobbz/lazy/init.lua`
 - **MNW (Minimal Neovim Wrapper)** - Used for wrapping Neovim with plugins and runtime dependencies, configured in `nix/mnw/default.nix`
-- **Neovide supported** - GUI wrapper defined in `nix/mnw.nix`
+- **Neovide supported** - GUI wrapper (`nobbzvide`) defined in `nix/mnw.nix`
 - **direnv integration** - `.envrc` auto-loads dev shell if direnv installed
+- **Jujutsu VCS** - the repository uses `jj`; a `.jj/` directory is present at the root alongside the backing `.git/`

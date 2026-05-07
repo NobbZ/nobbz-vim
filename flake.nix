@@ -38,7 +38,7 @@
           pkgs.mkShell {
             packages = builtins.attrValues {
               inherit (pkgs) nil stylua npins alejandra basedpyright;
-              inherit (self'.packages) nobbzvide;
+              inherit (self'.packages) nobbzvidev;
               inherit emmy-lua-code-style;
               neovim = self'.packages.nobbzvim.devMode;
             };

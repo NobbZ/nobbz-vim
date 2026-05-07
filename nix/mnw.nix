@@ -22,6 +22,16 @@
           }
         ];
       }).config.build.packages.neovide;
+    nobbzvidev =
+      (inputs.wrapper-manager.lib {
+        pkgs = final;
+        modules = [
+          {
+            wrappers.neovide.basePackage = final.neovide;
+            wrappers.neovide.prependFlags = ["--neovim-bin" (lib.getExe final.nobbzvim.devMode) "--fork"];
+          }
+        ];
+      }).config.build.packages.neovide;
   };
 
   perSystem = {
@@ -37,5 +47,6 @@
 
     packages.nobbzvim = pkgs.nobbzvim;
     packages.nobbzvide = pkgs.nobbzvide;
+    packages.nobbzvidev = pkgs.nobbzvidev;
   };
 }

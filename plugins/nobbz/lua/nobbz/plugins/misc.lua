@@ -16,13 +16,11 @@ vim.o.clipboard = "unnamedplus"  -- yank/delete into system clipboard
 vim.o.list = true
 vim.o.listchars = "tab:⇢⇥,trail:⎵,eol:↩"
 vim.o.wrap = false
+vim.o.scrolloff = 999    -- "autocenter" the cursor
+vim.o.sidescrolloff = 10 -- Leave more room to the side
 -- stylua: ignore end
 
 vim.g.mapleader = " " -- set `<leader>` to the space key
-
--- enables the new v2 UI (less "press enter" it seems)
-local has_ui2, ui2 = pcall(require, "vim._core.ui2")
-if has_ui2 and type(ui2.enable) == "function" then ui2.enable() end
 
 ---Sets linemode to the requested numbering.
 ---@param numbering_mode "relative"|"absolute"|"toggle" which mode shall be activated by the keypress

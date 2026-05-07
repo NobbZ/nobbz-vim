@@ -1,7 +1,7 @@
 local SCALE_FACTOR = 1.1
-local FONT = "Departure Mono"
+local FONT = "Iosevka Fixed Slab"
 local FONT_SIZE = 11
-local DEFAULT_SCALE = 0.6
+local DEFAULT_SCALE = 0.75
 
 vim.o.guifont = string.format("%s:%d", FONT, FONT_SIZE)
 
