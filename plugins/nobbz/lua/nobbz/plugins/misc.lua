@@ -16,6 +16,8 @@ vim.o.clipboard = "unnamedplus"  -- yank/delete into system clipboard
 vim.o.list = true
 vim.o.listchars = "tab:⇢⇥,trail:⎵,eol:↩"
 vim.o.wrap = false
+vim.o.scrolloff = 999    -- "autocenter" the cursor
+vim.o.sidescrolloff = 10 -- Leave more room to the side
 -- stylua: ignore end
 
 vim.g.mapleader = " " -- set `<leader>` to the space key
