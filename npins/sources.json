@@ -133,6 +133,22 @@
       "url": "https://github.com/ledger/vim-ledger/archive/4f2d93dd914f625e2d3db47d97bd9f428fedd68f.tar.gz",
       "hash": "sha256-vwMBEIlKorWs0agm1FgYvbYUO6e7RNb1X+bOL15qQps="
     },
+    "nvim-love2d": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "S1M0N38",
+        "repo": "love2d.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v3.0.2",
+      "revision": "2c31946e7a987dac4d812ac97b526fc07cced8c4",
+      "url": "https://api.github.com/repos/S1M0N38/love2d.nvim/tarball/refs/tags/v3.0.2",
+      "hash": "sha256-7zNsnm0Td6dHpD6mOBh/aVkybh2HDArGZG2LRag7H6I="
+    },
     "nvim-lspconfig": {
       "type": "Git",
       "repository": {
