@@ -62,6 +62,7 @@
       indent-blankline
       jj-nvim
       ledger
+      love2d
       markdown
       mini
       nabla
