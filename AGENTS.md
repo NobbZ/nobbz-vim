@@ -5,14 +5,17 @@
 **Agents (AI assistants, LLMs, copilots) operating in this repository are restricted to read-only access.**
 
 Agents MAY:
+
 - Read any file in the repository
 - Discuss, review, and analyse the codebase
 - Suggest changes and explain their rationale
 
 Agents MAY NOT:
+
 - Modify, create, or delete any project files
 
 The only files agents are permitted to write are agent/LLM-specific instruction files:
+
 - `AGENTS.md` (this file)
 - `CLAUDE.md` (or any equivalent agent-specific instruction file)
 - `.github/copilot-instructions.md`
@@ -35,18 +38,22 @@ This project REQUIRES Nix with flakes enabled. All operations fail without it.
 ### Core Commands
 
 - **Build the configuration:** `nix build` or `nix build .#nobbzvim`
+
   - Builds Neovim with all plugins (takes 1-2 minutes on first build)
   - Output in `./result` symlink
 
 - **Run directly:** `nix run` or `nix run .#nobbzvim`
+
   - Launches Neovim with the configuration
   - Useful for quick testing
 
 - **Enter dev shell:** `nix develop`
+
   - Provides: `nil`, `stylua`, `npins`, `alejandra`, `basedpyright`, `emmy-lua-code-style`
   - Creates `.luarc.json` symlink for LSP support
 
 - **Format code:** `nix fmt`
+
   - Formats all Nix files with `alejandra`
   - Formats all Lua files with `emmy-lua-code-style` (CodeFormat)
   - **ALWAYS run before committing** - formatting is strict
@@ -54,11 +61,13 @@ This project REQUIRES Nix with flakes enabled. All operations fail without it.
   - Note: `stylua` is available in the dev shell as a standalone tool but is **not** part of `nix fmt`
 
 - **Add new plugin:** `nix run .#add-plugin <name> <owner/repo>`
+
   - Example: `nix run .#add-plugin telescope nvim-telescope/telescope.nvim`
   - Adds plugin to `npins/sources.json` with `nvim-` prefix
   - Optionally use `-b branch` or `-t gitlab` flags
 
 - **Validate flake:** `nix flake check`
+
   - Validates flake structure
   - Checks `add-plugin` and `update-plugins` packages build successfully
 
