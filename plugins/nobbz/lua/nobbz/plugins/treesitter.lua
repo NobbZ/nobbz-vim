@@ -12,6 +12,8 @@ require("nvim-treesitter").setup({
   },
 })
 
+vim.treesitter.language.add("holo")
+
 vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("NobbZTreesitter_allLangs", { clear = true, }),
   pattern = require("nvim-treesitter").get_available(),

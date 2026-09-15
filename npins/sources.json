@@ -430,6 +430,19 @@
       "revision": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "url": "https://github.com/folke/which-key.nvim/archive/3aab2147e74890957785941f0c1ad87d0a44c15a.tar.gz",
       "hash": "sha256-rKaYnXM4gRkkF/+xIFm2oCZwtAU6CeTdRWU93N+Jmbc="
+    },
+    "tree-sitter-holo": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "jamauro",
+        "repo": "tree-sitter-holo"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "590aabe2291facc68061153194682a47c6f22497",
+      "url": "https://github.com/jamauro/tree-sitter-holo/archive/590aabe2291facc68061153194682a47c6f22497.tar.gz",
+      "hash": "sha256-RdbqKXTIKQn1TDUeD2mLT6oOomQamwi+cKVh6HiUx6k="
     }
   },
   "version": 8
