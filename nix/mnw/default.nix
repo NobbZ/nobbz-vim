@@ -3,7 +3,15 @@
   lib,
   inputs,
   ...
-}: {
+}: let
+  npins = import ../../npins;
+  tree-sitter-holo = pkgs.tree-sitter.buildGrammar {
+    language = "holo";
+    version = "0-unstable-rev-${npins.tree-sitter-holo.revision}";
+    src = npins.tree-sitter-holo;
+  };
+  nvim-treesitter-holo = pkgs.neovimUtils.grammarToPlugin tree-sitter-holo;
+in {
   aliases = ["vi" "vim" "nobbzvim"];
   appName = "nobbz-vim";
   desktopEntry = false;
@@ -30,7 +38,7 @@
         luasnip
         ;
       inherit (pkgs.vimPlugins) lualine-nvim blink-cmp bigfile-nvim oil-nvim nvim-web-devicons vim-wakatime;
-      nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+      nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: pkgs.vimPlugins.nvim-treesitter.allGrammars ++ [nvim-treesitter-holo]);
     })
     # Start because needed like that
     (builtins.attrValues {
