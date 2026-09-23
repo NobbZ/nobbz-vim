@@ -18,7 +18,8 @@ require("nobbz.lazy").add_specs({
   },
 })
 
-local function on_attach(client, buffer)
+---@diagnostic disable-next-line: unused-local
+local function on_attach(_client, buffer)
   vim.api.nvim_create_autocmd("BufWritePre", {
     buffer = buffer,
     callback = function()
@@ -42,9 +43,10 @@ local settings = {
       enable = true,
     },
     lens = { enable = true, },
-    checkOnSave = {
+    checkOnSave = true,
+    check = {
       command = "clippy",
-      allFeatures = true,
+      features = "all",
     },
   },
 }
