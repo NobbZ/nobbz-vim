@@ -37,7 +37,7 @@ in {
         lspconfig
         luasnip
         ;
-      inherit (pkgs.vimPlugins) lualine-nvim blink-cmp bigfile-nvim oil-nvim nvim-web-devicons vim-wakatime;
+      inherit (pkgs.vimPlugins) lualine-nvim blink-cmp bigfile-nvim oil-nvim nvim-web-devicons plenary-nvim vim-wakatime;
       nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: pkgs.vimPlugins.nvim-treesitter.allGrammars ++ [nvim-treesitter-holo]);
     })
     # Start because needed like that
