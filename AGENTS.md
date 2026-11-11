@@ -1,26 +1,5 @@
 # AGENTS.md - Development Guidelines for nobbz-vim
 
-## Agent Permissions
-
-**Agents (AI assistants, LLMs, copilots) operating in this repository are restricted to read-only access.**
-
-Agents MAY:
-
-- Read any file in the repository
-- Discuss, review, and analyse the codebase
-- Suggest changes and explain their rationale
-
-Agents MAY NOT:
-
-- Modify, create, or delete any project files
-
-The only files agents are permitted to write are agent/LLM-specific instruction files:
-
-- `AGENTS.md` (this file)
-- `CLAUDE.md` (or any equivalent agent-specific instruction file)
-- `.github/copilot-instructions.md`
-- Anything under `.opencode/`
-
 ## Overview
 
 This repository contains a Nix flake-based Neovim configuration. It provides a reproducible, declarative Neovim setup with custom plugins and LSP configurations.
@@ -31,7 +10,7 @@ This repository contains a Nix flake-based Neovim configuration. It provides a r
 
 ## Build/Lint/Test Commands
 
-> **Reference only.** Agents must not run these commands or modify project files.
+> These commands are available to agents for running and validation.
 
 This project REQUIRES Nix with flakes enabled. All operations fail without it.
 
@@ -168,8 +147,6 @@ This is a Neovim configuration managed as a Nix flake. The repository provides a
 - `.opencode/` - OpenCode agent configuration
 
 ### Common Workflows
-
-> **Reference only.** Agents must not perform these steps.
 
 **Making changes to Lua configuration:**
 
